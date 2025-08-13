@@ -1,0 +1,53 @@
+:orphan:
+
+.. title:: ANT_KEY_MANAGER
+
+.. option:: CONFIG_ANT_KEY_MANAGER
+
+*ANT Key Manager Library*
+
+Type: ``bool``
+
+Help
+====
+
+Helper functions for setting ANT Network Keys. The ANT+ network key
+is to be used by devices that will communicate on the ANT+ network
+and strictly adhere to the ANT+ Device Profiles. The ANT-FS network
+key is similarly used strictly for ANT-FS applications.
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+No defaults. Implicitly defaults to ``n``.
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``lib\ant_key_manager/Kconfig:10``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:12``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    menuconfig ANT_KEY_MANAGER
+    	bool "ANT Key Manager Library"
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  Helper functions for setting ANT Network Keys. The ANT+ network key
+    	  is to be used by devices that will communicate on the ANT+ network
+    	  and strictly adhere to the ANT+ Device Profiles. The ANT-FS network
+    	  key is similarly used strictly for ANT-FS applications.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

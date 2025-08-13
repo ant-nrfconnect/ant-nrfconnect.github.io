@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: ANT_BSC_LOG_LEVEL_DEFAULT
+
+.. option:: CONFIG_ANT_BSC_LOG_LEVEL_DEFAULT
+
+*Default*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice ANT_BSC_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ BSC> <choice_10>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:23``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:11`` → ``lib\ant_profiles\ant_bsc/Kconfig:29``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ Bike Speed and Cadence profile → Max compiled-in log level for ANT+ BSC
+
+.. parsed-literal::
+
+    config ANT_BSC_LOG_LEVEL_DEFAULT
+    	bool "Default"
+    	depends on \ :ref:`<choice ANT_BSC_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ BSC> <choice_10>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

@@ -1,0 +1,53 @@
+:orphan:
+
+.. title:: choice ANT_BPWR_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ BPWR
+
+.. _choice_7:
+
+.. describe:: choice ANT_BPWR_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ BPWR
+
+*Max compiled-in log level for ANT+ BPWR*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`ANT_BPWR <CONFIG_ANT_BPWR>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- \ :option:`ANT_BPWR_LOG_LEVEL_DEFAULT <CONFIG_ANT_BPWR_LOG_LEVEL_DEFAULT>`
+
+Choice options
+==============
+
+- \ :option:`ANT_BPWR_LOG_LEVEL_OFF <CONFIG_ANT_BPWR_LOG_LEVEL_OFF>`
+- \ :option:`ANT_BPWR_LOG_LEVEL_ERR <CONFIG_ANT_BPWR_LOG_LEVEL_ERR>`
+- \ :option:`ANT_BPWR_LOG_LEVEL_WRN <CONFIG_ANT_BPWR_LOG_LEVEL_WRN>`
+- \ :option:`ANT_BPWR_LOG_LEVEL_INF <CONFIG_ANT_BPWR_LOG_LEVEL_INF>`
+- \ :option:`ANT_BPWR_LOG_LEVEL_DBG <CONFIG_ANT_BPWR_LOG_LEVEL_DBG>`
+- \ :option:`ANT_BPWR_LOG_LEVEL_DEFAULT <CONFIG_ANT_BPWR_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:3``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:10`` → ``lib\ant_profiles\ant_bpwr/Kconfig:30``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ Bicycle Power profile
+
+.. parsed-literal::
+
+    choice ANT_BPWR_LOG_LEVEL_CHOICE
+    	bool "Max compiled-in log level for ANT+ BPWR"
+    	default \ :option:`ANT_BPWR_LOG_LEVEL_DEFAULT <CONFIG_ANT_BPWR_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`ANT_BPWR <CONFIG_ANT_BPWR>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

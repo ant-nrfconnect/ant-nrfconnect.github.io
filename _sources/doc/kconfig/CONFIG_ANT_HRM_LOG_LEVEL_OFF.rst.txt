@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: ANT_HRM_LOG_LEVEL_OFF
+
+.. option:: CONFIG_ANT_HRM_LOG_LEVEL_OFF
+
+*Off*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice ANT_HRM_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM> <choice_13>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:8``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:13`` → ``lib\ant_profiles\ant_hrm/Kconfig:29``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ HRM profile → Max compiled-in log level for ANT+ HRM
+
+.. parsed-literal::
+
+    config ANT_HRM_LOG_LEVEL_OFF
+    	bool "Off"
+    	depends on \ :ref:`<choice ANT_HRM_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM> <choice_13>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

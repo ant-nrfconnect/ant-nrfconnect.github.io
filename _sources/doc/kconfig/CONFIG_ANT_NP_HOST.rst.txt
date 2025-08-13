@@ -1,0 +1,53 @@
+:orphan:
+
+.. title:: ANT_NP_HOST
+
+.. option:: CONFIG_ANT_NP_HOST
+
+*ANT Network Processor Host (cpuapp)*
+
+Type: ``bool``
+
+Help
+====
+
+ANT Host (application core) configuration for multicore applications.
+
+Direct dependencies
+===================
+
+\ :option:`ANT_NP <CONFIG_ANT_NP>` && SOC_NRF5340_CPUAPP && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- n
+
+Symbols that select this symbol
+===============================
+
+- \ :option:`ANT_NP <CONFIG_ANT_NP>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``np/Kconfig:22``
+
+Included via ``Kconfig:50``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT Network Processor Multicore API Serialization
+
+.. parsed-literal::
+
+    config ANT_NP_HOST
+    	bool "ANT Network Processor Host (cpuapp)"
+    	default n
+    	depends on \ :option:`ANT_NP <CONFIG_ANT_NP>` && SOC_NRF5340_CPUAPP && \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  ANT Host (application core) configuration for multicore applications.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

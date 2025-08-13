@@ -1,0 +1,46 @@
+:orphan:
+
+.. title:: ANT_BSC_SIMULATOR
+
+.. option:: CONFIG_ANT_BSC_SIMULATOR
+
+*Enable ANT+ Bike Speed and Cadence Simulator*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :option:`ANT_BSC <CONFIG_ANT_BSC>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+No defaults. Implicitly defaults to ``n``.
+
+Symbols selected by this symbol
+===============================
+
+- \ :option:`SENSORSIM <CONFIG_SENSORSIM>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``lib\ant_profiles\ant_bsc/Kconfig:17``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:11``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ Bike Speed and Cadence profile
+
+.. parsed-literal::
+
+    config ANT_BSC_SIMULATOR
+    	bool "Enable ANT+ Bike Speed and Cadence Simulator"
+    	select \ :option:`SENSORSIM <CONFIG_SENSORSIM>`
+    	depends on \ :option:`ANT_BSC <CONFIG_ANT_BSC>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANT Parameters Reference &mdash; ANT for nRF Connect SDK  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ANT Error Reference" href="error.html" />
+    <link rel="prev" title="ANT Interface Reference" href="interface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ANT for nRF Connect SDK
+            <img src="../../_static/this-is-ant.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_notes.html">Integration notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples.html">Samples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="interface.html">ANT Interface Reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ANT Parameters Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">ANT Error Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../init/ant_init_host_cpuapp.html">ANT Initialization: Multicore Host (cpuapp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profiles/ant_plus.html">ANT+ Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lib/libraries.html">ANT Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kconfig/index.html">Configuration Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ANT for nRF Connect SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">ANT Parameters Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/api/parameters.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ant-parameters-reference">
+<span id="ant-parameters"></span><h1>ANT Parameters Reference<a class="headerlink" href="#ant-parameters-reference" title="Permalink to this headline"></a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-ant-serial-message-structure">ANT serial message structure</p>
+<p>Defines for accesssing <a class="reference internal" href="#union_a_n_t___m_e_s_s_a_g_e"><span class="std std-ref">ANT_MESSAGE</span></a> members variables </p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-baudrate-enum.">Baudrate enum.</p>
+<p>Must be in sequential ascending order</p>
+<p>BAUDRATE_TYPE used as index in asBaudLookup[] array BAUDRATE_TYPE used as left bitshift into BAUD_SUPPORTED_BITFIELD bitfield </p>
+</div>
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ANT_TIME_STAMP_CONFIG">
+<span class="target" id="struct_a_n_t___t_i_m_e___s_t_a_m_p___c_o_n_f_i_g"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ANT_TIME_STAMP_CONFIG</span></span></span><a class="headerlink" href="#c.ANT_TIME_STAMP_CONFIG" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ant_parameters.h&gt;</em></div>
+<p>Time stamp configuration structure. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_TIME_STAMP_CONFIG.ucTimeBase">
+<span class="target" id="struct_a_n_t___t_i_m_e___s_t_a_m_p___c_o_n_f_i_g_1a414671400ef1c8f8b203226b534d0948"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucTimeBase</span></span></span><a class="headerlink" href="#c.ANT_TIME_STAMP_CONFIG.ucTimeBase" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Time base Time Base Defines. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_TIME_STAMP_CONFIG.bTimeStampEnabled">
+<span class="target" id="struct_a_n_t___t_i_m_e___s_t_a_m_p___c_o_n_f_i_g_1a48f391e4d04e3d5bbb3e8ca72428a0a1"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bTimeStampEnabled</span></span></span><a class="headerlink" href="#c.ANT_TIME_STAMP_CONFIG.bTimeStampEnabled" title="Permalink to this definition"></a><br /></dt>
+<dd><p>False: Time stamp NOT used, True: Time stamp is used. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ANT_TIME_SYNC_CONFIG">
+<span class="target" id="struct_a_n_t___t_i_m_e___s_y_n_c___c_o_n_f_i_g"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ANT_TIME_SYNC_CONFIG</span></span></span><a class="headerlink" href="#c.ANT_TIME_SYNC_CONFIG" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ant_parameters.h&gt;</em></div>
+<p>Time synchronization configuration structure. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_TIME_SYNC_CONFIG.ucTimeBase">
+<span class="target" id="struct_a_n_t___t_i_m_e___s_y_n_c___c_o_n_f_i_g_1a04def2c6a12c359e8c3e129ab578bf6c"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucTimeBase</span></span></span><a class="headerlink" href="#c.ANT_TIME_SYNC_CONFIG.ucTimeBase" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Time base Time Base Defines. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_TIME_SYNC_CONFIG.bInvalidationEnabled">
+<span class="target" id="struct_a_n_t___t_i_m_e___s_y_n_c___c_o_n_f_i_g_1a861ec78fe09708e0ff029cb9ca0719f9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bInvalidationEnabled</span></span></span><a class="headerlink" href="#c.ANT_TIME_SYNC_CONFIG.bInvalidationEnabled" title="Permalink to this definition"></a><br /></dt>
+<dd><p>False: Invalidation is NOT used, True: Invalidation is used. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_TIME_SYNC_CONFIG.ucInvalidationByte">
+<span class="target" id="struct_a_n_t___t_i_m_e___s_y_n_c___c_o_n_f_i_g_1a8f530d966373e237d2dd874660dd3fd4"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucInvalidationByte</span></span></span><a class="headerlink" href="#c.ANT_TIME_SYNC_CONFIG.ucInvalidationByte" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The byte used to indicate an invalid time sync packet. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ANT_HIGH_DUTY_SEARCH_CONFIG">
+<span class="target" id="struct_a_n_t___h_i_g_h___d_u_t_y___s_e_a_r_c_h___c_o_n_f_i_g"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ANT_HIGH_DUTY_SEARCH_CONFIG</span></span></span><a class="headerlink" href="#c.ANT_HIGH_DUTY_SEARCH_CONFIG" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ant_parameters.h&gt;</em></div>
+<p>Used with the get/set high duty search config commands. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_HIGH_DUTY_SEARCH_CONFIG.bEnable">
+<span class="target" id="struct_a_n_t___h_i_g_h___d_u_t_y___s_e_a_r_c_h___c_o_n_f_i_g_1a6673003614f110531cfe936e5c09d811"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bEnable</span></span></span><a class="headerlink" href="#c.ANT_HIGH_DUTY_SEARCH_CONFIG.bEnable" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable or disable high duty search. See HIGH_DUTY_SEARCH defines in ant_parameters.h. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_HIGH_DUTY_SEARCH_CONFIG.ucSearchSuppressionWindows">
+<span class="target" id="struct_a_n_t___h_i_g_h___d_u_t_y___s_e_a_r_c_h___c_o_n_f_i_g_1adab18d66ab35432906448f66753a8aa2"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucSearchSuppressionWindows</span></span></span><a class="headerlink" href="#c.ANT_HIGH_DUTY_SEARCH_CONFIG.ucSearchSuppressionWindows" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Number of windows to apply suppression for. See HIGH_DUTY_SEARCH defines in ant_parameters.h. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_HIGH_DUTY_SEARCH_CONFIG.usRestartInterval">
+<span class="target" id="struct_a_n_t___h_i_g_h___d_u_t_y___s_e_a_r_c_h___c_o_n_f_i_g_1a7b57271df43d97bdf7f455cd9fee5deb"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usRestartInterval</span></span></span><a class="headerlink" href="#c.ANT_HIGH_DUTY_SEARCH_CONFIG.usRestartInterval" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Restart interval is reset back to default when high duty search is disabled. </p>
+<p>Restart interval. Use default value of HIGH_DUTY_SEARCH_RESTART_INTERVAL_DEFAULT unless otherwise specified. See HIGH_DUTY_SEARCH defines in ant_parameters.h</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ANT_PA_LNA_CONFIG</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ant_parameters.h&gt;</em></div>
+<p>The structure that holds configuration for PA/LNA GPIO outputs during radio events. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG.bEnabled">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g_1a040297c8589422084aa9f2095726a58e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bEnabled</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG.bEnabled" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Indicates that PA pin toggling is enabled. </p>
+<p>Indicates that LNA pin toggling is enabled. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG.ucGPIO">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g_1aa8b13d0c9f6a019d3c123a2cbf7d7450"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucGPIO</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG.ucGPIO" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Selects the GPIO used to control the PA. </p>
+<p>Selects the GPIO used to control the LNA. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG.bActiveState">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g_1a82058ad01e176f143856a171c3c87529"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bActiveState</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG.bActiveState" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Active state. 1 - Active high, 0 - Active low. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG.PA_CONFIG">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g_1a9da4d737854519f182e56ff3ee82252f"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ANT_PA_LNA_CONFIG" title="ANT_PA_LNA_CONFIG"><span class="n"><span class="pre">ANT_PA_LNA_CONFIG</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PA_CONFIG</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG.PA_CONFIG" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG.LNA_CONFIG">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g_1a2309c6f299ecb253a7a7ca69232b3583"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ANT_PA_LNA_CONFIG" title="ANT_PA_LNA_CONFIG"><span class="n"><span class="pre">ANT_PA_LNA_CONFIG</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LNA_CONFIG</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG.LNA_CONFIG" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG.ucGPIOTECh">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g_1a1d4077de1de03753c4095838ce9c6d28"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucGPIOTECh</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG.ucGPIOTECh" title="Permalink to this definition"></a><br /></dt>
+<dd><p>GPIOTE channel used to control PA and LNA pins. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG.ucPPIChEnable">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g_1a869ebfe780bef4d5a3aea8a660ee99b9"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucPPIChEnable</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG.ucPPIChEnable" title="Permalink to this definition"></a><br /></dt>
+<dd><p>PPI channel used to control the PA/LNA signal before EVENTS_READY. Must be different from ucPPIChDisable. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_PA_LNA_CONFIG.ucPPIChDisable">
+<span class="target" id="struct_a_n_t___p_a___l_n_a___c_o_n_f_i_g_1a10f4c24f15fc1e19132fa3ea3676ceb5"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucPPIChDisable</span></span></span><a class="headerlink" href="#c.ANT_PA_LNA_CONFIG.ucPPIChDisable" title="Permalink to this definition"></a><br /></dt>
+<dd><p>PPI channel used to control the PA/LNA signal during EVENTS_DISABLED. Must be different from ucPPIChEnable. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c union">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ANT_MESSAGE</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ant_parameters.h&gt;</em></div>
+<p>The structure that holds ANT messages. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.ulForceAlign">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a85bedf28555019f715138dbf597d2d65"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ulForceAlign</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.ulForceAlign" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.aucMessage">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1abdaebe6b4e083fbad9bc88f628f077bb"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">aucMessage</span></span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">17</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#c.ANT_MESSAGE.aucMessage" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.ucSize">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1aefe47590f5100483e7eba301aeffbd48"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucSize</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.ucSize" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.aucFramedData">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a1b80aea7ddb647e3b709f6859090aa35"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">aucFramedData</span></span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">17</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#c.ANT_MESSAGE.aucFramedData" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.ucMesgID">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a756f9e6482c170f110beced3f96c327f"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucMesgID</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.ucMesgID" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.aucMesgData">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1ad66a10082b066aa8bdbc91a65319c339"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">aucMesgData</span></span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">17</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#c.ANT_MESSAGE.aucMesgData" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.ucChannel">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a36f6215450920746f6e0ee319c810259"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucChannel</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.ucChannel" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.ucSubID">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a7714dd582fb8c245f23b6b0aeeecf4dd"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucSubID</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.ucSubID" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.uData0">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1aa217a01347972926dc7d7fb11812da7d"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><a class="reference internal" href="#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uData0</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.uData0" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.aucPayload">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a5637fd09197781428b048e31104ae437"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">aucPayload</span></span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#c.ANT_MESSAGE.aucPayload" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.sExtMesgBF">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a327d90a8fdf2ed266f6c56128742d425"></span><span class="n"><span class="pre">EXT_MESG_BF</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sExtMesgBF</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.sExtMesgBF" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.aucExtData">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a1322209a67f638d3381fdd63fe8bde46"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">aucExtData</span></span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">)</span></span><span class="m"><span class="pre">17</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#c.ANT_MESSAGE.aucExtData" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.stMesgData">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1aa384a87ac1730146362e9deea9b62be4"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stMesgData</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.stMesgData" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.uMesgData">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1a51bd2bc8a4588fe0f874ea4475e6b305"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><a class="reference internal" href="#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uMesgData</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.uMesgData" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.stFramedData">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1ac8318d9a50c59fc56a82606236e768ca"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stFramedData</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.stFramedData" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.uFramedData">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1aaeba4ab1ac516ccea12cc62e0eae5109"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><a class="reference internal" href="#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uFramedData</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.uFramedData" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.ucCheckSum">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1acb404a2c6960014307f8c7428684f233"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucCheckSum</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.ucCheckSum" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_MESSAGE.stMessage">
+<span class="target" id="union_a_n_t___m_e_s_s_a_g_e_1af4c69eaf7b7aaa29ded053b42690b19d"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stMessage</span></span></span><a class="headerlink" href="#c.ANT_MESSAGE.stMessage" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="interface.html" class="btn btn-neutral float-left" title="ANT Interface Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="error.html" class="btn btn-neutral float-right" title="ANT Error Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        
+           <strong> 
+          <dd><a href="https://www.thisisant.com/APIassets/ANTnRFConnectDoc/">2.0.0</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.3.0_ANTnRFConnectDoc/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.2.0_ANTnRFConnectDoc/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.1.0_ANTnRFConnectDoc/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.0.0_ANTnRFConnectDoc/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/0.5.0_ANTnRFConnectDoc/">0.5.0</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

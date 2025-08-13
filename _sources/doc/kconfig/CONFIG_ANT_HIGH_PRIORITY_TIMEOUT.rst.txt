@@ -1,0 +1,41 @@
+:orphan:
+
+.. title:: ANT_HIGH_PRIORITY_TIMEOUT
+
+.. option:: CONFIG_ANT_HIGH_PRIORITY_TIMEOUT
+
+*High priority search timeout*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+\ :option:`ANT_SEARCH_CONFIG <CONFIG_ANT_SEARCH_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- 10
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``lib\ant_search_config/Kconfig:25``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:16``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT Search Config Library
+
+.. parsed-literal::
+
+    config ANT_HIGH_PRIORITY_TIMEOUT
+    	int "High priority search timeout"
+    	default 10
+    	depends on \ :option:`ANT_SEARCH_CONFIG <CONFIG_ANT_SEARCH_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

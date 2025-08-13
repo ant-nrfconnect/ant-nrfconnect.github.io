@@ -1,0 +1,53 @@
+:orphan:
+
+.. title:: choice ANT_STATE_INDICATOR_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT State Indicator
+
+.. _choice_14:
+
+.. describe:: choice ANT_STATE_INDICATOR_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT State Indicator
+
+*Max compiled-in log level for ANT State Indicator*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`ANT_STATE_INDICATOR <CONFIG_ANT_STATE_INDICATOR>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT>`
+
+Choice options
+==============
+
+- \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_OFF <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_OFF>`
+- \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_ERR <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_ERR>`
+- \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_WRN <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_WRN>`
+- \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_INF <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_INF>`
+- \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_DBG <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DBG>`
+- \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:3``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:14`` → ``lib\ant_state_indicator/Kconfig:20``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT State Indicator Library
+
+.. parsed-literal::
+
+    choice ANT_STATE_INDICATOR_LOG_LEVEL_CHOICE
+    	bool "Max compiled-in log level for ANT State Indicator"
+    	default \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`ANT_STATE_INDICATOR <CONFIG_ANT_STATE_INDICATOR>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

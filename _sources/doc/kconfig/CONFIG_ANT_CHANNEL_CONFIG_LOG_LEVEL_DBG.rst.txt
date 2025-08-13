@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: ANT_CHANNEL_CONFIG_LOG_LEVEL_DBG
+
+.. option:: CONFIG_ANT_CHANNEL_CONFIG_LOG_LEVEL_DBG
+
+*Debug*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice ANT_CHANNEL_CONFIG_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT Channel Config> <choice_2>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:20``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:10`` → ``lib\ant_channel_config/Kconfig:19``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT Channel Config Library → Max compiled-in log level for ANT Channel Config
+
+.. parsed-literal::
+
+    config ANT_CHANNEL_CONFIG_LOG_LEVEL_DBG
+    	bool "Debug"
+    	depends on \ :ref:`<choice ANT_CHANNEL_CONFIG_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT Channel Config> <choice_2>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

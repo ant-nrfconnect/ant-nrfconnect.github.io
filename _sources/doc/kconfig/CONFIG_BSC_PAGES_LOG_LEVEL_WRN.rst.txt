@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: BSC_PAGES_LOG_LEVEL_WRN
+
+.. option:: CONFIG_BSC_PAGES_LOG_LEVEL_WRN
+
+*Warning*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice BSC_PAGES_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ BSC Pages> <choice_8>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:14``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:11`` → ``lib\ant_profiles\ant_bsc/Kconfig:21`` → ``lib\ant_profiles\ant_bsc\pages/Kconfig:12``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ Bike Speed and Cadence profile → Max compiled-in log level for ANT+ BSC Pages
+
+.. parsed-literal::
+
+    config BSC_PAGES_LOG_LEVEL_WRN
+    	bool "Warning"
+    	depends on \ :ref:`<choice BSC_PAGES_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ BSC Pages> <choice_8>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

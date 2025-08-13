@@ -1,0 +1,51 @@
+:orphan:
+
+.. title:: HRM_PAGES_LOG_LEVEL
+
+.. option:: CONFIG_HRM_PAGES_LOG_LEVEL
+
+*(No prompt -- not directly user assignable.)*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`ANT_HRM <CONFIG_ANT_HRM>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+- 0 if \ :option:`HRM_PAGES_LOG_LEVEL_OFF <CONFIG_HRM_PAGES_LOG_LEVEL_OFF>`
+- 1 if \ :option:`HRM_PAGES_LOG_LEVEL_ERR <CONFIG_HRM_PAGES_LOG_LEVEL_ERR>`
+- 2 if \ :option:`HRM_PAGES_LOG_LEVEL_WRN <CONFIG_HRM_PAGES_LOG_LEVEL_WRN>`
+- 3 if \ :option:`HRM_PAGES_LOG_LEVEL_INF <CONFIG_HRM_PAGES_LOG_LEVEL_INF>`
+- 4 if \ :option:`HRM_PAGES_LOG_LEVEL_DBG <CONFIG_HRM_PAGES_LOG_LEVEL_DBG>`
+- LOG_DEFAULT_LEVEL if \ :option:`HRM_PAGES_LOG_LEVEL_DEFAULT <CONFIG_HRM_PAGES_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:28``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:13`` → ``lib\ant_profiles\ant_hrm/Kconfig:21`` → ``lib\ant_profiles\ant_hrm\pages/Kconfig:12``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ HRM profile
+
+.. parsed-literal::
+
+    config HRM_PAGES_LOG_LEVEL
+    	int
+    	default 0 if \ :option:`HRM_PAGES_LOG_LEVEL_OFF <CONFIG_HRM_PAGES_LOG_LEVEL_OFF>`
+    	default 1 if \ :option:`HRM_PAGES_LOG_LEVEL_ERR <CONFIG_HRM_PAGES_LOG_LEVEL_ERR>`
+    	default 2 if \ :option:`HRM_PAGES_LOG_LEVEL_WRN <CONFIG_HRM_PAGES_LOG_LEVEL_WRN>`
+    	default 3 if \ :option:`HRM_PAGES_LOG_LEVEL_INF <CONFIG_HRM_PAGES_LOG_LEVEL_INF>`
+    	default 4 if \ :option:`HRM_PAGES_LOG_LEVEL_DBG <CONFIG_HRM_PAGES_LOG_LEVEL_DBG>`
+    	default LOG_DEFAULT_LEVEL if \ :option:`HRM_PAGES_LOG_LEVEL_DEFAULT <CONFIG_HRM_PAGES_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`ANT_HRM <CONFIG_ANT_HRM>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: ANT_SEARCH_CONFIG_LOG_LEVEL_INF
+
+.. option:: CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_INF
+
+*Info*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice ANT_SEARCH_CONFIG_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT Search Config> <choice_16>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:17``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:16`` → ``lib\ant_search_config/Kconfig:19``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT Search Config Library → Max compiled-in log level for ANT Search Config
+
+.. parsed-literal::
+
+    config ANT_SEARCH_CONFIG_LOG_LEVEL_INF
+    	bool "Info"
+    	depends on \ :ref:`<choice ANT_SEARCH_CONFIG_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT Search Config> <choice_16>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

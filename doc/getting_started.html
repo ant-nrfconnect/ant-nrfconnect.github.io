@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; ANT for nRF Connect SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integration notes" href="integration_notes.html" />
+    <link rel="prev" title="Welcome to ANT for nRF Connect SDK!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ANT for nRF Connect SDK
+            <img src="../_static/this-is-ant.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-nrf-connect-sdk">Setting up nRF Connect SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-the-ant-for-nrf-connect-sdk-add-on">Getting the ANT for nRF Connect SDK Add-on</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manual-installation">Manual Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nrf-connect-for-visual-studio-code-extension-installation">nRF Connect for Visual Studio Code Extension Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-ant-for-nrf-connect-sdk">Updating ANT for nRF Connect SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-documentation">Building the Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="integration_notes.html">Integration notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kconfig/index.html">Configuration Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ANT for nRF Connect SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/doc/getting_started.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<span id="ant-getting-started"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#setting-up-nrf-connect-sdk" id="id1">Setting up nRF Connect SDK</a></p></li>
+<li><p><a class="reference internal" href="#getting-the-ant-for-nrf-connect-sdk-add-on" id="id2">Getting the ANT for nRF Connect SDK Add-on</a></p>
+<ul>
+<li><p><a class="reference internal" href="#manual-installation" id="id3">Manual Installation</a></p></li>
+<li><p><a class="reference internal" href="#nrf-connect-for-visual-studio-code-extension-installation" id="id4">nRF Connect for Visual Studio Code Extension Installation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#updating-ant-for-nrf-connect-sdk" id="id5">Updating ANT for nRF Connect SDK</a></p></li>
+<li><p><a class="reference internal" href="#building-the-documentation" id="id6">Building the Documentation</a></p></li>
+<li><p><a class="reference internal" href="#resources" id="id7">Resources</a></p></li>
+</ul>
+</div>
+<section id="setting-up-nrf-connect-sdk">
+<h2><a class="toc-backref" href="#id1">Setting up nRF Connect SDK</a><a class="headerlink" href="#setting-up-nrf-connect-sdk" title="Permalink to this headline"></a></h2>
+<p>The nRF Connect SDK (sdk-nrf) uses <code class="docutils literal notranslate"><span class="pre">west</span></code> to manage a combination of multiple Git repositories and versions.</p>
+<p>You must use the west tool to install all components of the nRF Connect SDK including ANT. The required version of west is dictated by sdk-nrf.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From sdk-ant v2.0.0 onwards, ANT support is now being offered as an Add-on repository. This model requires completing a specific setup that differs from previous versions.
+Add-ons manage and clone their own compatible nRF Connect SDK instance. Please follow the instructions below to set up the development environment.</p>
+</div>
+</section>
+<section id="getting-the-ant-for-nrf-connect-sdk-add-on">
+<h2><a class="toc-backref" href="#id2">Getting the ANT for nRF Connect SDK Add-on</a><a class="headerlink" href="#getting-the-ant-for-nrf-connect-sdk-add-on" title="Permalink to this headline"></a></h2>
+<p>Access to the ANT for nRF Connect repository is granted to ANT Adopters after accepting the license agreement and authenticating through GitHub.</p>
+<p>Once your access is set up, you will be able to browse the repository here: <a class="reference external" href="https://github.com/ant-nrfconnect/sdk-ant">https://github.com/ant-nrfconnect/sdk-ant</a></p>
+<p>After confirming access, you can set up your development environment either manually or through the nRF Connect for Visual Studio Code extension.</p>
+<section id="manual-installation">
+<h3><a class="toc-backref" href="#id3">Manual Installation</a><a class="headerlink" href="#manual-installation" title="Permalink to this headline"></a></h3>
+<ol class="arabic">
+<li><p>Initialize the ANT repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">west</span> <span class="n">init</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;https://github.com/ant-nrfconnect/sdk-ant&quot;</span> <span class="o">--</span><span class="n">mr</span> <span class="n">main</span>
+</pre></div>
+</div>
+</li>
+<li><p>Update all repositories (including the compatible sdk-nrf version) using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">west</span> <span class="n">update</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="nrf-connect-for-visual-studio-code-extension-installation">
+<h3><a class="toc-backref" href="#id4">nRF Connect for Visual Studio Code Extension Installation</a><a class="headerlink" href="#nrf-connect-for-visual-studio-code-extension-installation" title="Permalink to this headline"></a></h3>
+<p>To set up the ANT Add-On alongside a compatible nRF Connect SDK, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Launch Visual Studio Code and open the nRF Connect extension from the Activity Bar.</p></li>
+<li><p>In the Welcome View, choose <strong>Create a new application</strong> to open the action list.</p></li>
+<li><p>Select <strong>Browse nRF Connect SDK Add-on Index</strong> to view available SDK Add-Ons.</p></li>
+<li><p>Locate and select <strong>ANT Wireless Add-On</strong>.</p></li>
+<li><p>Choose the desired Add-on version for installation.</p></li>
+<li><p>The installation process for both the Add-on and the compatible nRF Connect SDK will begin.</p></li>
+</ol>
+<p>See the <a class="reference internal" href="integration_notes.html#ant-integration-notes"><span class="std std-ref">Integration notes</span></a> and <a class="reference internal" href="samples.html#ant-samples"><span class="std std-ref">Samples</span></a> for details on configuring your nRF Connect SDK project to include ANT.</p>
+</section>
+</section>
+<section id="updating-ant-for-nrf-connect-sdk">
+<h2><a class="toc-backref" href="#id5">Updating ANT for nRF Connect SDK</a><a class="headerlink" href="#updating-ant-for-nrf-connect-sdk" title="Permalink to this headline"></a></h2>
+<p>When new releases are available, they will be tagged with a version and appear in the <code class="docutils literal notranslate"><span class="pre">Releases</span></code> sidebar on GitHub. ANT and sdk-nrf <a class="reference internal" href="compatibility.html#ant-compatibility"><span class="std std-ref">Compatibility</span></a> information is available for each release.</p>
+<p>ANT libraries are tightly coupled to sdk-nrf revisions. It is not recommended to use sdk-ant with any version other than that specified in the west manifest.</p>
+</section>
+<section id="building-the-documentation">
+<h2><a class="toc-backref" href="#id6">Building the Documentation</a><a class="headerlink" href="#building-the-documentation" title="Permalink to this headline"></a></h2>
+<p>If desired, this documentation can be generated on demand from the repository source. Documentation build files are located in the <code class="docutils literal notranslate"><span class="pre">ant/doc</span></code> folder.</p>
+<ol class="arabic">
+<li><p>Install the nRF Connect SDK and enable ANT as described above.</p></li>
+<li><p>Install or update all required Python dependencies. Open the command-line window in the <code class="docutils literal notranslate"><span class="pre">ant</span></code> folder. Use the following command to install the requirements for the documentation build:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">doc</span><span class="o">/</span><span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>To build the documentation:</p>
+<ol class="arabic">
+<li><p>Open a command-line window in the ANT module folder (<code class="docutils literal notranslate"><span class="pre">ant</span></code>).</p></li>
+<li><p>Run ninja by entering the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ninja</span>
+</pre></div>
+</div>
+</li>
+<li><p>The documentation output will be generated in the <code class="docutils literal notranslate"><span class="pre">ant/doc/html</span></code> folder. Double-click <code class="docutils literal notranslate"><span class="pre">index.html</span></code> to display the documentation in your browser.</p></li>
+</ol>
+</section>
+<section id="resources">
+<h2><a class="toc-backref" href="#id7">Resources</a><a class="headerlink" href="#resources" title="Permalink to this headline"></a></h2>
+<p>Follow the <a class="reference external" href="https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/installation.html">nRF Connect SDK installation guide</a>.</p>
+<p><a class="reference external" href="https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/installation/install_ncs.html">Installing the nRF Connect SDK</a> has instructions for obtaining an ANT compatible version of the nRF Connect SDK by hash, tag, or the latest state of the main branch.</p>
+<p>The nRF Connect SDK is available from Nordic Semiconductor:
+<a class="reference external" href="https://github.com/nrfconnect/sdk-nrf">https://github.com/nrfconnect/sdk-nrf</a></p>
+<p>Official documentation for nRF Connect SDK (sdk-nrf) can be found here:
+<a class="reference external" href="https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/index.html">https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/index.html</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to ANT for nRF Connect SDK!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="integration_notes.html" class="btn btn-neutral float-right" title="Integration notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        
+           <strong> 
+          <dd><a href="https://www.thisisant.com/APIassets/ANTnRFConnectDoc/">2.0.0</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.3.0_ANTnRFConnectDoc/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.2.0_ANTnRFConnectDoc/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.1.0_ANTnRFConnectDoc/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.0.0_ANTnRFConnectDoc/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/0.5.0_ANTnRFConnectDoc/">0.5.0</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

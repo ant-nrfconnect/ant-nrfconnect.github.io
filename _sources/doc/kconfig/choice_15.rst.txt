@@ -1,0 +1,53 @@
+:orphan:
+
+.. title:: choice SENSORSIM_LOG_LEVEL_CHOICE: Max compiled-in log level for Sensor Data Simulator
+
+.. _choice_15:
+
+.. describe:: choice SENSORSIM_LOG_LEVEL_CHOICE: Max compiled-in log level for Sensor Data Simulator
+
+*Max compiled-in log level for Sensor Data Simulator*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`SENSORSIM <CONFIG_SENSORSIM>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- \ :option:`SENSORSIM_LOG_LEVEL_DEFAULT <CONFIG_SENSORSIM_LOG_LEVEL_DEFAULT>`
+
+Choice options
+==============
+
+- \ :option:`SENSORSIM_LOG_LEVEL_OFF <CONFIG_SENSORSIM_LOG_LEVEL_OFF>`
+- \ :option:`SENSORSIM_LOG_LEVEL_ERR <CONFIG_SENSORSIM_LOG_LEVEL_ERR>`
+- \ :option:`SENSORSIM_LOG_LEVEL_WRN <CONFIG_SENSORSIM_LOG_LEVEL_WRN>`
+- \ :option:`SENSORSIM_LOG_LEVEL_INF <CONFIG_SENSORSIM_LOG_LEVEL_INF>`
+- \ :option:`SENSORSIM_LOG_LEVEL_DBG <CONFIG_SENSORSIM_LOG_LEVEL_DBG>`
+- \ :option:`SENSORSIM_LOG_LEVEL_DEFAULT <CONFIG_SENSORSIM_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:3``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:15`` → ``lib\sensorsim/Kconfig:19``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → Sensor Data Simulator Library
+
+.. parsed-literal::
+
+    choice SENSORSIM_LOG_LEVEL_CHOICE
+    	bool "Max compiled-in log level for Sensor Data Simulator"
+    	default \ :option:`SENSORSIM_LOG_LEVEL_DEFAULT <CONFIG_SENSORSIM_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`SENSORSIM <CONFIG_SENSORSIM>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

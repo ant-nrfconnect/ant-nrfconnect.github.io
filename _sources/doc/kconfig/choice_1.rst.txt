@@ -1,0 +1,53 @@
+:orphan:
+
+.. title:: choice ANT_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT
+
+.. _choice_1:
+
+.. describe:: choice ANT_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT
+
+*Max compiled-in log level for ANT*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- \ :option:`ANT_LOG_LEVEL_DEFAULT <CONFIG_ANT_LOG_LEVEL_DEFAULT>`
+
+Choice options
+==============
+
+- \ :option:`ANT_LOG_LEVEL_OFF <CONFIG_ANT_LOG_LEVEL_OFF>`
+- \ :option:`ANT_LOG_LEVEL_ERR <CONFIG_ANT_LOG_LEVEL_ERR>`
+- \ :option:`ANT_LOG_LEVEL_WRN <CONFIG_ANT_LOG_LEVEL_WRN>`
+- \ :option:`ANT_LOG_LEVEL_INF <CONFIG_ANT_LOG_LEVEL_INF>`
+- \ :option:`ANT_LOG_LEVEL_DBG <CONFIG_ANT_LOG_LEVEL_DBG>`
+- \ :option:`ANT_LOG_LEVEL_DEFAULT <CONFIG_ANT_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:3``
+
+Included via ``Kconfig:48`` → ``init/Kconfig:91``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    choice ANT_LOG_LEVEL_CHOICE
+    	bool "Max compiled-in log level for ANT"
+    	default \ :option:`ANT_LOG_LEVEL_DEFAULT <CONFIG_ANT_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

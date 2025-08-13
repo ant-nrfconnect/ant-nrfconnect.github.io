@@ -1,0 +1,39 @@
+:orphan:
+
+.. title:: ANT_INTERNAL
+
+.. option:: CONFIG_ANT_INTERNAL
+
+*ANT Internal*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- n
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``Kconfig:44``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_INTERNAL
+    	bool "ANT Internal"
+    	default n
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

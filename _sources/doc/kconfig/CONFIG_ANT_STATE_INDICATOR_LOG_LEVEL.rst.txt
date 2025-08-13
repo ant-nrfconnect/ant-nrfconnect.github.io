@@ -1,0 +1,51 @@
+:orphan:
+
+.. title:: ANT_STATE_INDICATOR_LOG_LEVEL
+
+.. option:: CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL
+
+*(No prompt -- not directly user assignable.)*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`ANT_STATE_INDICATOR <CONFIG_ANT_STATE_INDICATOR>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+- 0 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_OFF <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_OFF>`
+- 1 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_ERR <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_ERR>`
+- 2 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_WRN <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_WRN>`
+- 3 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_INF <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_INF>`
+- 4 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_DBG <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DBG>`
+- LOG_DEFAULT_LEVEL if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:28``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:14`` → ``lib\ant_state_indicator/Kconfig:20``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT State Indicator Library
+
+.. parsed-literal::
+
+    config ANT_STATE_INDICATOR_LOG_LEVEL
+    	int
+    	default 0 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_OFF <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_OFF>`
+    	default 1 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_ERR <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_ERR>`
+    	default 2 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_WRN <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_WRN>`
+    	default 3 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_INF <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_INF>`
+    	default 4 if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_DBG <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DBG>`
+    	default LOG_DEFAULT_LEVEL if \ :option:`ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT <CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`ANT_STATE_INDICATOR <CONFIG_ANT_STATE_INDICATOR>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

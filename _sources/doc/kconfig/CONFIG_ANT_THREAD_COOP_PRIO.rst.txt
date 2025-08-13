@@ -1,0 +1,41 @@
+:orphan:
+
+.. title:: ANT_THREAD_COOP_PRIO
+
+.. option:: CONFIG_ANT_THREAD_COOP_PRIO
+
+*(No prompt -- not directly user assignable.)*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- 8
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:28``
+
+Included via ``Kconfig:48``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_THREAD_COOP_PRIO
+    	int
+    	default 8
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

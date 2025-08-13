@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANT and Bluetooth® LE Heart Rate Monitor Relay Application &mdash; ANT for nRF Connect SDK  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API Reference" href="../../doc/api.html" />
+    <link rel="prev" title="ANT RPC" href="../ant_rpc/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ANT for nRF Connect SDK
+            <img src="../../_static/this-is-ant.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../doc/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../doc/integration_notes.html">Integration notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../doc/release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../doc/compatibility.html">Compatibility</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../doc/samples.html">Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ant_advanced_burst/README.html">ANT: Advanced Burst</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_bgnd_scan/README.html">ANT: Background Scanning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_broadcast_rx/README.html">ANT: Broadcast RX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_broadcast_tx/README.html">ANT: Broadcast TX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_encrypted_rx/README.html">ANT: Multi Channel Encrypted RX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_encrypted_tx/README.html">ANT: Multi Channel Encrypted TX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_plus/ant_bpwr/bpwr_rx/README.html">ANT: ANT+ Bicycle Power Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_plus/ant_bpwr/bpwr_tx/README.html">ANT: ANT+ Bicycle Power Transmitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_plus/ant_bsc/bsc_rx/README.html">ANT: ANT+ Bicycle Speed and Cadence Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_plus/ant_bsc/bsc_tx/README.html">ANT: ANT+ Bicycle Speed and Cadence Transmitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_plus/ant_hrm/hrm_rx/README.html">ANT: ANT+ Heart Rate Monitor Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_plus/ant_hrm/hrm_tx/README.html">ANT: ANT+ Heart Rate Monitor Transmitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant_rpc/README.html">ANT RPC</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ANT and Bluetooth® LE Heart Rate Monitor Relay Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#channel-configuration">Channel configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-and-running">Building and running</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ant-network-key">ANT+ Network Key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-the-hrm-relay">Testing the HRM Relay</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../doc/api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../doc/kconfig/index.html">Configuration Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ANT for nRF Connect SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doc/samples.html">Samples</a></li>
+      <li class="breadcrumb-item active">ANT and Bluetooth® LE Heart Rate Monitor Relay Application</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/samples/ble_ant_app_hrm/README.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ant-and-bluetooth-le-heart-rate-monitor-relay-application">
+<span id="ble-ant-app-hrm"></span><h1>ANT and Bluetooth® LE Heart Rate Monitor Relay Application<a class="headerlink" href="#ant-and-bluetooth-le-heart-rate-monitor-relay-application" title="Permalink to this headline"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>The ANT and Bluetooth® LE Heart Rate Monitor Relay Application shows the concurrent use of ANT and Bluetooth® LE protocols. This application exposes the HR (Heart Rate) GATT Service. In addition, it implements the ANT Heart Rate Profile Receiver. The aggregated data received from ANT is relayed and sent as Bluetooth® LE notifications.</p>
+<p>This application is based on the <code class="docutils literal notranslate"><span class="pre">zephyr/samples/bluetooth/peripheral_hr</span></code> and <code class="docutils literal notranslate"><span class="pre">ant/samples/ant_plus/ant_hrm/hrm_rx</span></code> samples.</p>
+<section id="channel-configuration">
+<h3>Channel configuration<a class="headerlink" href="#channel-configuration" title="Permalink to this headline"></a></h3>
+<p>This example uses the default channel configuration:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 29%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Transmitter</p></th>
+<th class="head"><p>Receiver</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Channel type</p></td>
+<td><p>Master (0x10)</p></td>
+<td><p>Slave (0x00)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Network key</p></td>
+<td><p>ANT+</p></td>
+<td><p>ANT+</p></td>
+</tr>
+<tr class="row-even"><td><p>RF channel</p></td>
+<td><p>57 (2457 MHz)</p></td>
+<td><p>57 (2457 MHz)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Device number</p></td>
+<td><p>0x31 (49)</p></td>
+<td><p>0x31 (49)</p></td>
+</tr>
+<tr class="row-even"><td><p>Device type</p></td>
+<td><p>0x78 (120)</p></td>
+<td><p>0x78 (120)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transmission type</p></td>
+<td><p>0x01</p></td>
+<td><p>0x01</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel period</p></td>
+<td><p>8070 (4.06 Hz)</p></td>
+<td><p>8070 (4.06 Hz)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 14%" />
+<col style="width: 21%" />
+<col style="width: 38%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Hardware platforms</p></td>
+<td><p>PCA</p></td>
+<td><p>Board name</p></td>
+<td><p>Board target</p></td>
+</tr>
+<tr class="row-even"><td><p>nRF52 DK</p></td>
+<td><p>PCA10040</p></td>
+<td><p>nrf52dk</p></td>
+<td><p>nrf52dk/nrf52832</p></td>
+</tr>
+<tr class="row-odd"><td><p>nRF52840 DK</p></td>
+<td><p>PCA10056</p></td>
+<td><p>nrf52840dk</p></td>
+<td><p>nrf52840dk/nrf52840</p></td>
+</tr>
+<tr class="row-even"><td><p>nRF5340 DK</p></td>
+<td><p>PCA10095</p></td>
+<td><p>nrf5340dk</p></td>
+<td><p>nrf5340dk/nrf5340/cpuapp</p></td>
+</tr>
+<tr class="row-odd"><td><p>nRF54L15 DK</p></td>
+<td><p>PCA10156</p></td>
+<td><p>nrf54l15dk</p></td>
+<td><p>nrf54l15dk/nrf54l15/cpuapp</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="building-and-running">
+<h2>Building and running<a class="headerlink" href="#building-and-running" title="Permalink to this headline"></a></h2>
+<p>This sample can be found under ant/samples/ble_ant_app_hrm in the nRF Connect SDK folder structure.</p>
+<section id="ant-network-key">
+<h3>ANT+ Network Key<a class="headerlink" href="#ant-network-key" title="Permalink to this headline"></a></h3>
+<p>This sample selects <code class="docutils literal notranslate"><span class="pre">CONFIG_ANT_KEY_MANAGER</span></code> to provide access to ant_plus_key_set() (See <a class="reference internal" href="../../doc/lib/key_manager.html#ant-key-manager"><span class="std std-ref">ANT Key Manager Library</span></a>). This library function configures the pre-defined ANT+ Network Key for ANT+ devices. Note that network keys, transmission type, device type IDs and RF channels are assigned and regulated to maintain
+network integrity, and interoperability, except for the default public network.</p>
+<p>For more information on Network Keys, visit <a class="reference external" href="https://www.thisisant.com/developer/ant-plus/ant-plus-basics/network-keys">https://www.thisisant.com/developer/ant-plus/ant-plus-basics/network-keys</a>.</p>
+</section>
+<section id="testing-the-hrm-relay">
+<h3>Testing the HRM Relay<a class="headerlink" href="#testing-the-hrm-relay" title="Permalink to this headline"></a></h3>
+<p>Test the Heart Rate Relay Application with the nRF Connect app, which is available on both iOS (App Store) and Android (Google Play).</p>
+<p>You can also test the application with nRF Connect for Desktop by performing the following steps:</p>
+<ol class="arabic">
+<li><p>Compile and program the application. Observe that the BSP_INDICATE_ADVERTISING state is indicated.</p></li>
+<li><p>Connect to the device from nRF Connect (the device is advertising as ‘Nordic_HRM’).</p></li>
+<li><p>Observe that the services are shown in the connected device and that you can start receiving values for the Heart Rate Service by clicking the Play button.</p></li>
+<li><p>Compile and program the ANT Heart Rate Monitor (HRM) transmitter example on the second board as a peer ANT device. This sample can be found under ant/samples/ant_plus/ant_hrm/hrm_tx in the nRF Connect SDK folder structure. Alternatively, you can configure a simulated Heart Rate Sensor in SimulANT+ with the channel parameters shown above.</p>
+<blockquote>
+<div><p><em>Note</em> that the Serial Number channel parameter in SimulANT+ corresponds to the device number given in the table above. Setting this will automatically set the three device number fields.</p>
+</div></blockquote>
+</li>
+<li><p>On the nRF DK side, connect to the virtual COM port to view the ANT+ HRM pages received by the Relay Application.</p></li>
+<li><p>Observe that the Bluetooth® LE Heart Rate notifications values received in the nRF Connect app the correspond to modifications made on the transmitter device. This could be simulated data or button presses if using ANT+ HRM Transmitter sample, or manual modifications to the data fields if using SimulANT+.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ant_rpc/README.html" class="btn btn-neutral float-left" title="ANT RPC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../doc/api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        
+           <strong> 
+          <dd><a href="https://www.thisisant.com/APIassets/ANTnRFConnectDoc/">2.0.0</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.3.0_ANTnRFConnectDoc/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.2.0_ANTnRFConnectDoc/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.1.0_ANTnRFConnectDoc/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.0.0_ANTnRFConnectDoc/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/0.5.0_ANTnRFConnectDoc/">0.5.0</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

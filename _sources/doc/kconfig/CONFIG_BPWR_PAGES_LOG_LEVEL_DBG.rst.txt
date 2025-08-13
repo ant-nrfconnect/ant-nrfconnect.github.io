@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: BPWR_PAGES_LOG_LEVEL_DBG
+
+.. option:: CONFIG_BPWR_PAGES_LOG_LEVEL_DBG
+
+*Debug*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice BPWR_PAGES_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ BPWR Pages> <choice_5>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:20``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:10`` → ``lib\ant_profiles\ant_bpwr/Kconfig:22`` → ``lib\ant_profiles\ant_bpwr\pages/Kconfig:12``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ Bicycle Power profile → Max compiled-in log level for ANT+ BPWR Pages
+
+.. parsed-literal::
+
+    config BPWR_PAGES_LOG_LEVEL_DBG
+    	bool "Debug"
+    	depends on \ :ref:`<choice BPWR_PAGES_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ BPWR Pages> <choice_5>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

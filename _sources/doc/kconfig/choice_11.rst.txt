@@ -1,0 +1,53 @@
+:orphan:
+
+.. title:: choice HRM_PAGES_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM Pages
+
+.. _choice_11:
+
+.. describe:: choice HRM_PAGES_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM Pages
+
+*Max compiled-in log level for ANT+ HRM Pages*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`ANT_HRM <CONFIG_ANT_HRM>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- \ :option:`HRM_PAGES_LOG_LEVEL_DEFAULT <CONFIG_HRM_PAGES_LOG_LEVEL_DEFAULT>`
+
+Choice options
+==============
+
+- \ :option:`HRM_PAGES_LOG_LEVEL_OFF <CONFIG_HRM_PAGES_LOG_LEVEL_OFF>`
+- \ :option:`HRM_PAGES_LOG_LEVEL_ERR <CONFIG_HRM_PAGES_LOG_LEVEL_ERR>`
+- \ :option:`HRM_PAGES_LOG_LEVEL_WRN <CONFIG_HRM_PAGES_LOG_LEVEL_WRN>`
+- \ :option:`HRM_PAGES_LOG_LEVEL_INF <CONFIG_HRM_PAGES_LOG_LEVEL_INF>`
+- \ :option:`HRM_PAGES_LOG_LEVEL_DBG <CONFIG_HRM_PAGES_LOG_LEVEL_DBG>`
+- \ :option:`HRM_PAGES_LOG_LEVEL_DEFAULT <CONFIG_HRM_PAGES_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:3``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:13`` → ``lib\ant_profiles\ant_hrm/Kconfig:21`` → ``lib\ant_profiles\ant_hrm\pages/Kconfig:12``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ HRM profile
+
+.. parsed-literal::
+
+    choice HRM_PAGES_LOG_LEVEL_CHOICE
+    	bool "Max compiled-in log level for ANT+ HRM Pages"
+    	default \ :option:`HRM_PAGES_LOG_LEVEL_DEFAULT <CONFIG_HRM_PAGES_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`ANT_HRM <CONFIG_ANT_HRM>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

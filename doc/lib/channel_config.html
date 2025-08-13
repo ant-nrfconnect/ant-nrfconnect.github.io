@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANT Channel Config Library &mdash; ANT for nRF Connect SDK  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ANT Encryption Library" href="encryption.html" />
+    <link rel="prev" title="ANT Libraries" href="libraries.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ANT for nRF Connect SDK
+            <img src="../../_static/this-is-ant.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_notes.html">Integration notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples.html">Samples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api/interface.html">ANT Interface Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/parameters.html">ANT Parameters Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/error.html">ANT Error Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../init/ant_init_host_cpuapp.html">ANT Initialization: Multicore Host (cpuapp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profiles/ant_plus.html">ANT+ Profiles</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="libraries.html">ANT Libraries</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ANT Channel Config Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encryption.html">ANT Encryption Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="key_manager.html">ANT Key Manager Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="search_config.html">ANT Search Config Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="state_indicator.html">ANT State Indicator Library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kconfig/index.html">Configuration Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ANT for nRF Connect SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="libraries.html">ANT Libraries</a></li>
+      <li class="breadcrumb-item active">ANT Channel Config Library</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/lib/channel_config.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ant-channel-config-library">
+<span id="ant-channel-config"></span><h1>ANT Channel Config Library<a class="headerlink" href="#ant-channel-config-library" title="Permalink to this headline"></a></h1>
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ant_channel_config_t">
+<span class="target" id="structant__channel__config__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_config_t</span></span></span><a class="headerlink" href="#c.ant_channel_config_t" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ant_channel_config.h&gt;</em></div>
+<p>ANT channel configuration structure. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.channel_number">
+<span class="target" id="structant__channel__config__t_1a8aee351ce47c8e84535c032b8b6f0a90"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channel_number</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.channel_number" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Assigned channel number. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.channel_type">
+<span class="target" id="structant__channel__config__t_1ad0ade6090c50ed93f8568c6019087207"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channel_type</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.channel_type" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Channel type (see Assign Channel Parameters in ant_parameters.h: ANT Stack Parameters). </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.ext_assign">
+<span class="target" id="structant__channel__config__t_1a7b909aa167ee8ea8a6f4724269ae45b6"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ext_assign</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.ext_assign" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Extended assign (see Ext. Assign Channel Parameters in ant_parameters.h: ANT Stack Parameters). </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.rf_freq">
+<span class="target" id="structant__channel__config__t_1a3d11df8eb3898973d76a97eb1976a702"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rf_freq</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.rf_freq" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Radio frequency offset from 2400 MHz (for example, 2466 MHz, rf_freq = 66). </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.transmission_type">
+<span class="target" id="structant__channel__config__t_1a975d997c46af8a2b83033a88b9474516"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transmission_type</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.transmission_type" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Transmission type. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.device_type">
+<span class="target" id="structant__channel__config__t_1a145be690742d6f6465910900a02850cc"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_type</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.device_type" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Device type. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.device_number">
+<span class="target" id="structant__channel__config__t_1a694b13d6ddd121c2665e3a2503c9a1f0"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_number</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.device_number" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Device number. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.channel_period">
+<span class="target" id="structant__channel__config__t_1abb321f668da0a7cb5c65cfeec57bdeff"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channel_period</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.channel_period" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The period in 32 kHz counts. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_channel_config_t.network_number">
+<span class="target" id="structant__channel__config__t_1a535a91a8ed6fb791a781b13740ad6f75"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">network_number</span></span></span><a class="headerlink" href="#c.ant_channel_config_t.network_number" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Network number denoting the network key. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="libraries.html" class="btn btn-neutral float-left" title="ANT Libraries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="encryption.html" class="btn btn-neutral float-right" title="ANT Encryption Library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        
+           <strong> 
+          <dd><a href="https://www.thisisant.com/APIassets/ANTnRFConnectDoc/">2.0.0</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.3.0_ANTnRFConnectDoc/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.2.0_ANTnRFConnectDoc/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.1.0_ANTnRFConnectDoc/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.0.0_ANTnRFConnectDoc/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/0.5.0_ANTnRFConnectDoc/">0.5.0</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

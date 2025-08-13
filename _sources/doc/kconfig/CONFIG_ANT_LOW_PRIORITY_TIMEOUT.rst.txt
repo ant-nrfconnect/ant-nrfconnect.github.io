@@ -1,0 +1,41 @@
+:orphan:
+
+.. title:: ANT_LOW_PRIORITY_TIMEOUT
+
+.. option:: CONFIG_ANT_LOW_PRIORITY_TIMEOUT
+
+*Low priority search timeout*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+\ :option:`ANT_SEARCH_CONFIG <CONFIG_ANT_SEARCH_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- 2
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``lib\ant_search_config/Kconfig:21``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:16``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT Search Config Library
+
+.. parsed-literal::
+
+    config ANT_LOW_PRIORITY_TIMEOUT
+    	int "Low priority search timeout"
+    	default 2
+    	depends on \ :option:`ANT_SEARCH_CONFIG <CONFIG_ANT_SEARCH_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

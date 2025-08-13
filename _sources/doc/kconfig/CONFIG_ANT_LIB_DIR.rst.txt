@@ -1,0 +1,54 @@
+:orphan:
+
+.. title:: ANT_LIB_DIR
+
+.. option:: CONFIG_ANT_LIB_DIR
+
+*(No prompt -- not directly user assignable.)*
+
+Type: ``string``
+
+Help
+====
+
+Helper option to calculate the library path.
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+- "nrf52" if SOC_SERIES_NRF52X
+- "nrf53" if SOC_NRF5340_CPUNET
+- "nrf54h" if SOC_NRF54H20_CPURAD
+- "nrf54l_ns" if SOC_SERIES_NRF54LX && TRUSTED_EXECUTION_NONSECURE
+- "nrf54l" if SOC_SERIES_NRF54LX && !TRUSTED_EXECUTION_NONSECURE
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``Kconfig:34``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_LIB_DIR
+    	string
+    	default "nrf52" if SOC_SERIES_NRF52X
+    	default "nrf53" if SOC_NRF5340_CPUNET
+    	default "nrf54h" if SOC_NRF54H20_CPURAD
+    	default "nrf54l_ns" if SOC_SERIES_NRF54LX && TRUSTED_EXECUTION_NONSECURE
+    	default "nrf54l" if SOC_SERIES_NRF54LX && !TRUSTED_EXECUTION_NONSECURE
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  Helper option to calculate the library path.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANT for nRF Connect SDK &mdash; ANT for nRF Connect SDK  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ANT for nRF Connect SDK
+            <img src="_static/this-is-ant.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="doc/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/integration_notes.html">Integration notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/kconfig/index.html">Configuration Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ANT for nRF Connect SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">ANT for nRF Connect SDK</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/README.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ant-for-nrf-connect-sdk">
+<h1>ANT for nRF Connect SDK<a class="headerlink" href="#ant-for-nrf-connect-sdk" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#about" id="id1">About</a></p></li>
+<li><p><a class="reference internal" href="#documentation" id="id2">Documentation</a></p></li>
+<li><p><a class="reference internal" href="#frequently-asked-questions" id="id3">Frequently Asked Questions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#i-have-applied-for-evaluation-or-commercial-access-but-i-m-not-sure-what-to-do-next-how-do-i-start-working-with-the-sdk" id="id4">I have applied for evaluation or commercial access, but I’m not sure what to do next. How do I start working with the SDK?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-an-add-on" id="id5">What is an Add-on?</a></p></li>
+<li><p><a class="reference internal" href="#where-can-i-find-sample-applications" id="id6">Where can I find sample applications?</a></p></li>
+<li><p><a class="reference internal" href="#what-version-of-nrf-connect-sdk-do-i-need-what-version-of-sdk-ant-should-i-use-for-development" id="id7">What version of nRF Connect SDK do I need? What version of sdk-ant should I use for development?</a></p></li>
+<li><p><a class="reference internal" href="#which-nrf-soc-series-are-supported" id="id8">Which nRF SoC series are supported?</a></p></li>
+<li><p><a class="reference internal" href="#does-enabling-ant-affect-the-bluetooth-qdid-used-for-certification" id="id9">Does enabling ANT affect the Bluetooth QDID used for certification?</a></p></li>
+<li><p><a class="reference internal" href="#where-can-i-get-support" id="id10">Where can I get support?</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This repository provides libraries, sample code, and instructions for developing
+ANT and ANT+ enabled applications with the Nordic nRF Connect SDK.</p>
+<p>The nRF Connect SDK is available on GitHub from Nordic Semiconductor:
+<a class="reference external" href="https://github.com/nrfconnect/sdk-nrf">https://github.com/nrfconnect/sdk-nrf</a></p>
+<section id="about">
+<h2><a class="toc-backref" href="#id1">About</a><a class="headerlink" href="#about" title="Permalink to this headline"></a></h2>
+<p>ANT is a proven ultra-low power wireless sensor network protocol operating in the 2.4 GHz ISM band and is an effective solution for personal and local area networks.</p>
+<p>nRF Connect SDK uses <code class="docutils literal notranslate"><span class="pre">west</span></code> to manage a combination of multiple Git repositories and versions.</p>
+<p>When combined with the SDK, these files enable developers to create unique applications that use ANT wireless communication technology to communicate between a wide array of devices over various network configurations.</p>
+<p>sdk-ant is now maintained as a top-level Add-on. This means when the repository is initialized with west, it will also pull a compatible version of nRF Connect SDK.</p>
+</section>
+<section id="documentation">
+<h2><a class="toc-backref" href="#id2">Documentation</a><a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h2>
+<p>To get started, visit the official ANT for nRF Connect SDK documentation:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.thisisant.com/APIassets/ANTnRFConnectDoc/">https://www.thisisant.com/APIassets/ANTnRFConnectDoc/</a></p></li>
+</ul>
+</section>
+<section id="frequently-asked-questions">
+<h2><a class="toc-backref" href="#id3">Frequently Asked Questions</a><a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline"></a></h2>
+<section id="i-have-applied-for-evaluation-or-commercial-access-but-i-m-not-sure-what-to-do-next-how-do-i-start-working-with-the-sdk">
+<h3><a class="toc-backref" href="#id4">I have applied for evaluation or commercial access, but I’m not sure what to do next. How do I start working with the SDK?</a><a class="headerlink" href="#i-have-applied-for-evaluation-or-commercial-access-but-i-m-not-sure-what-to-do-next-how-do-i-start-working-with-the-sdk" title="Permalink to this headline"></a></h3>
+<p>nRF Connect SDK uses the west tool to manage all repositories that make up the SDK, including ANT (this repository). See the Getting Started guide in the documentation above for details.</p>
+</section>
+<section id="what-is-an-add-on">
+<h3><a class="toc-backref" href="#id5">What is an Add-on?</a><a class="headerlink" href="#what-is-an-add-on" title="Permalink to this headline"></a></h3>
+<p>Prior to v2.0.0 of this repository (sdk-nrf v2.7.0 and earlier), sdk-ant was included in the sdk-nrf manifest. Now that sdk-ant is provided as an Add-on, the included west.yml specifies the compatible sdk-nrf revision. Follow the instructions in the documentation to set up your development environment.</p>
+</section>
+<section id="where-can-i-find-sample-applications">
+<h3><a class="toc-backref" href="#id6">Where can I find sample applications?</a><a class="headerlink" href="#where-can-i-find-sample-applications" title="Permalink to this headline"></a></h3>
+<p>Check the samples folder in the sdk-ant repository for the latest samples. Each sample contains a README with instructions for building and running the sample.</p>
+</section>
+<section id="what-version-of-nrf-connect-sdk-do-i-need-what-version-of-sdk-ant-should-i-use-for-development">
+<h3><a class="toc-backref" href="#id7">What version of nRF Connect SDK do I need? What version of sdk-ant should I use for development?</a><a class="headerlink" href="#what-version-of-nrf-connect-sdk-do-i-need-what-version-of-sdk-ant-should-i-use-for-development" title="Permalink to this headline"></a></h3>
+<p>Significant changes to the sdk-ant repository are tagged as releases, and each release contains sdk-nrf compatibility information in the Integration Notes and Release Notes sections of the official documentation. Check the Releases section on the sidebar for details.</p>
+<p>Since ANT must be kept in sync with the sdk-nrf and sdk-nrfxlib repositories, working on the sdk-nrf main branch will lead to occasional compatibility issues as we accommodate upstream changes and is not recommended. We recommend only using the sdk-nrf revision associated with an sdk-ant revision in the west manifest.</p>
+</section>
+<section id="which-nrf-soc-series-are-supported">
+<h3><a class="toc-backref" href="#id8">Which nRF SoC series are supported?</a><a class="headerlink" href="#which-nrf-soc-series-are-supported" title="Permalink to this headline"></a></h3>
+<p>ANT for nRF Connect SDK supports selected parts in the nRF52 (nRF52840, nRF52832), nRF53 (nRF5340) and nRF54 (nRF54L15) series. Contact <a class="reference external" href="https://www.thisisant.com/support">https://www.thisisant.com/support</a> for release timelines. Please see <a class="reference external" href="https://www.thisisant.com/APIassets/ANTnRFConnectDoc/doc/compatibility.html">https://www.thisisant.com/APIassets/ANTnRFConnectDoc/doc/compatibility.html</a> for more details regarding ANT for nRF Connect SDK compatibility.</p>
+</section>
+<section id="does-enabling-ant-affect-the-bluetooth-qdid-used-for-certification">
+<h3><a class="toc-backref" href="#id9">Does enabling ANT affect the Bluetooth QDID used for certification?</a><a class="headerlink" href="#does-enabling-ant-affect-the-bluetooth-qdid-used-for-certification" title="Permalink to this headline"></a></h3>
+<p>ANT is provided as a standalone library that exists in parallel with the Bluetooth® Low Energy Host and Softdevice Controller subsystems, so the QDID corresponding to an sdk-nrf tag is not affected by the inclusion of ANT. See Nordic Semiconductor’s website for the Bluetooth QDID compatibility matrix for your target SoC.</p>
+</section>
+<section id="where-can-i-get-support">
+<h3><a class="toc-backref" href="#id10">Where can I get support?</a><a class="headerlink" href="#where-can-i-get-support" title="Permalink to this headline"></a></h3>
+<p>nRF Connect SDK questions: <a class="reference external" href="https://devzone.nordicsemi.com/">https://devzone.nordicsemi.com/</a></p>
+<p>ANT implementation questions: <a class="reference external" href="https://www.thisisant.com/forum/">https://www.thisisant.com/forum/</a></p>
+<p>For general questions, inquiries, etc. use the links here: <a class="reference external" href="https://www.thisisant.com/support/">https://www.thisisant.com/support/</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        
+           <strong> 
+          <dd><a href="https://www.thisisant.com/APIassets/ANTnRFConnectDoc/">2.0.0</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.3.0_ANTnRFConnectDoc/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.2.0_ANTnRFConnectDoc/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.1.0_ANTnRFConnectDoc/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.0.0_ANTnRFConnectDoc/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/0.5.0_ANTnRFConnectDoc/">0.5.0</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

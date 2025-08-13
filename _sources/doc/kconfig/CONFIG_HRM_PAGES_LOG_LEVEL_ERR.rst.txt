@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: HRM_PAGES_LOG_LEVEL_ERR
+
+.. option:: CONFIG_HRM_PAGES_LOG_LEVEL_ERR
+
+*Error*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice HRM_PAGES_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM Pages> <choice_11>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:11``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:13`` → ``lib\ant_profiles\ant_hrm/Kconfig:21`` → ``lib\ant_profiles\ant_hrm\pages/Kconfig:12``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ HRM profile → Max compiled-in log level for ANT+ HRM Pages
+
+.. parsed-literal::
+
+    config HRM_PAGES_LOG_LEVEL_ERR
+    	bool "Error"
+    	depends on \ :ref:`<choice HRM_PAGES_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM Pages> <choice_11>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

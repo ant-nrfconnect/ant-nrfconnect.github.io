@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: HRM_SIMULATOR_LOG_LEVEL_DBG
+
+.. option:: CONFIG_HRM_SIMULATOR_LOG_LEVEL_DBG
+
+*Debug*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice HRM_SIMULATOR_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM Simulator> <choice_12>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:20``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:13`` → ``lib\ant_profiles\ant_hrm/Kconfig:24`` → ``lib\ant_profiles\ant_hrm\simulator/Kconfig:12``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ HRM profile → Max compiled-in log level for ANT+ HRM Simulator
+
+.. parsed-literal::
+
+    config HRM_SIMULATOR_LOG_LEVEL_DBG
+    	bool "Debug"
+    	depends on \ :ref:`<choice HRM_SIMULATOR_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM Simulator> <choice_12>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

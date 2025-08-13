@@ -1,0 +1,62 @@
+:orphan:
+
+.. title:: ANT_NP
+
+.. option:: CONFIG_ANT_NP
+
+*ANT Network Processor Multicore API Serialization*
+
+Type: ``bool``
+
+Help
+====
+
+Serialize API calls for execution on remote CPU.
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+- y if SOC_NRF5340_CPUAPP || SOC_NRF5340_CPUNET
+- n
+
+Symbols selected by this symbol
+===============================
+
+- \ :option:`ANT_NP_HOST <CONFIG_ANT_NP_HOST>` if SOC_NRF5340_CPUAPP
+- SOC_NRF53_CPUNET_ENABLE if SOC_NRF5340_CPUAPP
+- \ :option:`ANT_NP_REMOTE <CONFIG_ANT_NP_REMOTE>` if SOC_NRF5340_CPUNET
+- \ :option:`ANT_RPC <CONFIG_ANT_RPC>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``np/Kconfig:10``
+
+Included via ``Kconfig:50``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_NP
+    	bool "ANT Network Processor Multicore API Serialization"
+    	default y if SOC_NRF5340_CPUAPP || SOC_NRF5340_CPUNET
+    	default n
+    	select \ :option:`ANT_NP_HOST <CONFIG_ANT_NP_HOST>` if SOC_NRF5340_CPUAPP
+    	select SOC_NRF53_CPUNET_ENABLE if SOC_NRF5340_CPUAPP
+    	select \ :option:`ANT_NP_REMOTE <CONFIG_ANT_NP_REMOTE>` if SOC_NRF5340_CPUNET
+    	select \ :option:`ANT_RPC <CONFIG_ANT_RPC>`
+    	depends on \ :option:`ANT <CONFIG_ANT>` && \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  Serialize API calls for execution on remote CPU.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

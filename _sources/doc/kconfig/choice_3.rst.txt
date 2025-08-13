@@ -1,0 +1,53 @@
+:orphan:
+
+.. title:: choice ANT_ENCRYPT_CONFIG_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT Encrypt Config
+
+.. _choice_3:
+
+.. describe:: choice ANT_ENCRYPT_CONFIG_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT Encrypt Config
+
+*Max compiled-in log level for ANT Encrypt Config*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`ANT_ENCRYPT_CONFIG <CONFIG_ANT_ENCRYPT_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- \ :option:`ANT_ENCRYPT_CONFIG_LOG_LEVEL_DEFAULT <CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_DEFAULT>`
+
+Choice options
+==============
+
+- \ :option:`ANT_ENCRYPT_CONFIG_LOG_LEVEL_OFF <CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_OFF>`
+- \ :option:`ANT_ENCRYPT_CONFIG_LOG_LEVEL_ERR <CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_ERR>`
+- \ :option:`ANT_ENCRYPT_CONFIG_LOG_LEVEL_WRN <CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_WRN>`
+- \ :option:`ANT_ENCRYPT_CONFIG_LOG_LEVEL_INF <CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_INF>`
+- \ :option:`ANT_ENCRYPT_CONFIG_LOG_LEVEL_DBG <CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_DBG>`
+- \ :option:`ANT_ENCRYPT_CONFIG_LOG_LEVEL_DEFAULT <CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:3``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:11`` → ``lib\ant_encryption/Kconfig:19``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT Encrypt Config Library
+
+.. parsed-literal::
+
+    choice ANT_ENCRYPT_CONFIG_LOG_LEVEL_CHOICE
+    	bool "Max compiled-in log level for ANT Encrypt Config"
+    	default \ :option:`ANT_ENCRYPT_CONFIG_LOG_LEVEL_DEFAULT <CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`ANT_ENCRYPT_CONFIG <CONFIG_ANT_ENCRYPT_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: SENSORSIM_LOG_LEVEL_OFF
+
+.. option:: CONFIG_SENSORSIM_LOG_LEVEL_OFF
+
+*Off*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :ref:`<choice SENSORSIM_LOG_LEVEL_CHOICE: Max compiled-in log level for Sensor Data Simulator> <choice_15>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:8``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:15`` → ``lib\sensorsim/Kconfig:19``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → Sensor Data Simulator Library → Max compiled-in log level for Sensor Data Simulator
+
+.. parsed-literal::
+
+    config SENSORSIM_LOG_LEVEL_OFF
+    	bool "Off"
+    	depends on \ :ref:`<choice SENSORSIM_LOG_LEVEL_CHOICE: Max compiled-in log level for Sensor Data Simulator> <choice_15>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

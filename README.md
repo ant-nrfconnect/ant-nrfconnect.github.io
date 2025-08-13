@@ -1,2 +1,2 @@
 # ant-nrfconnect.github.io
-ANT for nRF Connect SDK Documentation
+This repository is a github pages hosted mirror for the latest ANT for nRF Connect SDK Documentation.

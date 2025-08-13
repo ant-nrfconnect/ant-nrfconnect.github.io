@@ -1,0 +1,42 @@
+:orphan:
+
+.. title:: ANT_TOTAL_CHANNELS_ALLOCATED
+
+.. option:: CONFIG_ANT_TOTAL_CHANNELS_ALLOCATED
+
+*Allocated ANT channels.*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- 15
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:56``
+
+Included via ``Kconfig:48``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_TOTAL_CHANNELS_ALLOCATED
+    	int "Allocated ANT channels."
+    	range 1 15
+    	default 15
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

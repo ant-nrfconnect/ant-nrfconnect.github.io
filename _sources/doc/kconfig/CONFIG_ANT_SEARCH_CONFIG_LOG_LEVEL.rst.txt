@@ -1,0 +1,51 @@
+:orphan:
+
+.. title:: ANT_SEARCH_CONFIG_LOG_LEVEL
+
+.. option:: CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL
+
+*(No prompt -- not directly user assignable.)*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+LOG && \ :option:`ANT_SEARCH_CONFIG <CONFIG_ANT_SEARCH_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+- 0 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_OFF <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_OFF>`
+- 1 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_ERR <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_ERR>`
+- 2 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_WRN <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_WRN>`
+- 3 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_INF <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_INF>`
+- 4 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_DBG <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_DBG>`
+- LOG_DEFAULT_LEVEL if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_DEFAULT <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_DEFAULT>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:28``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:16`` → ``lib\ant_search_config/Kconfig:19``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT Search Config Library
+
+.. parsed-literal::
+
+    config ANT_SEARCH_CONFIG_LOG_LEVEL
+    	int
+    	default 0 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_OFF <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_OFF>`
+    	default 1 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_ERR <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_ERR>`
+    	default 2 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_WRN <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_WRN>`
+    	default 3 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_INF <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_INF>`
+    	default 4 if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_DBG <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_DBG>`
+    	default LOG_DEFAULT_LEVEL if \ :option:`ANT_SEARCH_CONFIG_LOG_LEVEL_DEFAULT <CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_DEFAULT>`
+    	depends on LOG && \ :option:`ANT_SEARCH_CONFIG <CONFIG_ANT_SEARCH_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

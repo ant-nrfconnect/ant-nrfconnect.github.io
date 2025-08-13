@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANT Initialization: Multicore Host (cpuapp) &mdash; ANT for nRF Connect SDK  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ANT+ Profiles" href="../profiles/ant_plus.html" />
+    <link rel="prev" title="ANT Error Reference" href="../api/error.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ANT for nRF Connect SDK
+            <img src="../../_static/this-is-ant.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_notes.html">Integration notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples.html">Samples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api/interface.html">ANT Interface Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/parameters.html">ANT Parameters Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/error.html">ANT Error Reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ANT Initialization: Multicore Host (cpuapp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profiles/ant_plus.html">ANT+ Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lib/libraries.html">ANT Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kconfig/index.html">Configuration Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ANT for nRF Connect SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">ANT Initialization: Multicore Host (cpuapp)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/init/ant_init_host_cpuapp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ant-initialization-multicore-host-cpuapp">
+<span id="ant-init-cpuapp"></span><h1>ANT Initialization: Multicore Host (cpuapp)<a class="headerlink" href="#ant-initialization-multicore-host-cpuapp" title="Permalink to this headline"></a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_EVT_CHANNEL_FIELD_SIZE">
+<span class="target" id="ant__host__init_8h_1ab0e0803d069924642620079afbf42baf"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_EVT_CHANNEL_FIELD_SIZE</span></span></span> <span class="pre">1</span><a class="headerlink" href="#c.NRF_ANT_EVT_CHANNEL_FIELD_SIZE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Size of the channel field in ANT stack event. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_EVT_EVENT_FIELD_SIZE">
+<span class="target" id="ant__host__init_8h_1a0e938a53e611db2d9761c2dabcf6430a"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_EVT_EVENT_FIELD_SIZE</span></span></span> <span class="pre">1</span><a class="headerlink" href="#c.NRF_ANT_EVT_EVENT_FIELD_SIZE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Size of the event field in ANT stack event. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_MESSAGE_SIZE">
+<span class="target" id="ant__host__init_8h_1a274c63f597785e80da16a4659d044f19"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_MESSAGE_SIZE</span></span></span> <span class="pre">((CEIL_DIV(</span><span class="pre">MESG_BUFFER_SIZE</span><span class="pre">,</span> <span class="pre">sizeof(uint32_t)))</span> <span class="pre">*</span> <span class="pre">sizeof(uint32_t))</span><a class="headerlink" href="#c.NRF_ANT_MESSAGE_SIZE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Size of the buffer provided to the ANT stack to receive ANT events. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_EVT_BUF_SIZE">
+<span class="target" id="ant__host__init_8h_1aae0e02013aafeb8ec23883bd1101cba3"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_EVT_BUF_SIZE</span></span></span> &#160; <span class="pre">((CEIL_DIV(</span><a class="reference internal" href="#ant__host__init_8h_1a274c63f597785e80da16a4659d044f19"><span class="std std-ref"><span class="pre">NRF_ANT_MESSAGE_SIZE</span></span></a> <span class="pre">+</span> <a class="reference internal" href="#ant__host__init_8h_1ab0e0803d069924642620079afbf42baf"><span class="std std-ref"><span class="pre">NRF_ANT_EVT_CHANNEL_FIELD_SIZE</span></span></a> <span class="pre">+</span> <a class="reference internal" href="#ant__host__init_8h_1a0e938a53e611db2d9761c2dabcf6430a"><span class="std std-ref"><span class="pre">NRF_ANT_EVT_EVENT_FIELD_SIZE</span></span></a><p><span class="pre">,</span> <span class="pre">\</span></p>
+<p><span class="pre">sizeof(uint32_t)))</span> <span class="pre">*</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">\</span></p>
+<p><span class="pre">sizeof(uint32_t))</span></p>
+<a class="headerlink" href="#c.NRF_ANT_EVT_BUF_SIZE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Size of the buffer provided to the Events Scheduler to hold ANT events. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="c type">
+<dt class="sig sig-object c" id="c.ant_evt_callback_t">
+<span class="target" id="ant__host__init_8h_1ab08807eb3c1c2a86218bdc0e0d9b90b2"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">ant_evt_callback_t</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.ant_evt_t" title="ant_evt_t"><span class="n"><span class="pre">ant_evt_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_ant_evt</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#c.ant_evt_callback_t" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_init">
+<span class="target" id="ant__host__init_8h_1a45ae6c99d4d35665f0a48439f3f2038e"></span><span class="n"><span class="pre">ant_err_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_init" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_cb_register">
+<span class="target" id="ant__host__init_8h_1afe45a0b665ce1718e38f2ef742839763"></span><span class="n"><span class="pre">ant_err_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_cb_register</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.ant_evt_callback_t" title="ant_evt_callback_t"><span class="n"><span class="pre">ant_evt_callback_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">evt_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_cb_register" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_cmd_passthrough">
+<span class="target" id="ant__host__init_8h_1ad033cd3ce26068e1b7ac276e009de964"></span><span class="n"><span class="pre">ant_err_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_cmd_passthrough</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api/parameters.html#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">cmd</span></span>, <a class="reference internal" href="../api/parameters.html#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">rsp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_cmd_passthrough" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for passing in <a class="reference internal" href="../api/parameters.html#union_a_n_t___m_e_s_s_a_g_e"><span class="std std-ref">ANT_MESSAGE</span></a> cmds from host to remote. Provided rsp input populated with <a class="reference internal" href="../api/parameters.html#union_a_n_t___m_e_s_s_a_g_e"><span class="std std-ref">ANT_MESSAGE</span></a> response to cmd. Intended for apps dealing with raw cmds/rsps in <a class="reference internal" href="../api/parameters.html#union_a_n_t___m_e_s_s_a_g_e"><span class="std std-ref">ANT_MESSAGE</span></a> format and forgoes usage of issuance of ANT cmd via apis in ant_interface.h. </p>
+</dd></dl>
+
+</div>
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ant_evt_t">
+<span class="target" id="structant__evt__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_evt_t</span></span></span><a class="headerlink" href="#c.ant_evt_t" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ant_init.h&gt;</em></div>
+<p>ANT Stack Event. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_evt_t.message">
+<span class="target" id="structant__evt__t_1ac2dbda60b2e2ee739c34b25d6f7c879f"></span><a class="reference internal" href="../api/parameters.html#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">message</span></span></span><a class="headerlink" href="#c.ant_evt_t.message" title="Permalink to this definition"></a><br /></dt>
+<dd><p>ANT Message </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_evt_t.channel">
+<span class="target" id="structant__evt__t_1a5e084957ed6c0f93b78203d74a268e36"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channel</span></span></span><a class="headerlink" href="#c.ant_evt_t.channel" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Channel number (including RX burst transfer sequencing if applicable, see “RX Burst Message Sequencing Defines” in ant_parameters.h) </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ant_evt_t.event">
+<span class="target" id="structant__evt__t_1a8449b66e97f4dfce737478dc751199e1"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">event</span></span></span><a class="headerlink" href="#c.ant_evt_t.event" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Event code </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../api/error.html" class="btn btn-neutral float-left" title="ANT Error Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../profiles/ant_plus.html" class="btn btn-neutral float-right" title="ANT+ Profiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        
+           <strong> 
+          <dd><a href="https://www.thisisant.com/APIassets/ANTnRFConnectDoc/">2.0.0</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.3.0_ANTnRFConnectDoc/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.2.0_ANTnRFConnectDoc/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.1.0_ANTnRFConnectDoc/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/1.0.0_ANTnRFConnectDoc/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="https://www.thisisant.com/APIassets/0.5.0_ANTnRFConnectDoc/">0.5.0</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

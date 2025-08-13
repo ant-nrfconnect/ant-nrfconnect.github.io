@@ -1,0 +1,41 @@
+:orphan:
+
+.. title:: ANT_ENCRYPTED_CHANNELS
+
+.. option:: CONFIG_ANT_ENCRYPTED_CHANNELS
+
+*Allocated ANT encrypted channels.*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- 0
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:62``
+
+Included via ``Kconfig:48``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_ENCRYPTED_CHANNELS
+    	int "Allocated ANT encrypted channels."
+    	default 0
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

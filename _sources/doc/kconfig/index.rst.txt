@@ -1,0 +1,368 @@
+.. _configuration_options:
+
+Configuration Options
+=====================
+
+:file:`Kconfig` files describe build-time configuration options (called symbols
+in Kconfig-speak), how they're grouped into menus and sub-menus, and
+dependencies between them that determine what configurations are valid.
+
+Some dependencies listed here are part of the nRF Connect SDK or
+Zephyr projects. If an option is not described in detail, you can search
+for it in Nordic Semiconductor's Kconfig search:
+https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/kconfig/
+
+:file:`Kconfig` files appear throughout the directory tree. For example,
+:file:`init/Kconfig` defines initialization related options.
+
+This documentation is generated from the :file:`Kconfig` files.
+Click on symbols for more information.
+
+.. raw:: html
+
+    <!--
+    FIXME: do not limit page width until content uses another representation
+    format other than tables
+    -->
+    <style>.wy-nav-content { max-width: none; !important }</style>
+
+
+
+Configuration options
+*********************
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Symbol name
+     - Help/prompt
+   * - :option:`CONFIG_ANT`
+     - Enable ANT ultra low power wireless protocol.
+   * - :option:`CONFIG_ANT_BPWR`
+     - Support for ANT+ BPWR constants and pages
+   * - :option:`CONFIG_ANT_BPWR_SIMULATOR`
+     - Enable ANT+ Bicycle Power Simulator
+   * - :option:`CONFIG_ANT_BSC`
+     - Support for ANT+ Bike Speed and Cadence constants and pages
+   * - :option:`CONFIG_ANT_BSC_SIMULATOR`
+     - Enable ANT+ Bike Speed and Cadence Simulator
+   * - :option:`CONFIG_ANT_BURST_QUEUE_SIZE`
+     - ANT burst queue size.
+   * - :option:`CONFIG_ANT_CHANNEL_CONFIG`
+     - Helper functions for ANT channel configuration
+   * - :option:`CONFIG_ANT_COMMON`
+     - Support for ANT+ common constants and pages
+   * - :option:`CONFIG_ANT_ENCRYPTED_CHANNELS`
+     - Allocated ANT encrypted channels.
+   * - :option:`CONFIG_ANT_ENCRYPTION_NEGOTIATION_SLAVE`
+     - Negotiation for encrypted ANT slave (rx) channels
+   * - :option:`CONFIG_ANT_ENCRYPTION_NUM_CHANNELS`
+     - Number of encrypted channels to configure. Must be <= CONFIG_ANT_ENCRYPTED_CHANNELS
+   * - :option:`CONFIG_ANT_ENCRYPT_CONFIG`
+     - Helper functions for ANT encrypt configuration
+   * - :option:`CONFIG_ANT_EVALUATION_KEY`
+     - Use ANT Evaluation License Key.
+   * - :option:`CONFIG_ANT_EVENT_QUEUE_SIZE`
+     - Event queue size.
+   * - :option:`CONFIG_ANT_HIGH_PRIORITY_TIMEOUT`
+     - High priority search timeout
+   * - :option:`CONFIG_ANT_HRM`
+     - Support for ANT+ HRM constants and pages
+   * - :option:`CONFIG_ANT_HRM_SIMULATOR`
+     - Enable ANT+ HRM Simulator
+   * - :option:`CONFIG_ANT_INTERNAL`
+     - ANT Internal
+   * - :option:`CONFIG_ANT_KEY_MANAGER`
+     - Helper functions for setting ANT Network Keys. The ANT+ network key
+       is to be used by devices that will communicate on the ANT+ network
+       and strictly adhere to the ANT+ Device Profiles. The ANT-FS network
+       key is similarly used strictly for ANT-FS applications.
+   * - :option:`CONFIG_ANT_LIBRARY_CORE`
+     - This configuration is required for all single core builds and for network core builds on dual-core systems.
+   * - :option:`CONFIG_ANT_LIB_DIR`
+     - Helper option to calculate the library path.
+   * - :option:`CONFIG_ANT_LICENSE_KEY`
+     - This key is used in library initialization. You MUST obtain a
+       valid commercial license key BEFORE releasing a product to market
+       that uses ANT. You may enable the Evaluation license key for
+       non-commericial use by setting CONFIG ANT_EVALUATION_KEY=y or
+       defining CONFIG_ANT_LICENSE_KEY in the configuration file. For
+       more information about ANT licensing, visit the following website:
+       https://www.thisisant.com/developer/ant/licensing
+   * - :option:`CONFIG_ANT_LOW_PRIORITY_TIMEOUT`
+     - Low priority search timeout
+   * - :option:`CONFIG_ANT_NP`
+     - Serialize API calls for execution on remote CPU.
+   * - :option:`CONFIG_ANT_NP_HOST`
+     - ANT Host (application core) configuration for multicore applications.
+   * - :option:`CONFIG_ANT_NP_HOST_SYS_INIT`
+     - In most cases, the network processor host module handles initialization using
+       the SYS_INIT macro. This Kconfig is provided to bypass initialization and expose
+       the ant_rpc_app_init function for applications that have unique initialization
+       requirements. When enabled, it becomes the responisbility of the application to
+       ensure that ant_init() is called on the application core prior to any ANT API usage
+       so RPC messages from the network core can be processed.
+   * - :option:`CONFIG_ANT_NP_REMOTE`
+     - ANT Remote (network core) configuration for multicore applications.
+   * - :option:`CONFIG_ANT_RPC`
+     - ANT over RPC
+   * - :option:`CONFIG_ANT_SDC_INIT`
+     - Allow ANT initialization on the network core to also initialize the softdevice
+       controller. This is to allow the ANT library stack to utlize the sdc_soc
+       interface for cryptographic purposes. If sdc_init() is run prior to ANT
+       initialization (eg. for BT), then this configuration is not needed as long as
+       it is run before using any ANT library stack cryptographic functions.
+   * - :option:`CONFIG_ANT_SEARCH_CONFIG`
+     - Helper functions for ANT search configuration
+   * - :option:`CONFIG_ANT_STATE_INDICATOR`
+     - Controls LEDs based on ANT connection states
+   * - :option:`CONFIG_ANT_SWI1`
+     - SWI1
+   * - :option:`CONFIG_ANT_SWI2`
+     - SWI2
+   * - :option:`CONFIG_ANT_SWI3`
+     - SWI3
+   * - :option:`CONFIG_ANT_THREAD_COOP_PRIO`
+     - 
+   * - :option:`CONFIG_ANT_TOTAL_CHANNELS_ALLOCATED`
+     - Allocated ANT channels.
+   * - :option:`CONFIG_ANT_WORK_STACK_SIZE`
+     - Size of the work handler thread stack, used to process work in ANT priority context.
+   * - :option:`CONFIG_SENSORSIM`
+     - Allows for manual incrementing of a sensor value or generates a triangular waveform.
+
+
+Logging configuration options
+*****************************
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Symbol name
+     - Help/prompt
+   * - :option:`CONFIG_ANT_BPWR_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_BPWR_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_BPWR_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_BPWR_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_BPWR_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_BPWR_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_BPWR_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_ANT_BSC_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_BSC_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_BSC_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_BSC_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_BSC_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_BSC_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_BSC_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_ANT_CHANNEL_CONFIG_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_CHANNEL_CONFIG_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_CHANNEL_CONFIG_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_CHANNEL_CONFIG_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_CHANNEL_CONFIG_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_CHANNEL_CONFIG_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_CHANNEL_CONFIG_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_ENCRYPT_CONFIG_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_ANT_HRM_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_HRM_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_HRM_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_HRM_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_HRM_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_HRM_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_HRM_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_ANT_KEY_MANAGER_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_KEY_MANAGER_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_KEY_MANAGER_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_KEY_MANAGER_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_KEY_MANAGER_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_KEY_MANAGER_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_KEY_MANAGER_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_ANT_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_SEARCH_CONFIG_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_ANT_STATE_INDICATOR_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_BPWR_PAGES_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_BPWR_PAGES_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_BPWR_PAGES_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_BPWR_PAGES_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_BPWR_PAGES_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_BPWR_PAGES_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_BPWR_PAGES_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_BPWR_SIMULATOR_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_BPWR_SIMULATOR_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_BPWR_SIMULATOR_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_BPWR_SIMULATOR_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_BPWR_SIMULATOR_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_BPWR_SIMULATOR_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_BPWR_SIMULATOR_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_BSC_PAGES_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_BSC_PAGES_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_BSC_PAGES_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_BSC_PAGES_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_BSC_PAGES_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_BSC_PAGES_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_BSC_PAGES_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_BSC_SIMULATOR_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_BSC_SIMULATOR_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_BSC_SIMULATOR_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_BSC_SIMULATOR_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_BSC_SIMULATOR_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_BSC_SIMULATOR_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_BSC_SIMULATOR_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_HRM_PAGES_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_HRM_PAGES_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_HRM_PAGES_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_HRM_PAGES_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_HRM_PAGES_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_HRM_PAGES_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_HRM_PAGES_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_HRM_SIMULATOR_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_HRM_SIMULATOR_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_HRM_SIMULATOR_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_HRM_SIMULATOR_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_HRM_SIMULATOR_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_HRM_SIMULATOR_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_HRM_SIMULATOR_LOG_LEVEL_WRN`
+     - Warning
+   * - :option:`CONFIG_SENSORSIM_LOG_LEVEL`
+     - 
+   * - :option:`CONFIG_SENSORSIM_LOG_LEVEL_DBG`
+     - Debug
+   * - :option:`CONFIG_SENSORSIM_LOG_LEVEL_DEFAULT`
+     - Default
+   * - :option:`CONFIG_SENSORSIM_LOG_LEVEL_ERR`
+     - Error
+   * - :option:`CONFIG_SENSORSIM_LOG_LEVEL_INF`
+     - Info
+   * - :option:`CONFIG_SENSORSIM_LOG_LEVEL_OFF`
+     - Off
+   * - :option:`CONFIG_SENSORSIM_LOG_LEVEL_WRN`
+     - Warning

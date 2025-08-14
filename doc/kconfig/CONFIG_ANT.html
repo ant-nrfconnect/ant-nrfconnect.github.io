@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -65,8 +64,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">ANT</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>ANT</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/doc/kconfig/CONFIG_ANT.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,32 +82,32 @@
 
 <p><em>ANT Wireless</em></p>
 <p>Type: <code class="docutils literal notranslate"><span class="pre">bool</span></code></p>
-<section id="help">
+<div class="section" id="help">
 <h1>Help<a class="headerlink" href="#help" title="Permalink to this headline"></a></h1>
 <p>Enable ANT ultra low power wireless protocol.</p>
-</section>
-<section id="direct-dependencies">
+</div>
+<div class="section" id="direct-dependencies">
 <h1>Direct dependencies<a class="headerlink" href="#direct-dependencies" title="Permalink to this headline"></a></h1>
 <p>SOC_NRF5340_CPUNET || SOC_NRF5340_CPUAPP || SOC_NRF52840 || SOC_NRF52832 || SOC_NRF54L15</p>
 <p><em>(Includes any dependencies from ifs and menus.)</em></p>
-</section>
-<section id="defaults">
+</div>
+<div class="section" id="defaults">
 <h1>Defaults<a class="headerlink" href="#defaults" title="Permalink to this headline"></a></h1>
 <p>No defaults. Implicitly defaults to <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
-</section>
-<section id="kconfig-definition">
+</div>
+<div class="section" id="kconfig-definition">
 <h1>Kconfig definition<a class="headerlink" href="#kconfig-definition" title="Permalink to this headline"></a></h1>
 <p>At <code class="docutils literal notranslate"><span class="pre">Kconfig:12</span></code></p>
 <p>Menu path: (Top) → ANT Wireless</p>
-<div class="highlight-kconfig notranslate"><div class="highlight"><pre><span></span><span class="k">config</span><span class="w"> </span>ANT
-<span class="w">    </span><span class="nb">bool</span><span class="w"> </span><span class="s2">&quot;ANT Wireless&quot;</span>
-<span class="w">    </span><span class="k">depends on</span><span class="w"> </span>SOC_NRF5340_CPUNET<span class="w"> </span><span class="o">||</span><span class="w"> </span>SOC_NRF5340_CPUAPP<span class="w"> </span><span class="o">||</span><span class="w"> </span>SOC_NRF52840<span class="w"> </span><span class="o">||</span><span class="w"> </span>SOC_NRF52832<span class="w"> </span><span class="o">||</span><span class="w"> </span>SOC_NRF54L15
+<div class="highlight-kconfig notranslate"><div class="highlight"><pre><span></span><span class="k">config</span><span class="w"> </span>ANT<span class="w"></span>
+<span class="w">    </span><span class="nb">bool</span><span class="w"> </span><span class="s2">&quot;ANT Wireless&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">depends on</span><span class="w"> </span>SOC_NRF5340_CPUNET<span class="w"> </span><span class="o">||</span><span class="w"> </span>SOC_NRF5340_CPUAPP<span class="w"> </span><span class="o">||</span><span class="w"> </span>SOC_NRF52840<span class="w"> </span><span class="o">||</span><span class="w"> </span>SOC_NRF52832<span class="w"> </span><span class="o">||</span><span class="w"> </span>SOC_NRF54L15<span class="w"></span>
 <span class="w">    </span><span class="k">help</span>
-<span class="w">      </span>Enable<span class="w"> </span>ANT<span class="w"> </span>ultra<span class="w"> </span>low<span class="w"> </span>power<span class="w"> </span>wireless<span class="w"> </span>protocol.
+<span class="w">      </span>Enable<span class="w"> </span>ANT<span class="w"> </span>ultra<span class="w"> </span>low<span class="w"> </span>power<span class="w"> </span>wireless<span class="w"> </span>protocol.<span class="w"></span>
 </pre></div>
 </div>
 <p><em>(The ‘depends on’ condition includes propagated dependencies from ifs and menus.)</em></p>
-</section>
+</div>
 
 
            </div>
@@ -118,7 +117,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

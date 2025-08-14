@@ -20,7 +20,7 @@ Kconfig definition
 
 .. highlight:: kconfig
 
-At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:17``
+At ``C:/ncs/addon/sdk-ant-v2.0/zephyr/subsys/logging/Kconfig.template.log_config:17``
 
 Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:13`` → ``lib\ant_profiles\ant_hrm/Kconfig:29``
 

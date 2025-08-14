@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT Interface Reference &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -75,9 +74,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
-      <li class="breadcrumb-item active">ANT Interface Reference</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+      <li>ANT Interface Reference</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/doc/api/interface.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,8 +86,1275 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ant-interface-reference">
+  <div class="section" id="ant-interface-reference">
 <span id="ant-interface"></span><h1>ANT Interface Reference<a class="headerlink" href="#ant-interface-reference" title="Permalink to this headline"></a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-ant-api-functions">ANT API functions</p>
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.ant_channel_open">
+<span class="target" id="group__ant__interface_1ga5e9c66618a98e68be2ebf8ddac121d74"></span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_open</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ucChannel</span></span><span class="sig-paren">)</span> <a class="reference internal" href="#group__ant__interface_1ga1af758e5af49d6c490009fdb8717a9bb"><span class="std std-ref"><span class="pre">ant_channel_open_with_offset</span></span></a><span class="pre">(ucChannel,</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1ga2020243a3d2e734a0455449d916a7eee"><span class="std std-ref"><span class="pre">CHANNEL_START_OFFSET_NONE</span></span></a><span class="pre">)</span><a class="headerlink" href="#c.ant_channel_open" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function opens and activates a channel. The channel to open must be in an assigned state. When opening a master channel, a supplied offset can be provided in order to suggest a minimum channel start time offset (from when the command is issued) to the ANT stack. Specifying CHANNEL_START_OFFSET_NONE will result in default channel start up behaviour. When opening a slave channel, CHANNEL_START_OFFSET_NONE must be used. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to open. param[in] usOffset is an unsigned short (2 octet) denoting the offset from which to start the channel. See Channel Start Offset in ant_parameters.h</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.ant_channel_rx_search_timeout_set">
+<span class="target" id="group__ant__interface_1gaca999fce3f35dcdcd315db72b03c3095"></span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_rx_search_timeout_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">ucTimeout</span></span><span class="sig-paren">)</span> <a class="reference internal" href="#group__ant__interface_1ga2b7def8e33d8e1a1f562562b84cc5fe0"><span class="std std-ref"><span class="pre">ant_channel_search_timeout_set</span></span></a><span class="pre">(ucChannel,</span> <span class="pre">ucTimeout)</span><a class="headerlink" href="#c.ant_channel_rx_search_timeout_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the channel search timeout. For a slave channel, the configuration applies to rx search timeout. For a master channel, the configuration applies to timeout for starting a transmitter using group transmitter initiation requirements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to set. </p></li>
+<li><p><strong>ucTimeout</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the timeout value. When applied to an assigned slave channel, ucTimeout is in 2.5 second increments. Default = 10 (25s) at channel assignment When applied to an assigned master channel, ucTimeout is in 250ms increments. Default = 0 (disabled) at channel assignment</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_stack_init">
+<span class="target" id="group__ant__interface_1ga285b49edbf93d7a7b4805eb1cac0f29f"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucLicenseKey</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_stack_init" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function checks for a valid license key and initializes the ANT stack (including stack variables). It must be executed prior to any wireless protocol activity. By default, it will be called during kernel initialization by ANT for nRF Connect SDK initialization code. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is an internal glue function intended for SYS_INIT, it is not necessary to call it directly. This function is only meaningful on processor cores used for radio communication and may have a dummy implementation on multicore SoC’s.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aucLicenseKey</strong> – <strong>[in]</strong> is a pointer to an ANT License Key. This key is managed via the :kconfig:option:<code class="docutils literal notranslate"><span class="pre">CONFIG_ANT_LICENSE_KEY</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EPERM</strong> – if the stack is not enabled </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – if the ANT License Key argument is invalid </p></li>
+<li><p><strong>-NRF_ENOMEM</strong> – if stack resources could not be allocated </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_stack_funcs_register">
+<span class="target" id="group__ant__interface_1gad438fd43a257c2b431a799b91872c2b0"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_funcs_register</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.ANT_STACK_FUNCS" title="ANT_STACK_FUNCS"><span class="n"><span class="pre">ANT_STACK_FUNCS</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">pstFuncs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_stack_funcs_register" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This is an internal glue function used by the nRF Connect SDK initialization code for ANT. It should not be called directly. This registers platform specific functions to the ANT stack. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pstFuncs</strong> – <strong>[in]</strong> is a pointer to a function table</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EPERM</strong> – if the stack is not enabled </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_stack_config">
+<span class="target" id="group__ant__interface_1ga70dc9366755ef3a8e9bf82b7ebde5cc4"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_config</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.ANT_ENABLE" title="ANT_ENABLE"><span class="n"><span class="pre">ANT_ENABLE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">pstChannelEnable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_stack_config" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to specify the total number of ANT channels, number of encrypted channels (subset of total ANT channels) and transmit burst queue size to be supported by the ANT stack. Upon enabling successfully, the ANT stack defaults to the values defined by Kconfigs ANT_TOTAL_CHANNELS_ALLOCATED, ANT_ENCRYPTED_CHANNELS and ANT_EVENT_QUEUE_SIZE. If more channels are needed and/or more encrypted channels are needed and/or larger tx burst buffer size is needed, then the desired configuration can be specified to the ANT stack using these configuration variables. In this case, a static RAM buffer (of minimum size defined by <a class="reference internal" href="parameters.html#group__ant__parameters_1gaf53cab067ff8c0fed43823a1ceebd701"><span class="std std-ref">ANT_ENABLE_GET_REQUIRED_SPACE</span></a>) is supplied by the initialization code to be used by the ANT stack. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#group__ant__interface_1gaf206731bbd14c7cd662a9b1851664265"><span class="std std-ref">ant_stack_reset</span></a> will not reset this ANT stack channel allocation configuration. It will be maintained.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By default, this function is called automatically by the ANT for nRF Connect SDK initialization code. This function is only meaningful on processor cores used for radio communication and may have a dummy implementation on multicore SoC’s. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pstChannelEnable</strong> – <strong>[in]</strong> is a pointer to <a class="reference internal" href="#struct_a_n_t___e_n_a_b_l_e"><span class="std std-ref">ANT_ENABLE</span></a> structure. <a class="reference internal" href="#group__ant__interface_1gaa34653235a190b5fbe3e3859898371e9"><span class="std std-ref">ANT_ENABLE::ucTotalNumberOfChannels</span></a> is an unsigned char (1 octet) denoting the total number of ANT channels desired (1 to <a class="reference internal" href="parameters.html#group__ant__parameters_1ga9af7557143323ed81fd2dc050a16049a"><span class="std std-ref">MAX_ANT_CHANNELS</span></a>, defined in ant_parameters.h). <a class="reference internal" href="#group__ant__interface_1ga2787a6fe8bf97a208fb8113fc23d7856"><span class="std std-ref">ANT_ENABLE::ucNumberOfEncryptedChannels</span></a> is an unsigned char (1 octet) denoting the total number of ANT channels (0 to ucTotalNumberOfChannels) that support encryption. <a class="reference internal" href="#group__ant__interface_1ga63f402bf6d6dea03b868077578b1c639"><span class="std std-ref">ANT_ENABLE::pucMemoryBlockStartLocation</span></a> is the pointer to an application supplied buffer to be used by the ANT stack. <a class="reference internal" href="#group__ant__interface_1ga21348dcd51a5288ef75a0ddd5e1d698c"><span class="std std-ref">ANT_ENABLE::usMemoryBlockByteSize</span></a> is an unsigned short (2 octet) denoting the size of the given memory block (pucMemoryBlockStartLocation). The defined <a class="reference internal" href="parameters.html#group__ant__parameters_1gaf53cab067ff8c0fed43823a1ceebd701"><span class="std std-ref">ANT_ENABLE_GET_REQUIRED_SPACE</span></a> macro (see ant_parameters.h) should be used to determine the minimum buffer size requirement.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EPERM</strong> – if the stack is not enabled </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_stack_enable">
+<span class="target" id="group__ant__interface_1ga1f88fb57e74591269312e058db3c2e91"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_enable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_stack_enable" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function enables the ANT stack. It is only permitted after the stack is configured with <a class="reference internal" href="#group__ant__interface_1ga70dc9366755ef3a8e9bf82b7ebde5cc4"><span class="std std-ref">ant_stack_config</span></a>. It can be used to re-enable the stack after a call to <a class="reference internal" href="#group__ant__interface_1gaf843f2b185b4731c4b7f0aebe4194fc2"><span class="std std-ref">ant_stack_disable</span></a>. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By default, this function is called automatically by the ANT for nRF Connect SDK initialization code.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EPERM</strong> – if not permitted </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_stack_disable">
+<span class="target" id="group__ant__interface_1gaf843f2b185b4731c4b7f0aebe4194fc2"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_disable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_stack_disable" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function stops all pending ANT activity and disables the ANT stack. This is a blocking operation. If the operation has timed out (after ~2 seconds), then -NRF_ETIMEDOUT is returned and the application may try again. Otherwise, upon success, 0 is returned. This API affects ANT activity only and does not surrender any system resources allocated for the use of ANT. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Return values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_ETIMEDOUT</strong> – </p></li>
+<li><p><strong>-NRF_EPERM</strong> – if not permitted (ie. the stack is not enabled) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_stack_reset">
+<span class="target" id="group__ant__interface_1gaf206731bbd14c7cd662a9b1851664265"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_reset</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_stack_reset" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for resetting the ANT Stack. This is a blocking operation. If the operation has timed out (after ~2 seconds), then -NRF_ETIMEDOUT is returned and the application must try again. Otherwise, upon successful reset, 0 is returned. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Return values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_ETIMEDOUT</strong> – </p></li>
+<li><p><strong>-NRF_EPERM</strong> – if the stack is not enabled </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_event_get">
+<span class="target" id="group__ant__interface_1ga91d65034febd915a644d9ccdc8289f74"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_event_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucEvent</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucANTMesg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_event_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function returns ANT channel events and data messages. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pucChannel</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the channel number will be copied. </p></li>
+<li><p><strong>pucEvent</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the event code will be copied. See Channel Events and Command Response Codes in ant_parameters.h. </p></li>
+<li><p><strong>aucANTMesg</strong> – <strong>[out]</strong> is the buffer where event’s message will be copied. The array size must be at least <a class="reference internal" href="parameters.html#group__ant__parameters_1gac05f0827e5d0372c4b50727da960dae1"><span class="std std-ref">MESG_BUFFER_SIZE</span></a> to accommodate the entire <a class="reference internal" href="parameters.html#union_a_n_t___m_e_s_s_a_g_e"><span class="std std-ref">ANT_MESSAGE</span></a> structure size. See ANT Message Structure in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>-NRF_ENOENT</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_assign">
+<span class="target" id="group__ant__interface_1ga07b2488dc0859acb0ca2ecdb5375bdd2"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_assign</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannelType</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucNetwork</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucExtAssign</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_assign" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function assigns and initializes a new channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to assign. </p></li>
+<li><p><strong>ucChannelType</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel type. See Assign Channel Parameters/Assign Channel Types in ant_parameters.h. </p></li>
+<li><p><strong>ucNetwork</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the network key to associate with the channel. </p></li>
+<li><p><strong>ucExtAssign</strong> – <strong>[in]</strong> is a bit field (1 octet) for an extended assign. See Ext. Assign Channel Parameters in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EPERM</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_NETWORK_NUMBER</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_unassign">
+<span class="target" id="group__ant__interface_1gad36a8c20316985d3eb312c1b653a4dc3"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_unassign</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_unassign" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function unassigns a channel. The channel to unassign must be in an assigned state. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to unassign.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_open_with_offset">
+<span class="target" id="group__ant__interface_1ga1af758e5af49d6c490009fdb8717a9bb"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_open_with_offset</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n"><span class="pre">usOffset</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_open_with_offset" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_close">
+<span class="target" id="group__ant__interface_1ga61e25bafb2a9ddb0a6a420c2952c0121"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_close</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_close" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function closes a channel. The channel must be in an open state (SEARCHING or TRACKING). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to close.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_broadcast_message_tx">
+<span class="target" id="group__ant__interface_1gad50d06c03df08870eff312b8eb7dc81b"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_broadcast_message_tx</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucSize</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucMesg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_broadcast_message_tx" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to set broadcast data for transmission. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to send the data on. </p></li>
+<li><p><strong>ucSize</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the size of the message, ucSize must be 8. </p></li>
+<li><p><strong>aucMesg</strong> – <strong>[in]</strong> is the buffer where the message is located (array must be 8 octets).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_MESSAGE_SIZE_EXCEEDS_LIMIT</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_SCAN_TX_CHANNEL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_IN_PROGRESS</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_IN_ERROR</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_acknowledge_message_tx">
+<span class="target" id="group__ant__interface_1ga231f86595c2f8771d0652493193aa9e1"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_acknowledge_message_tx</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucSize</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucMesg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_acknowledge_message_tx" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to send an acknowledge message. This message requests an acknowledgement from the slave to validate reception. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to send the data on. </p></li>
+<li><p><strong>ucSize</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the size of the message, ucSize must be 8. </p></li>
+<li><p><strong>aucMesg</strong> – <strong>[in]</strong> is the buffer where the message is located (array must be 8 octets).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_MESSAGE_SIZE_EXCEEDS_LIMIT</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_SCAN_TX_CHANNEL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_IN_PROGRESS</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_IN_ERROR</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_burst_handler_request">
+<span class="target" id="group__ant__interface_1ga0e70a1349efa0d8f3ea665430125f379"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_burst_handler_request</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n"><span class="pre">usSize</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucData</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucBurstSegment</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_burst_handler_request" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to queue data for burst transmission. After every successful call, the input buffer is held in use by the burst handler and must not be changed. When the burst handler releases the input buffer, it will either generate a <a class="reference internal" href="parameters.html#group__ant__parameters_1ga79ea77f1981aed66f580b396d5b86f05"><span class="std std-ref">EVENT_TRANSFER_NEXT_DATA_BLOCK</span></a> event or clear a specified wait flag assigned to the burst handler. Transfer end events: <a class="reference internal" href="parameters.html#group__ant__parameters_1ga51573152c1529ee27fed45e93372728f"><span class="std std-ref">EVENT_TRANSFER_TX_COMPLETED</span></a> and <a class="reference internal" href="parameters.html#group__ant__parameters_1gaf9f5a3fd4304ebae7e61e6ce78fed2b9"><span class="std std-ref">EVENT_TRANSFER_TX_FAILED</span></a> also releases the input buffer. Special care must be made to ensure that the input buffer does not change until it is released by the burst handler to avoid data corruption. Use of burst segment identifiers (<a class="reference internal" href="parameters.html#group__ant__parameters_1ga37b944eb5dc2a7468e5a347bbb91e836"><span class="std std-ref">BURST_SEGMENT_START</span></a>, <a class="reference internal" href="parameters.html#group__ant__parameters_1ga56e39155014fde638f41df68325db77f"><span class="std std-ref">BURST_SEGMENT_CONTINUE</span></a>, and <a class="reference internal" href="parameters.html#group__ant__parameters_1ga113c56011fdb29743c5b46bd938098f0"><span class="std std-ref">BURST_SEGMENT_END</span></a>) is required to indicate the sequence of the data block being sent as a burst transfer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to do a burst transmission. </p></li>
+<li><p><strong>usSize</strong> – <strong>[in]</strong> is an unsigned short (2 octets) denoting the size of the message block. Size must be divisible by 8. </p></li>
+<li><p><strong>aucData</strong> – <strong>[in]</strong> is the buffer where the message block is located. </p></li>
+<li><p><strong>ucBurstSegment</strong> – <strong>[in]</strong> is an unsigned char (1 octet) containing a bitfield representing the message block type. See Tx Burst Handler Request Segment Defines in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_SCAN_TX_CHANNEL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_NOT_OPENED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_SEQUENCE_NUMBER_ERROR</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_IN_PROGRESS</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_IN_ERROR</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_MESSAGE_SIZE_EXCEEDS_LIMIT</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_BUSY</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_pending_transmit_clear">
+<span class="target" id="group__ant__interface_1gada325026a68004c3f206753b24e14348"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_pending_transmit_clear</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucSuccess</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_pending_transmit_clear" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function clears a pending transmit. Primarily intended for shared slave channels (receive channel). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to clear pending transmit. </p></li>
+<li><p><strong>pucSuccess</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the result will be stored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_network_address_set">
+<span class="target" id="group__ant__interface_1gac10b6aa1ebe99936b53c0890ebd06e31"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_network_address_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucNetwork</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucNetworkKey</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_network_address_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the 64bit network address. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucNetwork</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the network number to assign the network address to. </p></li>
+<li><p><strong>aucNetworkKey</strong> – <strong>[in]</strong> is the pointer to location of the Network Key (8 octets in length)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_NETWORK_NUMBER</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_radio_freq_set">
+<span class="target" id="group__ant__interface_1ga87cac23f95972ea83a5b8e0db38a2ab7"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_radio_freq_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucFreq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_radio_freq_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the radio frequency of an ANT channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to set to. </p></li>
+<li><p><strong>ucFreq</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the radio frequency offset from 2400MHz (eg. 2466MHz, ucFreq = 66). Frequency bands are capped to the Bluetooth ISM band. Min:2402 Max:2480.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_radio_freq_get">
+<span class="target" id="group__ant__interface_1ga9148237839ef8b5dcc1ab69d3c0f5220"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_radio_freq_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucRfreq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_radio_freq_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function returns the radio frequency of an ANT channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to query. </p></li>
+<li><p><strong>pucRfreq</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the frequency will be stored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_radio_tx_power_set">
+<span class="target" id="group__ant__interface_1gaa96db6bbb242743a88d28afa5ff5f41c"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_radio_tx_power_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucTxPower</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucCustomTxPower</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_radio_tx_power_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the radio tx power. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to assign the radio tx power. </p></li>
+<li><p><strong>ucTxPower</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the ANT transmit power index. See Radio TX Power Definitions in ant_parameters.h. </p></li>
+<li><p><strong>ucCustomTxPower</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the custom nRF transmit power as defined in nrf52xxx_bitfields.h. Only applicable if ucTxPower is set to custom tx power selection.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_prox_search_set">
+<span class="target" id="group__ant__interface_1ga2d95d5a5a9649e4a71c8fcf44d19ea57"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_prox_search_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucProxThreshold</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucCustomProxThreshold</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_prox_search_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the sensitivity threshold for acquisition on a searching channel. One time set. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ERRATA-153 and ERRATA-225 require the RSSI threshold to be compensated based on a temperature measurement.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number. </p></li>
+<li><p><strong>ucProxThreshold</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the minimum RSSI threshold required for acquisition during a search. See Radio Proximity Search Threshold in ant_parameters.h</p></li>
+<li><p><strong>ucCustomProxThreshold</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the custom minimum RSSI threshold for acquisition during a search. Only applicable if ucProxThreshold is set to custom proximity selection. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_radio_crc_mode_set">
+<span class="target" id="group__ant__interface_1ga4d50e7920ad8268f52fcbd894e912f1b"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_radio_crc_mode_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucCRCMode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_radio_crc_mode_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Set the CRC mode used by the ANT radio for a specific channel. </p>
+<p>CAUTION: Changing this will break compatability with existing ant radio devices. Channels using an alternate CRC mode will only be able to communicate with other channels using the same CRC mode, and should generally be used with frequency/network-key combinations that are not widely used by other ANT devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to change the CRC mode on. </p></li>
+<li><p><strong>ucCRCMode</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the “CRC mode” to use (<a class="reference internal" href="parameters.html#group__ant__parameters_1gaaef2e346f39e4a7a7ee7a7ab9c075b77"><span class="std std-ref">CRC_MODE_STANDARD_ANT</span></a> or <a class="reference internal" href="parameters.html#group__ant__parameters_1ga6187f8225e4af0d9148242521e7762ec"><span class="std std-ref">CRC_MODE_3BYTE</span></a>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_radio_crc_mode_get">
+<span class="target" id="group__ant__interface_1gaad3e54349bb0c5a52e8dc8d8411b92ff"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_radio_crc_mode_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ucCRCModeOut</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_radio_crc_mode_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the current CRC mode used by the ANT radio for a specific channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to get the CRC mode for. </p></li>
+<li><p><strong>ucCRCModeOut</strong> – <strong>[out]</strong> is a pointer to unsigned char (1 octet) that will be set to the current “CRC mode” used by the channel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_period_set">
+<span class="target" id="group__ant__interface_1gab48920c8f26732b2789c4f5e9325cc6f"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_period_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n"><span class="pre">usPeriod</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_period_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the channel period. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to set the period to. </p></li>
+<li><p><strong>usPeriod</strong> – <strong>[in]</strong> is an unsigned short (2 octets) denoting the period in 32 kHz counts (usPeriod/32768 s).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_period_get">
+<span class="target" id="group__ant__interface_1ga3871c99cf80fcc48fccaf8151462170e"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_period_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pusPeriod</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_period_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function returns the current channel period. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to query. </p></li>
+<li><p><strong>pusPeriod</strong> – <strong>[out]</strong> is the pointer to an unsigned short (2 octets) where the channel period will be stored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_id_set">
+<span class="target" id="group__ant__interface_1gafd0744106e86e8ed959f62a190ae74f9"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_id_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n"><span class="pre">usDeviceNumber</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucDeviceType</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucTransmitType</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_id_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the channel ID. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to set. </p></li>
+<li><p><strong>usDeviceNumber</strong> – <strong>[in]</strong> is an unsigned short (2 octets) denoting the device number. </p></li>
+<li><p><strong>ucDeviceType</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the device type. </p></li>
+<li><p><strong>ucTransmitType</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the transmission type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_id_get">
+<span class="target" id="group__ant__interface_1gacc0761f16d980e755c3e0ea80c8f0346"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_id_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pusDeviceNumber</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucDeviceType</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucTransmitType</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_id_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function returns the current Channel ID of a channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to query. </p></li>
+<li><p><strong>pusDeviceNumber</strong> – <strong>[out]</strong> is the pointer to an unsigned short (2 octets) where the device number will be stored. </p></li>
+<li><p><strong>pucDeviceType</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the device type will be stored. </p></li>
+<li><p><strong>pucTransmitType</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the transmit type will be stored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_search_waveform_set">
+<span class="target" id="group__ant__interface_1gac549eb5f2af1839cb31016db6ed68789"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_search_waveform_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n"><span class="pre">usWaveform</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_search_waveform_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the searching waveform value of an ANT Channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to set. </p></li>
+<li><p><strong>usWaveform</strong> – <strong>[in]</strong> is an unsigned short (2 octets) denoting the channel waveform period (usWaveform/32768 s). Default = 316.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_search_timeout_set">
+<span class="target" id="group__ant__interface_1ga2b7def8e33d8e1a1f562562b84cc5fe0"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_search_timeout_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucTimeout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_search_timeout_set" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_search_channel_priority_set">
+<span class="target" id="group__ant__interface_1ga7197af8f1af7069b7d2e56e69c52dd0e"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_search_channel_priority_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucSearchPriority</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_search_channel_priority_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the channel’s search priority. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to set. </p></li>
+<li><p><strong>ucSearchPriority</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the search priority value. 0 to 7 (Default = 0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_search_channel_priority_get">
+<span class="target" id="group__ant__interface_1ga2ef35cddb4b16a2d055ce961a3c92091"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_search_channel_priority_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucSearchPriority</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_search_channel_priority_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the configured search channel priority. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet denoting the channel) </p></li>
+<li><p><strong>pucSearchPriority</strong> – <strong>[out]</strong> is a pointer to an unsigned char (1 octet) denoting the configured search channel priority</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_active_search_sharing_cycles_set">
+<span class="target" id="group__ant__interface_1gafe994d51bf64eb64749899f13697fed7"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_active_search_sharing_cycles_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucCycles</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_active_search_sharing_cycles_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the search cycle number of separate searching channels for active search time sharing. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to configure. </p></li>
+<li><p><strong>ucCycles</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the number of cycles to set.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_active_search_sharing_cycles_get">
+<span class="target" id="group__ant__interface_1gaad9f4b68f890a93dc124ba4fb0ae9641"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_active_search_sharing_cycles_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucCycles</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_active_search_sharing_cycles_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function returns the search sharing cycles number of the specified searching channel for active search time sharing. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to query. </p></li>
+<li><p><strong>pucCycles</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the cycle value will be stored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_low_priority_rx_search_timeout_set">
+<span class="target" id="group__ant__interface_1gae36d9df9a6b12586f5f34a5f5088c5bb"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_low_priority_rx_search_timeout_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucTimeout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_low_priority_rx_search_timeout_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the low priority search timeout value of a channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to set. </p></li>
+<li><p><strong>ucTimeout</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the timeout value in 2.5 seconds increments. Default = 2 (5s).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_adv_burst_config_set">
+<span class="target" id="group__ant__interface_1ga08907d27443f4bed6452b37b0167c4d8"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_adv_burst_config_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucConfig</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_adv_burst_config_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the advanced burst configuration. Configuration structure is as follows: Required Byte0 = 0-Disable, 1-Enable. See Advanced Burst Configuration Defines in ant_parameters.h. Required Byte1 = RF payload size. See Advanced Burst Configuration Defines in ant_parameters.h. Required Byte2 = Required advanced burst modes. See Advanced Burst Configuration Defines in ant_parameters.h. Required Byte3 = 0, Reserved Required Byte4 = 0, Reserved Required Byte5 = Optional advanced burst modes. See Advanced Burst Configuration Defines in ant_parameters.h. Required Byte6 = 0, Reserved Required Byte7 = 0, Reserved Optional Byte8 = Advanced burst stalling count config LSB. Typical is 3210 (~10s of stalling) where each count represents ~3ms of stalling. Optional Byte9 = Advanced burst stalling count config MSB. Optional Byte10 = Advanced burst retry count cycle extension. Typical is 3 (15 retries) where each count cycles represents 5 retries. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aucConfig</strong> – <strong>[in]</strong> is a buffer containing the advanced burst configuration to be set (as stated above). </p></li>
+<li><p><strong>ucSize</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the size of the configuration parameter buffer. Minimum config set is 8 octets, maximum is 11 octets.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_adv_burst_config_get">
+<span class="target" id="group__ant__interface_1ga61efc9941a0b9e6928c65696cacf3f01"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_adv_burst_config_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucRequestType</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_adv_burst_config_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function gets the advance burst configuration and supported capabilities. Returned structure is as follows for configuration: Byte0 = RF payload size. See Advanced Burst Configuration Defines in ant_parameters.h. Byte1 = Required advanced burst modes. See Advanced Burst Configuration Defines in ant_parameters.h. Byte2 = 0, Reserved Byte3 = 0, Reserved Byte4 = Optional advanced burst modes. See Advanced Burst Configuration Defines in ant_parameters.h. Byte5 = 0, Reserved Byte6 = 0, Reserved Byte7 = Advanced burst stalling count config LSB. Each count represents ~3ms of stalling. Byte8 = Advanced burst stalling count config MSB Byte9 = Advanced burst retry count cycle extension. Each count cycle represents 5 retries. </p>
+<p>Returned structure is as follows for capabilities: Byte0 = Supported RF payload size. See Advanced Burst Configuration Defines in ant_parameters.h. Byte1 = Supported burst configurations. See Advanced Burst Configuration Defines in ant_parameters.h. Byte2 = 0, Reserved Byte3 = 0, Reserved</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucRequestType</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the type of request. 1 = configuration, 0 = capability. </p></li>
+<li><p><strong>aucConfig</strong> – <strong>[out]</strong> is the pointer to the buffer where the configuration/capabilities will be read to. The array should be at least 10 octets</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_lib_config_set">
+<span class="target" id="group__ant__interface_1ga1d12427b012e081ae044a22fd1add0a6"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_lib_config_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucANTLibConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_lib_config_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets the ANT Messaging Library Configuration used by Extended messaging. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ERRATA-153 and ERRATA-225 require the RSSI reading to be compensated based on a temperature measurement.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucANTLibConfig</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the ANT lib config bit flags. See ANT Library Config in ant_parameters.h. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_lib_config_clear">
+<span class="target" id="group__ant__interface_1gaed70d8d0aaec48f2ec234834ea9ddfa6"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_lib_config_clear</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucANTLibConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_lib_config_clear" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function clears the ANT Messaging Library Configuration. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucANTLibConfig</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the ANT lib Config bit(s) to clear. See ANT Library Config in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><p><strong>0</strong> – Success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_lib_config_get">
+<span class="target" id="group__ant__interface_1gacbe47d1b5b952c0aef7a42c417ebfea7"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_lib_config_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucANTLibConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_lib_config_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function returns current ANT Messaging Library Configuration. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pucANTLibConfig</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the bit flags will be stored. See ANT Library Config in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_id_list_add">
+<span class="target" id="group__ant__interface_1gac4d1779e9665d8269d1882a0ae082a27"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_id_list_add</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucDevId</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucListIndex</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_id_list_add" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to add a Device ID to an include or exclude list. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to add the list entry to. </p></li>
+<li><p><strong>aucDevId</strong> – <strong>[in]</strong> is the pointer to the buffer (4 octets) containing device ID information with the following format: Byte0 = DeviceNumber_LSB Byte1 = DeviceNumber_MSB Byte2 = DeviceType Byte3 = TransType </p></li>
+<li><p><strong>ucListIndex</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the index where the specified Channel ID is to be placed in the list (0-3).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_LIST_ID</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_id_list_config">
+<span class="target" id="group__ant__interface_1gafbc78700e3b6c5ff67fa02b7072d6d67"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_id_list_config</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucIDListSize</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucIncExcFlag</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_id_list_config" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to configure the device ID list as include or exclude as well as the number of IDs to compare against. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number of the device ID list. </p></li>
+<li><p><strong>ucIDListSize</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the size of the inclusion or exclusion list (0-4). </p></li>
+<li><p><strong>ucIncExcFlag</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the type of list as Include(0) or Exclude(1)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_LIST_ID</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_auto_freq_hop_table_set">
+<span class="target" id="group__ant__interface_1ga71b2b38c619a3780d02bbec2491d809e"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_auto_freq_hop_table_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucFreq0</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucFreq1</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucFreq2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_auto_freq_hop_table_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function populates the frequency hop table list. This table is used when frequency hopping is enabled on a channel via extended assignment bit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to set the frequency hop table list. </p></li>
+<li><p><strong>ucFreq0</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the offset from 2400MHz of the 1st frequency hop value. </p></li>
+<li><p><strong>ucFreq1</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the offset from 2400MHz of the 2nd frequency hop value. </p></li>
+<li><p><strong>ucFreq2</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the offset from 2400MHz of the 3rd frequency hop value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_event_filtering_set">
+<span class="target" id="group__ant__interface_1ga8d6670d42b9e281d827d3896bc54e5df"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_event_filtering_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n"><span class="pre">usFilter</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_event_filtering_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to specify filter configuration for channel event message generation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usFilter</strong> – <strong>[in]</strong> is an unsigned short (2 octets) denoting the filter configuration bitfield. See Event Filtering in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><p><strong>0</strong> – Success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_event_filtering_get">
+<span class="target" id="group__ant__interface_1ga9ea0566b066ae102de7867e25ca9effd"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_event_filtering_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pusFilter</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_event_filtering_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to retrieve the filter configuration for channel event message generation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pusFilter</strong> – <strong>[out]</strong> is the pointer to an unsigned short (2 octets) where the filter configuration will be stored. See Event Filtering in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_sdu_mask_set">
+<span class="target" id="group__ant__interface_1gab0f899cada8942d71c264dfbcd5082fb"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_sdu_mask_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucMask</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucMask</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_sdu_mask_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function is used to assign a selective data update (SDU) mask (8 octets) to an identifier, ucMask. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucMask</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the index representing the SDU data mask. </p></li>
+<li><p><strong>aucMask</strong> – <strong>[in]</strong> is a buffer (8 octets) containing the SDU mask to be assigned to ucMask.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_sdu_mask_get">
+<span class="target" id="group__ant__interface_1gaf9a69a074913d0677108a5928dd2252e"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_sdu_mask_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucMask</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucMask</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_sdu_mask_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function returns the selective data update (SDU) mask (8 octets) from the specified identifier, ucMask. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucMask</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the index representing the SDU data mask. </p></li>
+<li><p><strong>aucMask</strong> – <strong>[out]</strong> is a pointer to the buffer where the SDU data mask will be copied, the array should be at least 8 octects.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_sdu_mask_config">
+<span class="target" id="group__ant__interface_1ga9304fdbcf367439f48a755aaa3895c40"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_sdu_mask_config</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucMaskConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_sdu_mask_config" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function assigns a SDU mask configuration to a particular channel. The configuration specifies the mask identifier and the type of rx data in which the mask should be applied to. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel in which the SDU mask configuration is to be applied to. </p></li>
+<li><p><strong>ucMaskConfig</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting SDU mask configuration. See Selective Data Update Mask Configuration Defines in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_crypto_channel_enable">
+<span class="target" id="group__ant__interface_1ga3f80054329acfb03b820ede9e3205b0b"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_crypto_channel_enable</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucEnable</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucKeyNum</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucDecimationRate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_crypto_channel_enable" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function enables/disables 128-bit AES encryption mode to the specified channel. Advanced burst must be enabled beforehand to enable encrypted channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel in which encryption mode is set. </p></li>
+<li><p><strong>ucEnable</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the encryption mode. See Encrypted Channel Defines in ant_parameters.h. </p></li>
+<li><p><strong>ucKeyNum</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the key index of the 128-bit key to be used for encryption. The key index range is bound by the number of encrypted channels configured by <a class="reference internal" href="#group__ant__interface_1ga70dc9366755ef3a8e9bf82b7ebde5cc4"><span class="std std-ref">ant_stack_config()</span></a>. If <a class="reference internal" href="#group__ant__interface_1ga70dc9366755ef3a8e9bf82b7ebde5cc4"><span class="std std-ref">ant_stack_config()</span></a> is not used then by default ucKeyNum is 0. Range is [0 to (num encrypted channels - 1)], if 1 or more encrypted channels are configured. </p></li>
+<li><p><strong>ucDecimationRate</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the decimate rate to apply for encrypted slave channel. Must be &gt; 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_SCAN_TX_CHANNEL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_NOT_OPENED</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_SEQUENCE_NUMBER_ERROR</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_IN_PROGRESS</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_IN_ERROR</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_MESSAGE_SIZE_EXCEEDS_LIMIT</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_TRANSFER_BUSY</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_crypto_key_set">
+<span class="target" id="group__ant__interface_1gacc8382c0a3a7c50987cc2d181e97363d"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_crypto_key_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucKeyNum</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucKey</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_crypto_key_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function assigns a 128-bit AES encryption key to a key index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucKeyNum</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the key index for assignment. The key index range is bound by the number of encrypted channels configured by <a class="reference internal" href="#group__ant__interface_1ga70dc9366755ef3a8e9bf82b7ebde5cc4"><span class="std std-ref">ant_stack_config()</span></a>. If <a class="reference internal" href="#group__ant__interface_1ga70dc9366755ef3a8e9bf82b7ebde5cc4"><span class="std std-ref">ant_stack_config()</span></a> is not used then by default ucKeyNum is 0. Range is [0 to (num encrypted channels - 1)], if 1 or more encrypted channels are configured. </p></li>
+<li><p><strong>aucKey</strong> – <strong>[in]</strong> is a buffer (16 octets) containing the 128-bit AES key to be assigned to the key index.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_crypto_info_set">
+<span class="target" id="group__ant__interface_1ga1c4a15694053f899b306ef9143d5c3a2"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_crypto_info_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucType</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucInfo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_crypto_info_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets specific information to be exchanged between the channel master and slave during encryption channel set-up/negotiation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucType</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the type of information being set. See Encrypted Channel Defines in ant_parameters.h. </p></li>
+<li><p><strong>aucInfo</strong> – <strong>[in]</strong> is a buffer containing the information being set (4 octets for ID, 19 octets for custom user data).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_crypto_info_get">
+<span class="target" id="group__ant__interface_1ga6b4d44e7787317c8f8fe4d9907cc8577"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_crypto_info_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucType</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucInfo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_crypto_info_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function retrieves specific information to be exchanged between the channel master and slave during encryption channel set-up/negotiation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucType</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the type of information being requested. See Encrypted Channel Defines in ant_parameters.h. </p></li>
+<li><p><strong>aucInfo</strong> – <strong>[out]</strong> is a pointer to a buffer in which the information retrieved will be copied to (1 octet for supported mode, 4 octets for ID, 19 octets for custom user data).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_coex_config_set">
+<span class="target" id="group__ant__interface_1gac8de80e1127715fccdb9641d75bc227d"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_coex_config_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <a class="reference internal" href="#c.ANT_BUFFER_PTR" title="ANT_BUFFER_PTR"><span class="n"><span class="pre">ANT_BUFFER_PTR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pstCoexConfig</span></span>, <a class="reference internal" href="#c.ANT_BUFFER_PTR" title="ANT_BUFFER_PTR"><span class="n"><span class="pre">ANT_BUFFER_PTR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pstAdvCoexConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_coex_config_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function sets ANT radio coexistence behaviour. Supported only if ANT is sharing radio HW concurrently with another wireless protocol. ANT Priority &lt;-&gt; Priority Mapping Low &lt;-&gt; Third Priority Normal (default) &lt;-&gt; Third Priority High &lt;-&gt; Second Priority Critical &lt;-&gt; Second Priority. </p>
+<p>Fixed interval configuration - fixed pattern scheme, raise priority to high on 1/x intervals, 0 is invalid Keep alive configuration (time) - reactive scheme, raises priority to critical if channel blocked for x 32 kHz counts + next channel interval (e.g. 0x5000 will raise priority if 3 consecutive messages are blocked on a 4 Hz channel)</p>
+<p>Configuration structure is as follows: Byte0 = Configuration enable bitfield bit0 - enable/disable tx/rx channel keep alive config (Byte4/5 &amp; Byte6/7) bit1 - enable/disable tx/rx channel fixed interval priority config (Byte1) bit2 - enable/disable transfer keep alive config (Byte2) bit3 - enable/disable search channel fixed interval priority config (Byte3) else - reserved Byte1 = tx/rx channel fixed interval priority configuration (fixed interval behaviour) Byte2 = transfer keep alive configuration (raise priority to high after x blocked transfer events) Byte3 = search channel fixed interval priority configuration (fixed interval behaviour) Byte4(LSB)/Byte5(MSB) = tx channel keep alive configuration (Keep alive configuration (time)) Byte6(LSB)/Byte7(MSB) = rx channel keep alive configuration (Keep alive configuration (time)) Byte8 = ANT counts/16 spent in high priority mode during search scan. Byte9 = ANT counts/16 spent in low priority mode during search scan.</p>
+<p>Advanced configuration structure is as follows: Byte0 = Configuration enable bitfield bit0 - enable/disable priority override config (Byte1) bit1-7 - reserved Byte1 = ANT priority override. 0 = low, 1 = normal(default), 2 = high, 3 = critical Byte2 = Reserved Byte3 = Reserved Byte4 = Reserved Byte5 = Reserved Byte6 = Reserved Byte7 = Reserved</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel for which the coexistence configuration is to be set. </p></li>
+<li><p><strong>pstCoexConfig</strong> – <strong>[in]</strong> is a buffer containing the coex configuration to be set. Set as null for no change. </p></li>
+<li><p><strong>pstAdvCoexConfig</strong> – <strong>[in]</strong> is a buffer containing the advanced coex configuration to be set. Set as null for no change.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_coex_config_get">
+<span class="target" id="group__ant__interface_1gabffa185111864b7028787022ca096c3f"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_coex_config_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <a class="reference internal" href="#c.ANT_BUFFER_PTR" title="ANT_BUFFER_PTR"><span class="n"><span class="pre">ANT_BUFFER_PTR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pstCoexConfig</span></span>, <a class="reference internal" href="#c.ANT_BUFFER_PTR" title="ANT_BUFFER_PTR"><span class="n"><span class="pre">ANT_BUFFER_PTR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pstAdvCoexConfig</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_coex_config_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function retrieves the configured ANT radio coexistence behaviour as described in ant_coex_config_set. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel to query. </p></li>
+<li><p><strong>pstCoexConfig</strong> – <strong>[out]</strong> is the pointer to a buffer where the coexistence configuration will be stored. Set as null to ignore. </p></li>
+<li><p><strong>pstAdvCoexConfig</strong> – <strong>[out]</strong> is the pointer to a buffer where the advanced coexistence configuration will be stored. Set as null to ignore.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_enhanced_channel_spacing_enable">
+<span class="target" id="group__ant__interface_1ga83e14003477b673f559ed9936f403732"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_enhanced_channel_spacing_enable</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucEnable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_enhanced_channel_spacing_enable" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function enables or disables the enhanced channel spacing feature. This feature is enabled by default and is used to reduce internal channel collisions when running multiple tracking channels with channel periods that are synchronous with each other. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucEnable</strong> – <strong>[in]</strong> is a unsigned char (1 octet) denoting enable/disable control. See Enhanced Channel Spacing Defines in ant_parameters.h</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_channel_status_get">
+<span class="target" id="group__ant__interface_1gaf56042d2932cd58bfad749af96dfe926"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_status_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucStatus</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_channel_status_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function gets a specific channel’s status. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to query. </p></li>
+<li><p><strong>pucStatus</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the channel status will be stored. See Channel Status in ant_parameters.h.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_pending_transmit">
+<span class="target" id="group__ant__interface_1gad73e728c54e119df66538b3edeaf7796"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_pending_transmit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucChannel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucPending</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_pending_transmit" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function determines if there is a pending transmission on a specific channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucChannel</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the channel number to query. </p></li>
+<li><p><strong>pucPending</strong> – <strong>[out]</strong> is the pointer to an unsigned char (1 octet) where the pending result will be stored. 1 = pending, 0 = otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_version_get">
+<span class="target" id="group__ant__interface_1ga3f2590d468f7e29a1f700ba39b6001db"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_version_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucVersion</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_version_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function gets the version string of the ANT stack. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aucVersion</strong> – <strong>[out]</strong> is the pointer to the buffer where the version string will be copied, the array should be at least MESG_VERSION_STRING (see ant_parameters.h) number of octets.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_capabilities_get">
+<span class="target" id="group__ant__interface_1ga2149bb3a8ea771d67e8defba43f77f8a"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_capabilities_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">aucCapabilities</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_capabilities_get" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function gets the capabilities of the stack. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aucCapabilities</strong> – <strong>[out]</strong> is the pointer to the buffer where the capabilities message will be copied, the array should be at least 9 octets. Byte0 = Maximum supported ANT channels Byte1 = Maximum supported ANT networks Byte2 = CAPABILITIES_STANDARD. See Standard capabilities defines in ant_parameters.h Byte3 = CAPABILITIES_ADVANCED. See Advanced capabilities defines in ant_parameters.h Byte4 = CAPABILITIES_ADVANCED_2. See Advanced capabilities 2 defines in ant_parameters.h Byte5 = Maximum support ANT data channels (only applicable for SensRcore support) Byte6 = CAPABILITIES_ADVANCED_3. See Advanced capabilities 3 defines in ant_parameters.h Byte7 = CAPABILITIES_ADVANCED_4. Advanced capabilities 4 defines in ant_parameters.h Byte8 = CAPABILITIES_ADVANCED_5. Advanced capabilities 5 defines in ant_parameters.h</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – Success </p></li>
+<li><p><strong>-NRF_EINVAL</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_cw_test_mode_init">
+<span class="target" id="group__ant__interface_1gaf657c59c3249a019d741feecc33cae69"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_cw_test_mode_init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_cw_test_mode_init" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function initialize the stack to get ready for a continuous wave transmission test. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Return values</dt>
+<dd class="field-odd"><p><strong>0</strong> – Success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_cw_test_mode">
+<span class="target" id="group__ant__interface_1gac6e8c6b27d76eb2587199623b6cf38c3"></span><a class="reference internal" href="error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_cw_test_mode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucRadioFreq</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucTxPower</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucCustomTxPower</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucMode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_cw_test_mode" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This function starts a continuous wave test mode transmission. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ucRadioFreq</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the radio frequency offset from 2400MHz for continuous wave mode. (eg. 2466MHz, ucRadioFreq = 66). </p></li>
+<li><p><strong>ucTxPower</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the ANT transmit power index for continuous wave mode. See Radio TX Power Definitions in ant_parameters.h</p></li>
+<li><p><strong>ucCustomTxPower</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting the custom nRF transmit power as defined in nrf52xxx_bitfields.h. Only applicable if ucTxPower is set to custom tx power selection. </p></li>
+<li><p><strong>ucMode</strong> – <strong>[in]</strong> is an unsigned char (1 octet) denoting test mode type where 0 = cw tx carrier transmission, 1 = cw tx modulated transmission</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><p><strong>0</strong> – Success </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="c type">
+<dt class="sig sig-object c" id="c.ant_stack_crypto_rand_get">
+<span class="target" id="group__ant__interface_1ga0d9c1e6142d438c4701c0dd6acf68676"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_crypto_rand_get</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">pucBuf</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">ucLength</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#c.ant_stack_crypto_rand_get" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c type">
+<dt class="sig sig-object c" id="c.ant_stack_crypto_ecb_encrypt">
+<span class="target" id="group__ant__interface_1gacbecac3723b83a294856983402dedd73"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_crypto_ecb_encrypt</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.ANT_ECB_DATA" title="ANT_ECB_DATA"><span class="n"><span class="pre">ANT_ECB_DATA</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#c.ant_stack_crypto_ecb_encrypt" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
 <dl class="c struct">
 <dt class="sig sig-object c" id="c.ANT_ECB_DATA">
 <span class="target" id="struct_a_n_t___e_c_b___d_a_t_a"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ANT_ECB_DATA</span></span></span><a class="headerlink" href="#c.ANT_ECB_DATA" title="Permalink to this definition"></a><br /></dt>
@@ -120,6 +1386,21 @@
 <dd><div class="docutils container">
 <em>#include &lt;ant_interface.h&gt;</em></div>
 <p>Table of specific functions supplied to ANT stack. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_STACK_FUNCS.fpRANDGet">
+<span class="target" id="group__ant__interface_1gaf896238e59e73c2eccfaf9309a5e11a9"></span><a class="reference internal" href="#c.ant_stack_crypto_rand_get" title="ant_stack_crypto_rand_get"><span class="n"><span class="pre">ant_stack_crypto_rand_get</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fpRANDGet</span></span></span><a class="headerlink" href="#c.ANT_STACK_FUNCS.fpRANDGet" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function pointer providing random number for cryptographic purposes </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_STACK_FUNCS.fpECBEncrypt">
+<span class="target" id="group__ant__interface_1ga7c8fbbc4f21d49dcd4b9db710fc7792e"></span><a class="reference internal" href="#c.ant_stack_crypto_ecb_encrypt" title="ant_stack_crypto_ecb_encrypt"><span class="n"><span class="pre">ant_stack_crypto_ecb_encrypt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fpECBEncrypt</span></span></span><a class="headerlink" href="#c.ANT_STACK_FUNCS.fpECBEncrypt" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function pointer providing ECB encrypt process via HW ECB block </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 <dl class="c struct">
@@ -128,6 +1409,39 @@
 <dd><div class="docutils container">
 <em>#include &lt;ant_interface.h&gt;</em></div>
 <p>Structure for setting up ANT stack channels. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_ENABLE.ucTotalNumberOfChannels">
+<span class="target" id="group__ant__interface_1gaa34653235a190b5fbe3e3859898371e9"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucTotalNumberOfChannels</span></span></span><a class="headerlink" href="#c.ANT_ENABLE.ucTotalNumberOfChannels" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Total number of channels wanted in ANT stack. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_ENABLE.ucNumberOfEncryptedChannels">
+<span class="target" id="group__ant__interface_1ga2787a6fe8bf97a208fb8113fc23d7856"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucNumberOfEncryptedChannels</span></span></span><a class="headerlink" href="#c.ANT_ENABLE.ucNumberOfEncryptedChannels" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Number of encrypted channels wanted (subset of total channels). </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_ENABLE.usNumberOfEvents">
+<span class="target" id="group__ant__interface_1gab12a83db1eb05ec31e2feb638f453d7e"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usNumberOfEvents</span></span></span><a class="headerlink" href="#c.ANT_ENABLE.usNumberOfEvents" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Number of events in the event queue. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_ENABLE.pucMemoryBlockStartLocation">
+<span class="target" id="group__ant__interface_1ga63f402bf6d6dea03b868077578b1c639"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">pucMemoryBlockStartLocation</span></span></span><a class="headerlink" href="#c.ANT_ENABLE.pucMemoryBlockStartLocation" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Memory location pointer to start allocating ANT channels. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_ENABLE.usMemoryBlockByteSize">
+<span class="target" id="group__ant__interface_1ga21348dcd51a5288ef75a0ddd5e1d698c"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usMemoryBlockByteSize</span></span></span><a class="headerlink" href="#c.ANT_ENABLE.usMemoryBlockByteSize" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Block byte size available for ANT channels starting at memory location pointerNumber of events in the event queue. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 <dl class="c struct">
@@ -136,9 +1450,24 @@
 <dd><div class="docutils container">
 <em>#include &lt;ant_interface.h&gt;</em></div>
 <p>Buffer pointer structure. Used for passing dynamically sized buffers to the coex apis. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_BUFFER_PTR.ucBufferSize">
+<span class="target" id="group__ant__interface_1ga8eb59114d211b28ce21337ae12cbe1ef"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ucBufferSize</span></span></span><a class="headerlink" href="#c.ANT_BUFFER_PTR.ucBufferSize" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The length of the buffer in bytes. </p>
 </dd></dl>
 
-</section>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ANT_BUFFER_PTR.pucBuffer">
+<span class="target" id="group__ant__interface_1ga4cbce13c3591f42eb1fc1757ebfd3280"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">pucBuffer</span></span></span><a class="headerlink" href="#c.ANT_BUFFER_PTR.pucBuffer" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Pointer to the first byte of the buffer. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
 
 
            </div>
@@ -151,7 +1480,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

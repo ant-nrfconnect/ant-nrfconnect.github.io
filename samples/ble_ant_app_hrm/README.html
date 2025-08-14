@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT and Bluetooth® LE Heart Rate Monitor Relay Application &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -95,9 +94,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../../doc/samples.html">Samples</a></li>
-      <li class="breadcrumb-item active">ANT and Bluetooth® LE Heart Rate Monitor Relay Application</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../doc/samples.html">Samples</a> &raquo;</li>
+      <li>ANT and Bluetooth® LE Heart Rate Monitor Relay Application</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/samples/ble_ant_app_hrm/README.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -107,13 +106,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ant-and-bluetooth-le-heart-rate-monitor-relay-application">
+  <div class="section" id="ant-and-bluetooth-le-heart-rate-monitor-relay-application">
 <span id="ble-ant-app-hrm"></span><h1>ANT and Bluetooth® LE Heart Rate Monitor Relay Application<a class="headerlink" href="#ant-and-bluetooth-le-heart-rate-monitor-relay-application" title="Permalink to this headline"></a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>The ANT and Bluetooth® LE Heart Rate Monitor Relay Application shows the concurrent use of ANT and Bluetooth® LE protocols. This application exposes the HR (Heart Rate) GATT Service. In addition, it implements the ANT Heart Rate Profile Receiver. The aggregated data received from ANT is relayed and sent as Bluetooth® LE notifications.</p>
 <p>This application is based on the <code class="docutils literal notranslate"><span class="pre">zephyr/samples/bluetooth/peripheral_hr</span></code> and <code class="docutils literal notranslate"><span class="pre">ant/samples/ant_plus/ant_hrm/hrm_rx</span></code> samples.</p>
-<section id="channel-configuration">
+<div class="section" id="channel-configuration">
 <h3>Channel configuration<a class="headerlink" href="#channel-configuration" title="Permalink to this headline"></a></h3>
 <p>This example uses the default channel configuration:</p>
 <table class="docutils align-default">
@@ -159,9 +158,9 @@
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="requirements">
+</div>
+</div>
+<div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <table class="docutils align-default">
 <colgroup>
@@ -198,17 +197,17 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="building-and-running">
+</div>
+<div class="section" id="building-and-running">
 <h2>Building and running<a class="headerlink" href="#building-and-running" title="Permalink to this headline"></a></h2>
 <p>This sample can be found under ant/samples/ble_ant_app_hrm in the nRF Connect SDK folder structure.</p>
-<section id="ant-network-key">
+<div class="section" id="ant-network-key">
 <h3>ANT+ Network Key<a class="headerlink" href="#ant-network-key" title="Permalink to this headline"></a></h3>
 <p>This sample selects <code class="docutils literal notranslate"><span class="pre">CONFIG_ANT_KEY_MANAGER</span></code> to provide access to ant_plus_key_set() (See <a class="reference internal" href="../../doc/lib/key_manager.html#ant-key-manager"><span class="std std-ref">ANT Key Manager Library</span></a>). This library function configures the pre-defined ANT+ Network Key for ANT+ devices. Note that network keys, transmission type, device type IDs and RF channels are assigned and regulated to maintain
 network integrity, and interoperability, except for the default public network.</p>
 <p>For more information on Network Keys, visit <a class="reference external" href="https://www.thisisant.com/developer/ant-plus/ant-plus-basics/network-keys">https://www.thisisant.com/developer/ant-plus/ant-plus-basics/network-keys</a>.</p>
-</section>
-<section id="testing-the-hrm-relay">
+</div>
+<div class="section" id="testing-the-hrm-relay">
 <h3>Testing the HRM Relay<a class="headerlink" href="#testing-the-hrm-relay" title="Permalink to this headline"></a></h3>
 <p>Test the Heart Rate Relay Application with the nRF Connect app, which is available on both iOS (App Store) and Android (Google Play).</p>
 <p>You can also test the application with nRF Connect for Desktop by performing the following steps:</p>
@@ -224,9 +223,9 @@ network integrity, and interoperability, except for the default public network.<
 <li><p>On the nRF DK side, connect to the virtual COM port to view the ANT+ HRM pages received by the Relay Application.</p></li>
 <li><p>Observe that the Bluetooth® LE Heart Rate notifications values received in the nRF Connect app the correspond to modifications made on the transmitter device. This could be simulated data or button presses if using ANT+ HRM Transmitter sample, or manual modifications to the data fields if using SimulANT+.</p></li>
 </ol>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -239,7 +238,7 @@ network integrity, and interoperability, except for the default public network.<
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

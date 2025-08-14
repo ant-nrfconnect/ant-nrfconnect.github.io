@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting Started &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -78,8 +77,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Getting Started</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Getting Started</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/doc/getting_started.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -89,7 +88,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="getting-started">
+  <div class="section" id="getting-started">
 <span id="ant-getting-started"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -105,7 +104,7 @@
 <li><p><a class="reference internal" href="#resources" id="id7">Resources</a></p></li>
 </ul>
 </div>
-<section id="setting-up-nrf-connect-sdk">
+<div class="section" id="setting-up-nrf-connect-sdk">
 <h2><a class="toc-backref" href="#id1">Setting up nRF Connect SDK</a><a class="headerlink" href="#setting-up-nrf-connect-sdk" title="Permalink to this headline"></a></h2>
 <p>The nRF Connect SDK (sdk-nrf) uses <code class="docutils literal notranslate"><span class="pre">west</span></code> to manage a combination of multiple Git repositories and versions.</p>
 <p>You must use the west tool to install all components of the nRF Connect SDK including ANT. The required version of west is dictated by sdk-nrf.</p>
@@ -114,13 +113,13 @@
 <p>From sdk-ant v2.0.0 onwards, ANT support is now being offered as an Add-on repository. This model requires completing a specific setup that differs from previous versions.
 Add-ons manage and clone their own compatible nRF Connect SDK instance. Please follow the instructions below to set up the development environment.</p>
 </div>
-</section>
-<section id="getting-the-ant-for-nrf-connect-sdk-add-on">
+</div>
+<div class="section" id="getting-the-ant-for-nrf-connect-sdk-add-on">
 <h2><a class="toc-backref" href="#id2">Getting the ANT for nRF Connect SDK Add-on</a><a class="headerlink" href="#getting-the-ant-for-nrf-connect-sdk-add-on" title="Permalink to this headline"></a></h2>
 <p>Access to the ANT for nRF Connect repository is granted to ANT Adopters after accepting the license agreement and authenticating through GitHub.</p>
 <p>Once your access is set up, you will be able to browse the repository here: <a class="reference external" href="https://github.com/ant-nrfconnect/sdk-ant">https://github.com/ant-nrfconnect/sdk-ant</a></p>
 <p>After confirming access, you can set up your development environment either manually or through the nRF Connect for Visual Studio Code extension.</p>
-<section id="manual-installation">
+<div class="section" id="manual-installation">
 <h3><a class="toc-backref" href="#id3">Manual Installation</a><a class="headerlink" href="#manual-installation" title="Permalink to this headline"></a></h3>
 <ol class="arabic">
 <li><p>Initialize the ANT repository:</p>
@@ -134,8 +133,8 @@ Add-ons manage and clone their own compatible nRF Connect SDK instance. Please f
 </div>
 </li>
 </ol>
-</section>
-<section id="nrf-connect-for-visual-studio-code-extension-installation">
+</div>
+<div class="section" id="nrf-connect-for-visual-studio-code-extension-installation">
 <h3><a class="toc-backref" href="#id4">nRF Connect for Visual Studio Code Extension Installation</a><a class="headerlink" href="#nrf-connect-for-visual-studio-code-extension-installation" title="Permalink to this headline"></a></h3>
 <p>To set up the ANT Add-On alongside a compatible nRF Connect SDK, follow these steps:</p>
 <ol class="arabic simple">
@@ -147,14 +146,14 @@ Add-ons manage and clone their own compatible nRF Connect SDK instance. Please f
 <li><p>The installation process for both the Add-on and the compatible nRF Connect SDK will begin.</p></li>
 </ol>
 <p>See the <a class="reference internal" href="integration_notes.html#ant-integration-notes"><span class="std std-ref">Integration notes</span></a> and <a class="reference internal" href="samples.html#ant-samples"><span class="std std-ref">Samples</span></a> for details on configuring your nRF Connect SDK project to include ANT.</p>
-</section>
-</section>
-<section id="updating-ant-for-nrf-connect-sdk">
+</div>
+</div>
+<div class="section" id="updating-ant-for-nrf-connect-sdk">
 <h2><a class="toc-backref" href="#id5">Updating ANT for nRF Connect SDK</a><a class="headerlink" href="#updating-ant-for-nrf-connect-sdk" title="Permalink to this headline"></a></h2>
 <p>When new releases are available, they will be tagged with a version and appear in the <code class="docutils literal notranslate"><span class="pre">Releases</span></code> sidebar on GitHub. ANT and sdk-nrf <a class="reference internal" href="compatibility.html#ant-compatibility"><span class="std std-ref">Compatibility</span></a> information is available for each release.</p>
 <p>ANT libraries are tightly coupled to sdk-nrf revisions. It is not recommended to use sdk-ant with any version other than that specified in the west manifest.</p>
-</section>
-<section id="building-the-documentation">
+</div>
+<div class="section" id="building-the-documentation">
 <h2><a class="toc-backref" href="#id6">Building the Documentation</a><a class="headerlink" href="#building-the-documentation" title="Permalink to this headline"></a></h2>
 <p>If desired, this documentation can be generated on demand from the repository source. Documentation build files are located in the <code class="docutils literal notranslate"><span class="pre">ant/doc</span></code> folder.</p>
 <ol class="arabic">
@@ -175,8 +174,8 @@ Add-ons manage and clone their own compatible nRF Connect SDK instance. Please f
 </li>
 <li><p>The documentation output will be generated in the <code class="docutils literal notranslate"><span class="pre">ant/doc/html</span></code> folder. Double-click <code class="docutils literal notranslate"><span class="pre">index.html</span></code> to display the documentation in your browser.</p></li>
 </ol>
-</section>
-<section id="resources">
+</div>
+<div class="section" id="resources">
 <h2><a class="toc-backref" href="#id7">Resources</a><a class="headerlink" href="#resources" title="Permalink to this headline"></a></h2>
 <p>Follow the <a class="reference external" href="https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/installation.html">nRF Connect SDK installation guide</a>.</p>
 <p><a class="reference external" href="https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/installation/install_ncs.html">Installing the nRF Connect SDK</a> has instructions for obtaining an ANT compatible version of the nRF Connect SDK by hash, tag, or the latest state of the main branch.</p>
@@ -184,8 +183,8 @@ Add-ons manage and clone their own compatible nRF Connect SDK instance. Please f
 <a class="reference external" href="https://github.com/nrfconnect/sdk-nrf">https://github.com/nrfconnect/sdk-nrf</a></p>
 <p>Official documentation for nRF Connect SDK (sdk-nrf) can be found here:
 <a class="reference external" href="https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/index.html">https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/index.html</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -198,7 +197,7 @@ Add-ons manage and clone their own compatible nRF Connect SDK instance. Please f
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

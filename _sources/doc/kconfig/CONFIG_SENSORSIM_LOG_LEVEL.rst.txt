@@ -30,7 +30,7 @@ Kconfig definition
 
 .. highlight:: kconfig
 
-At ``C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:28``
+At ``C:/ncs/addon/sdk-ant-v2.0/zephyr/subsys/logging/Kconfig.template.log_config:28``
 
 Included via ``Kconfig:49`` → ``lib/Kconfig:15`` → ``lib\sensorsim/Kconfig:19``
 

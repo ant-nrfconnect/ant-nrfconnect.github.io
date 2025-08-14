@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>choice ANT_HRM_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -65,8 +64,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">choice ANT_HRM_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>choice ANT_HRM_LOG_LEVEL_CHOICE: Max compiled-in log level for ANT+ HRM</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/doc/kconfig/choice_13.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,18 +82,18 @@
 
 <p><em>Max compiled-in log level for ANT+ HRM</em></p>
 <p>Type: <code class="docutils literal notranslate"><span class="pre">bool</span></code></p>
-<section id="direct-dependencies">
+<div class="section" id="direct-dependencies">
 <h1>Direct dependencies<a class="headerlink" href="#direct-dependencies" title="Permalink to this headline"></a></h1>
 <p>LOG &amp;&amp; <a class="reference internal" href="CONFIG_ANT_HRM.html#cmdoption-arg-CONFIG_ANT_HRM"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT_HRM</span></code></a> &amp;&amp; <a class="reference internal" href="CONFIG_ANT.html#cmdoption-arg-CONFIG_ANT"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT</span></code></a></p>
 <p><em>(Includes any dependencies from ifs and menus.)</em></p>
-</section>
-<section id="default">
+</div>
+<div class="section" id="default">
 <h1>Default<a class="headerlink" href="#default" title="Permalink to this headline"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="CONFIG_ANT_HRM_LOG_LEVEL_DEFAULT.html#cmdoption-arg-CONFIG_ANT_HRM_LOG_LEVEL_DEFAULT"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT_HRM_LOG_LEVEL_DEFAULT</span></code></a></p></li>
 </ul>
-</section>
-<section id="choice-options">
+</div>
+<div class="section" id="choice-options">
 <h1>Choice options<a class="headerlink" href="#choice-options" title="Permalink to this headline"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="CONFIG_ANT_HRM_LOG_LEVEL_OFF.html#cmdoption-arg-CONFIG_ANT_HRM_LOG_LEVEL_OFF"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT_HRM_LOG_LEVEL_OFF</span></code></a></p></li>
@@ -104,10 +103,10 @@
 <li><p><a class="reference internal" href="CONFIG_ANT_HRM_LOG_LEVEL_DBG.html#cmdoption-arg-CONFIG_ANT_HRM_LOG_LEVEL_DBG"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT_HRM_LOG_LEVEL_DBG</span></code></a></p></li>
 <li><p><a class="reference internal" href="CONFIG_ANT_HRM_LOG_LEVEL_DEFAULT.html#cmdoption-arg-CONFIG_ANT_HRM_LOG_LEVEL_DEFAULT"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT_HRM_LOG_LEVEL_DEFAULT</span></code></a></p></li>
 </ul>
-</section>
-<section id="kconfig-definition">
+</div>
+<div class="section" id="kconfig-definition">
 <h1>Kconfig definition<a class="headerlink" href="#kconfig-definition" title="Permalink to this headline"></a></h1>
-<p>At <code class="docutils literal notranslate"><span class="pre">C:/ncs/main/zephyr/subsys/logging/Kconfig.template.log_config:3</span></code></p>
+<p>At <code class="docutils literal notranslate"><span class="pre">C:/ncs/addon/sdk-ant-v2.0/zephyr/subsys/logging/Kconfig.template.log_config:3</span></code></p>
 <p>Included via <code class="docutils literal notranslate"><span class="pre">Kconfig:49</span></code> → <code class="docutils literal notranslate"><span class="pre">lib/Kconfig:13</span></code> → <code class="docutils literal notranslate"><span class="pre">lib\ant_profiles/Kconfig:13</span></code> → <code class="docutils literal notranslate"><span class="pre">lib\ant_profiles\ant_hrm/Kconfig:29</span></code></p>
 <p>Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ HRM profile</p>
 <pre class="literal-block">choice ANT_HRM_LOG_LEVEL_CHOICE
@@ -115,7 +114,7 @@
     default <a class="reference internal" href="CONFIG_ANT_HRM_LOG_LEVEL_DEFAULT.html#cmdoption-arg-CONFIG_ANT_HRM_LOG_LEVEL_DEFAULT"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT_HRM_LOG_LEVEL_DEFAULT</span></code></a>
     depends on LOG &amp;&amp; <a class="reference internal" href="CONFIG_ANT_HRM.html#cmdoption-arg-CONFIG_ANT_HRM"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT_HRM</span></code></a> &amp;&amp; <a class="reference internal" href="CONFIG_ANT.html#cmdoption-arg-CONFIG_ANT"><code class="xref std std-option docutils literal notranslate"><span class="pre">ANT</span></code></a></pre>
 <p><em>(The ‘depends on’ condition includes propagated dependencies from ifs and menus.)</em></p>
-</section>
+</div>
 
 
            </div>
@@ -125,7 +124,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

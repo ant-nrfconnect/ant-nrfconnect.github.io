@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT+ Bike Speed and Cadence Profile &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -80,10 +79,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
-          <li class="breadcrumb-item"><a href="ant_plus.html">ANT+ Profiles</a></li>
-      <li class="breadcrumb-item active">ANT+ Bike Speed and Cadence Profile</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+          <li><a href="ant_plus.html">ANT+ Profiles</a> &raquo;</li>
+      <li>ANT+ Bike Speed and Cadence Profile</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/doc/profiles/bsc.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -93,9 +92,112 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ant-bike-speed-and-cadence-profile">
+  <div class="section" id="ant-bike-speed-and-cadence-profile">
 <span id="ant-bsc"></span><h1>ANT+ Bike Speed and Cadence Profile<a class="headerlink" href="#ant-bike-speed-and-cadence-profile" title="Permalink to this headline"></a></h1>
-</section>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_bsc_disp_init">
+<span class="target" id="group__ant__bsc_1ga8b74a58cfd6ec45254897f4016941efc"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_bsc_disp_init</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ant_bsc_profile_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_profile</span></span>, <a class="reference internal" href="../lib/channel_config.html#c.ant_channel_config_t" title="ant_channel_config_t"><span class="n"><span class="pre">ant_channel_config_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_channel_config</span></span>, <span class="n"><span class="pre">ant_bsc_disp_config_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_disp_config</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_bsc_disp_init" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for initializing the ANT BSC profile instance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_profile</strong> – <strong>[in]</strong> Pointer to the profile instance. </p></li>
+<li><p><strong>p_channel_config</strong> – <strong>[in]</strong> Pointer to the ANT channel configuration structure. </p></li>
+<li><p><strong>p_disp_config</strong> – <strong>[in]</strong> Pointer to the BSC display configuration structure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><p><strong>0</strong> – If initialization was successful. Otherwise, an error code is returned. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_bsc_sens_init">
+<span class="target" id="group__ant__bsc_1ga8ee9e7475f76f56a2bb7c49eb19e2538"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_bsc_sens_init</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ant_bsc_profile_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_profile</span></span>, <a class="reference internal" href="../lib/channel_config.html#c.ant_channel_config_t" title="ant_channel_config_t"><span class="n"><span class="pre">ant_channel_config_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_channel_config</span></span>, <span class="n"><span class="pre">ant_bsc_sens_config_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_sens_config</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_bsc_sens_init" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for initializing the ANT BSC profile instance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_profile</strong> – <strong>[in]</strong> Pointer to the profile instance. </p></li>
+<li><p><strong>p_channel_config</strong> – <strong>[in]</strong> Pointer to the ANT channel configuration structure. </p></li>
+<li><p><strong>p_sens_config</strong> – <strong>[in]</strong> Pointer to the BSC sensor configuration structure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><p><strong>0</strong> – If initialization was successful. Otherwise, an error code is returned. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_bsc_disp_open">
+<span class="target" id="group__ant__bsc_1gafc68e2326691b49b6740f575c5103a70"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_bsc_disp_open</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ant_bsc_profile_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_profile</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_bsc_disp_open" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for opening the profile instance channel for the ANT BSC Display. </p>
+<p>Before calling this function, pages should be configured.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_profile</strong> – <strong>[in]</strong> Pointer to the profile instance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><p><strong>0</strong> – If the channel was successfully opened. Otherwise, an error code is returned. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_bsc_sens_open">
+<span class="target" id="group__ant__bsc_1ga5ae4e9ae562172f60e87de9ea17a7260"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_bsc_sens_open</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ant_bsc_profile_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_profile</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_bsc_sens_open" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for opening the profile instance channel for the ANT BSC Sensor. </p>
+<p>Before calling this function, pages should be configured.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_profile</strong> – <strong>[in]</strong> Pointer to the profile instance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><p><strong>0</strong> – If the channel was successfully opened. Otherwise, an error code is returned. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_bsc_sens_evt_handler">
+<span class="target" id="group__ant__bsc_1gab5d864c604f7452c44efed88f2feb959"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_bsc_sens_evt_handler</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../init/ant_init_host_cpuapp.html#c.ant_evt_t" title="ant_evt_t"><span class="n"><span class="pre">ant_evt_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_ant_evt</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_context</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_bsc_sens_evt_handler" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for handling the Sensor ANT events. </p>
+<p>This function handles all events from the ANT stack that are of interest to the Bicycle Speed and Cadence Sensor profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_ant_evt</strong> – <strong>[in]</strong> Event received from the ANT stack. </p></li>
+<li><p><strong>p_context</strong> – <strong>[in]</strong> Pointer to the profile instance. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_bsc_disp_evt_handler">
+<span class="target" id="group__ant__bsc_1ga871d19cfcb0a0c46d39d198b7d79df26"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_bsc_disp_evt_handler</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../init/ant_init_host_cpuapp.html#c.ant_evt_t" title="ant_evt_t"><span class="n"><span class="pre">ant_evt_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_ant_evt</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_context</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_bsc_disp_evt_handler" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for handling the Display ANT events. </p>
+<p>This function handles all events from the ANT stack that are of interest to the Bicycle Speed and Cadence Display profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_ant_evt</strong> – <strong>[in]</strong> Event received from the ANT stack. </p></li>
+<li><p><strong>p_context</strong> – <strong>[in]</strong> Pointer to the profile instance. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
 
 
            </div>
@@ -108,7 +210,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

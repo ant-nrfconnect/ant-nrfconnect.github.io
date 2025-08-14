@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT Initialization: Multicore Host (cpuapp) &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -75,9 +74,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
-      <li class="breadcrumb-item active">ANT Initialization: Multicore Host (cpuapp)</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+      <li>ANT Initialization: Multicore Host (cpuapp)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/doc/init/ant_init_host_cpuapp.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,7 +86,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ant-initialization-multicore-host-cpuapp">
+  <div class="section" id="ant-initialization-multicore-host-cpuapp">
 <span id="ant-init-cpuapp"></span><h1>ANT Initialization: Multicore Host (cpuapp)<a class="headerlink" href="#ant-initialization-multicore-host-cpuapp" title="Permalink to this headline"></a></h1>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
@@ -105,7 +104,7 @@
 
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.NRF_ANT_MESSAGE_SIZE">
-<span class="target" id="ant__host__init_8h_1a274c63f597785e80da16a4659d044f19"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_MESSAGE_SIZE</span></span></span> <span class="pre">((CEIL_DIV(</span><span class="pre">MESG_BUFFER_SIZE</span><span class="pre">,</span> <span class="pre">sizeof(uint32_t)))</span> <span class="pre">*</span> <span class="pre">sizeof(uint32_t))</span><a class="headerlink" href="#c.NRF_ANT_MESSAGE_SIZE" title="Permalink to this definition"></a><br /></dt>
+<span class="target" id="ant__host__init_8h_1a274c63f597785e80da16a4659d044f19"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_MESSAGE_SIZE</span></span></span> <span class="pre">((CEIL_DIV(</span><a class="reference internal" href="../api/parameters.html#group__ant__parameters_1gac05f0827e5d0372c4b50727da960dae1"><span class="std std-ref"><span class="pre">MESG_BUFFER_SIZE</span></span></a><span class="pre">,</span> <span class="pre">sizeof(uint32_t)))</span> <span class="pre">*</span> <span class="pre">sizeof(uint32_t))</span><a class="headerlink" href="#c.NRF_ANT_MESSAGE_SIZE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Size of the buffer provided to the ANT stack to receive ANT events. </p>
 </dd></dl>
 
@@ -131,17 +130,17 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.ant_init">
-<span class="target" id="ant__host__init_8h_1a45ae6c99d4d35665f0a48439f3f2038e"></span><span class="n"><span class="pre">ant_err_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_init" title="Permalink to this definition"></a><br /></dt>
+<span class="target" id="ant__host__init_8h_1a45ae6c99d4d35665f0a48439f3f2038e"></span><a class="reference internal" href="../api/error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_init" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.ant_cb_register">
-<span class="target" id="ant__host__init_8h_1afe45a0b665ce1718e38f2ef742839763"></span><span class="n"><span class="pre">ant_err_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_cb_register</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.ant_evt_callback_t" title="ant_evt_callback_t"><span class="n"><span class="pre">ant_evt_callback_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">evt_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_cb_register" title="Permalink to this definition"></a><br /></dt>
+<span class="target" id="ant__host__init_8h_1afe45a0b665ce1718e38f2ef742839763"></span><a class="reference internal" href="../api/error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_cb_register</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.ant_evt_callback_t" title="ant_evt_callback_t"><span class="n"><span class="pre">ant_evt_callback_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">evt_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_cb_register" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.ant_cmd_passthrough">
-<span class="target" id="ant__host__init_8h_1ad033cd3ce26068e1b7ac276e009de964"></span><span class="n"><span class="pre">ant_err_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_cmd_passthrough</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api/parameters.html#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">cmd</span></span>, <a class="reference internal" href="../api/parameters.html#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">rsp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_cmd_passthrough" title="Permalink to this definition"></a><br /></dt>
+<span class="target" id="ant__host__init_8h_1ad033cd3ce26068e1b7ac276e009de964"></span><a class="reference internal" href="../api/error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_cmd_passthrough</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api/parameters.html#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">cmd</span></span>, <a class="reference internal" href="../api/parameters.html#c.ANT_MESSAGE" title="ANT_MESSAGE"><span class="n"><span class="pre">ANT_MESSAGE</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">rsp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_cmd_passthrough" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Function for passing in <a class="reference internal" href="../api/parameters.html#union_a_n_t___m_e_s_s_a_g_e"><span class="std std-ref">ANT_MESSAGE</span></a> cmds from host to remote. Provided rsp input populated with <a class="reference internal" href="../api/parameters.html#union_a_n_t___m_e_s_s_a_g_e"><span class="std std-ref">ANT_MESSAGE</span></a> response to cmd. Intended for apps dealing with raw cmds/rsps in <a class="reference internal" href="../api/parameters.html#union_a_n_t___m_e_s_s_a_g_e"><span class="std std-ref">ANT_MESSAGE</span></a> format and forgoes usage of issuance of ANT cmd via apis in ant_interface.h. </p>
 </dd></dl>
 
@@ -175,7 +174,7 @@
 </div>
 </dd></dl>
 
-</section>
+</div>
 
 
            </div>
@@ -188,7 +187,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

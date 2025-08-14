@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Compatibility &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -72,8 +71,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Compatibility</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Compatibility</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/doc/compatibility.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,7 +82,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="compatibility">
+  <div class="section" id="compatibility">
 <span id="ant-compatibility"></span><h1>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -92,7 +91,7 @@
 <li><p><a class="reference internal" href="#manifest-deployment-sdk-nrf-v2-7" id="id3">Manifest Deployment (&lt;= sdk-nrf v2.7)</a></p></li>
 </ul>
 </div>
-<section id="sdk-compatibility">
+<div class="section" id="sdk-compatibility">
 <h2><a class="toc-backref" href="#id1">SDK Compatibility</a><a class="headerlink" href="#sdk-compatibility" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -181,23 +180,23 @@
 <p>The ANT stack requires a 32.768 kHz low frequency clock source with a maximum tolerance of ±50 ppm.</p>
 <p>On nRF development kits for the SoCs listed above, this means that ANT/ANT+ requires the 32.768 kHz crystal (X2) for correct operation.</p>
 </div>
-</section>
-<section id="add-on-deployment">
+</div>
+<div class="section" id="add-on-deployment">
 <h2><a class="toc-backref" href="#id2">Add-on Deployment</a><a class="headerlink" href="#add-on-deployment" title="Permalink to this headline"></a></h2>
 <p>nRF Connect SDK Add-ons are supplementary components that extend the nRF Connect SDK.</p>
 <p>In this model, Add-ons specify the compatible revision of sdk-nrf in their own <code class="docutils literal notranslate"><span class="pre">west.yml</span></code> manifest file.</p>
-</section>
-<section id="manifest-deployment-sdk-nrf-v2-7">
+</div>
+<div class="section" id="manifest-deployment-sdk-nrf-v2-7">
 <h2><a class="toc-backref" href="#id3">Manifest Deployment (&lt;= sdk-nrf v2.7)</a><a class="headerlink" href="#manifest-deployment-sdk-nrf-v2-7" title="Permalink to this headline"></a></h2>
 <p>Since the sdk-ant repository targets specific nRF Connect SDK versions, care should be taken with the versions used to build an application.</p>
 <p>Both the nRF Connect SDK and ANT repositories use a main trunk development model. It is recommended that the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch should only be used if you are not particularly concerned about stability.</p>
 <p>When incompatibilities arise due to changes in sdk-nrf, sdk-ant may be updated in between releases.</p>
 <p>Typically, users should choose a Git release tagged version of sdk-nrf and the ANT version that targets that tag. The recommended ANT version should only deviate from the hash in the <code class="docutils literal notranslate"><span class="pre">west.yml</span></code> manifest when there is a bugfix or feature preview.</p>
-<figure class="align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/ant_nrf_connect_deployment.png"><img alt="ANT for nRF Connect SDK Repository Diagram" src="../_images/ant_nrf_connect_deployment.png" style="width: 596.5px; height: 211.0px;" /></a>
-</figure>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -210,7 +209,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

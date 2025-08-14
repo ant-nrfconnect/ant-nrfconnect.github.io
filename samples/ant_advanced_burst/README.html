@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT: Advanced Burst &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -98,9 +97,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../../doc/samples.html">Samples</a></li>
-      <li class="breadcrumb-item active">ANT: Advanced Burst</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../doc/samples.html">Samples</a> &raquo;</li>
+      <li>ANT: Advanced Burst</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/samples/ant_advanced_burst/README.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -110,7 +109,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ant-advanced-burst">
+  <div class="section" id="ant-advanced-burst">
 <span id="id1"></span><h1>ANT: Advanced Burst<a class="headerlink" href="#ant-advanced-burst" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -133,10 +132,10 @@
 </ul>
 </div>
 <p>The Advanced Burst examples consists of an example application that can be used to test ANT burst transfers between a transmitter and receiver.</p>
-<section id="overview">
+<div class="section" id="overview">
 <h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>On dual core, this sample uses sysbuild to add a network core image to the build by defining the ‘’NRF_DEFAULT_ANT_ONLY’’ with a default value of ‘’y’’ in <strong>Kconfig.sysbuild</strong>.</p>
-<section id="channel-configuration">
+<div class="section" id="channel-configuration">
 <h3><a class="toc-backref" href="#id3">Channel configuration</a><a class="headerlink" href="#channel-configuration" title="Permalink to this headline"></a></h3>
 <p>This example uses the default channel configuration:</p>
 <table class="docutils align-default">
@@ -182,17 +181,17 @@
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="configuration">
+</div>
+</div>
+<div class="section" id="configuration">
 <h2><a class="toc-backref" href="#id4">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
 <p>The sample configuration is split into the following two files:</p>
 <ul class="simple">
 <li><p>generic configuration is available in the <strong>prj.conf</strong> file (single core, or dual core cpuapp)</p></li>
 <li><p>configuration for the ant_rpc network core image is stored in the <strong>sysbuild/ant_rpc</strong> subdirectory (dual core cpunet)</p></li>
 </ul>
-</section>
-<section id="requirements">
+</div>
+<div class="section" id="requirements">
 <h2><a class="toc-backref" href="#id5">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <table class="docutils align-default">
 <colgroup>
@@ -229,18 +228,18 @@
 </tr>
 </tbody>
 </table>
-<section id="testing-requirements">
+<div class="section" id="testing-requirements">
 <h3><a class="toc-backref" href="#id6">Testing Requirements</a><a class="headerlink" href="#testing-requirements" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>ANT PC dongle (for example, ANTUSB-m)</p></li>
 <li><p>ANTware II software (see <a class="reference external" href="https://www.thisisant.com/developer/resources/software-tools/">https://www.thisisant.com/developer/resources/software-tools/</a>)</p></li>
 </ul>
-</section>
-</section>
-<section id="building-and-running">
+</div>
+</div>
+<div class="section" id="building-and-running">
 <h2><a class="toc-backref" href="#id7">Building and running</a><a class="headerlink" href="#building-and-running" title="Permalink to this headline"></a></h2>
 <p>This sample can be found under ant/samples/ant_advanced_burst in the nRF Connect SDK folder structure.</p>
-<section id="testing">
+<div class="section" id="testing">
 <h3><a class="toc-backref" href="#id8">Testing</a><a class="headerlink" href="#testing" title="Permalink to this headline"></a></h3>
 <p>After programming the sample to your development kit, you can test Burst Transfers using ANTware II:</p>
 <ol class="arabic">
@@ -1029,9 +1028,9 @@ Ensure that the “Enable” option is selected, “Pckts/AntMsg” is set to 3.
 </div>
 </li>
 </ol>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -1044,7 +1043,7 @@ Ensure that the “Enable” option is selected, “Pckts/AntMsg” is set to 3.
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

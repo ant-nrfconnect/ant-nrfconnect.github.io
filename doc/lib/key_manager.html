@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT Key Manager Library &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -82,10 +81,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
-          <li class="breadcrumb-item"><a href="libraries.html">ANT Libraries</a></li>
-      <li class="breadcrumb-item active">ANT Key Manager Library</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+          <li><a href="libraries.html">ANT Libraries</a> &raquo;</li>
+      <li>ANT Key Manager Library</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/doc/lib/key_manager.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -95,9 +94,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ant-key-manager-library">
+  <div class="section" id="ant-key-manager-library">
 <span id="ant-key-manager"></span><h1>ANT Key Manager Library<a class="headerlink" href="#ant-key-manager-library" title="Permalink to this headline"></a></h1>
-</section>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_custom_key_set">
+<span class="target" id="group__ant__key__manager_1ga163684a3fa83d51957a8114bda5c7ffe"></span><a class="reference internal" href="../api/error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_custom_key_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">network_number</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p_network_key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_custom_key_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for registering a custom network key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>network_number</strong> – <strong>[in]</strong> Network key number. </p></li>
+<li><p><strong>p_network_key</strong> – <strong>[in]</strong> Pointer to the custom ANT network key.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An ANT library error code. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_plus_key_set">
+<span class="target" id="group__ant__key__manager_1gaa52103e978bcca89066cb70b60e6cbfd"></span><a class="reference internal" href="../api/error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_plus_key_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">network_number</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_plus_key_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for registering an ANT+ network key. </p>
+<p>The ANT_PLUS_NETWORK_KEY has been predefined in this module for exclusive use by ANT+ Adopters. It is to be used by devices that will communicate on the ANT+ network and strictly adhere to the ANT+ Device Profiles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>network_number</strong> – <strong>[in]</strong> Network key number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An ANT library error code. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ant_fs_key_set">
+<span class="target" id="group__ant__key__manager_1ga1da576c99806c299dfc2a865c8c0074a"></span><a class="reference internal" href="../api/error.html#c.ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_fs_key_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n"><span class="pre">network_number</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ant_fs_key_set" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for registering an ANT-FS network key. </p>
+<p>The ANT_FS_NETWORK_KEY has been predefined in this module for exclusive use by ANT+ Adopters. It is to be used strictly for ANT-FS applications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>network_number</strong> – <strong>[in]</strong> Network key number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An ANT library error code. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
 
 
            </div>
@@ -110,7 +163,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

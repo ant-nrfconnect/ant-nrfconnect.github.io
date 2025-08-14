@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT: ANT+ Bicycle Power Transmitter &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -96,9 +95,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../../../../doc/samples.html">Samples</a></li>
-      <li class="breadcrumb-item active">ANT: ANT+ Bicycle Power Transmitter</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../doc/samples.html">Samples</a> &raquo;</li>
+      <li>ANT: ANT+ Bicycle Power Transmitter</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../_sources/samples/ant_plus/ant_bpwr/bpwr_tx/README.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -108,7 +107,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ant-ant-bicycle-power-transmitter">
+  <div class="section" id="ant-ant-bicycle-power-transmitter">
 <span id="bpwr-tx"></span><h1>ANT: ANT+ Bicycle Power Transmitter<a class="headerlink" href="#ant-ant-bicycle-power-transmitter" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -128,11 +127,11 @@
 </ul>
 </div>
 <p>The Bicycle Power Transmitter sample shows the usage of the ANT+ Bicycle Power profile.</p>
-<section id="overview">
+<div class="section" id="overview">
 <h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This sample simulates a Bicycle Power Transmitter. The Transmitter application connects to the nearest Bicycle Power Sensor in range and prints out incoming page data. The actual channel state is indicated by the ANT channel state indicator.</p>
 <p>On dual core, this sample uses sysbuild to add a network core image to the build by defining the ‘’NRF_DEFAULT_ANT_ONLY’’ with a default value of ‘’y’’ in <strong>Kconfig.sysbuild</strong>.</p>
-<section id="channel-configuration">
+<div class="section" id="channel-configuration">
 <h3><a class="toc-backref" href="#id2">Channel configuration</a><a class="headerlink" href="#channel-configuration" title="Permalink to this headline"></a></h3>
 <p>This example uses the default channel configuration:</p>
 <table class="docutils align-default">
@@ -178,9 +177,9 @@
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="requirements">
+</div>
+</div>
+<div class="section" id="requirements">
 <h2><a class="toc-backref" href="#id3">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <table class="docutils align-default">
 <colgroup>
@@ -217,8 +216,8 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="building-and-running">
+</div>
+<div class="section" id="building-and-running">
 <h2><a class="toc-backref" href="#id4">Building and running</a><a class="headerlink" href="#building-and-running" title="Permalink to this headline"></a></h2>
 <p>This sample can be found under ant/samples/ant_plus/ant_bpwr/bpwr_tx in the nRF Connect SDK folder structure.</p>
 <p>You can select how the profile information is modified with the ‘’CONFIG_BSC_TX_MODIFICATION_TYPE’’ value. There are two ways to modify the profile information (instantaneous power):</p>
@@ -232,13 +231,13 @@
 <li><p>Wheel Torque Sensor (2), which will transmit wheel torque data and intermittent power data.</p></li>
 <li><p>Crank Torque Sensor (3), which will transmit crank torque data and intermittent power data.</p></li>
 </ul>
-<section id="ant-network-key">
+<div class="section" id="ant-network-key">
 <h3><a class="toc-backref" href="#id5">ANT+ Network Key</a><a class="headerlink" href="#ant-network-key" title="Permalink to this headline"></a></h3>
 <p>This sample selects <code class="docutils literal notranslate"><span class="pre">CONFIG_ANT_KEY_MANAGER</span></code> to provide access to ant_plus_key_set() (See <a class="reference internal" href="../../../../doc/lib/key_manager.html#ant-key-manager"><span class="std std-ref">ANT Key Manager Library</span></a>). This library function configures the pre-defined ANT+ Network Key for ANT+ devices. Note that network keys, transmission type, device type IDs and RF channels are assigned and regulated to maintain
 network integrity, and interoperability, except for the default public network.</p>
 <p>For more information on Network Keys, visit <a class="reference external" href="https://www.thisisant.com/developer/ant-plus/ant-plus-basics/network-keys">https://www.thisisant.com/developer/ant-plus/ant-plus-basics/network-keys</a>.</p>
-</section>
-<section id="testing-with-antware-ii">
+</div>
+<div class="section" id="testing-with-antware-ii">
 <h3><a class="toc-backref" href="#id6">Testing with ANTware II</a><a class="headerlink" href="#testing-with-antware-ii" title="Permalink to this headline"></a></h3>
 <p>After programming the sample to your development kit, you can test the Bicycle Power Transmitter using ANTware II:</p>
 <ol class="arabic">
@@ -270,13 +269,13 @@ network integrity, and interoperability, except for the default public network.<
 <p>Each message can be decoded according to the ANT message protocol and the Bicycle Power ANT+ device profile.</p>
 </li>
 </ol>
-</section>
-<section id="testing-the-bpwr-examples-with-the-ant-simulator-tools">
+</div>
+<div class="section" id="testing-the-bpwr-examples-with-the-ant-simulator-tools">
 <h3><a class="toc-backref" href="#id7">Testing the BPWR examples with the ANT+ Simulator tools</a><a class="headerlink" href="#testing-the-bpwr-examples-with-the-ant-simulator-tools" title="Permalink to this headline"></a></h3>
 <p>You can use the SimulANT+ Bicycle Power Display Simulator to test the BPWR Transmitter. Make sure the Device Number matches the Channel Configuration above (0x31). See the documentation of the ANT+ Simulator tools at thisisant.com for information about how to use these tools.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -289,7 +288,7 @@ network integrity, and interoperability, except for the default public network.<
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT Error Reference &mdash; ANT for nRF Connect SDK  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -75,9 +74,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
-      <li class="breadcrumb-item active">ANT Error Reference</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+      <li>ANT Error Reference</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/doc/api/error.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,9 +86,115 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ant-error-reference">
+  <div class="section" id="ant-error-reference">
 <span id="ant-error"></span><h1>ANT Error Reference<a class="headerlink" href="#ant-error-reference" title="Permalink to this headline"></a></h1>
-</section>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_OFFSET">
+<span class="target" id="group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></span> <span class="pre">0x4000</span><a class="headerlink" href="#c.NRF_ANT_ERROR_OFFSET" title="Permalink to this definition"></a><br /></dt>
+<dd><p>ANT Error Return parameter definitions. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_SUCCESS">
+<span class="target" id="group__ant__error_1ga7cbe60d36e791a31e2035d636dd32e95"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_SUCCESS</span></span></span> <span class="pre">0x0</span><a class="headerlink" href="#c.NRF_ANT_SUCCESS" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE">
+<span class="target" id="group__ant__error_1ga5b0ab7ccef5e3ceba284982ec2ed09e7"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1gae63dd1e4e2a57a5d8a1e6927c9a6fad4"><span class="std std-ref"><span class="pre">CHANNEL_IN_WRONG_STATE</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response on attempt to perform an action from the wrong channel state. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_CHANNEL_NOT_OPENED">
+<span class="target" id="group__ant__error_1ga709a9d777285a2bbdade6b4d570ceb7f"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_CHANNEL_NOT_OPENED</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1ga831f38de81c3ee18dc3d6d58a28469c4"><span class="std std-ref"><span class="pre">CHANNEL_NOT_OPENED</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_CHANNEL_NOT_OPENED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response on attempt to communicate on a channel that is not open. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_CHANNEL_ID_NOT_SET">
+<span class="target" id="group__ant__error_1gab6a1f394512daf7b90e0e92ff6a8f2e1"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_CHANNEL_ID_NOT_SET</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1ga2ece855dff97f8acea68c06d7a75abf6"><span class="std std-ref"><span class="pre">CHANNEL_ID_NOT_SET</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_CHANNEL_ID_NOT_SET" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response on attempt to open a channel without setting the channel ID. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_CLOSE_ALL_CHANNELS">
+<span class="target" id="group__ant__error_1ga9a743d59e33a719f366bc0c277e44b17"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_CLOSE_ALL_CHANNELS</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1ga294cc2a8b09302615ff6c499ffeab85f"><span class="std std-ref"><span class="pre">CLOSE_ALL_CHANNELS</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_CLOSE_ALL_CHANNELS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when attempting to start scanning mode, when channels are still open. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_TRANSFER_IN_PROGRESS">
+<span class="target" id="group__ant__error_1ga460c07f11f1a95c756479dda71736195"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_TRANSFER_IN_PROGRESS</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1gae295711c3c6f5a87788c7dad6ef83da1"><span class="std std-ref"><span class="pre">TRANSFER_IN_PROGRESS</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_TRANSFER_IN_PROGRESS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response on attempt to communicate on a channel with a TX transfer in progress. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_TRANSFER_SEQUENCE_NUMBER_ERROR">
+<span class="target" id="group__ant__error_1ga95a1031bc77561ab4199f6f634e51d2e"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_TRANSFER_SEQUENCE_NUMBER_ERROR</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1gae578b7c324f2d9addad818e1b6df7d7e"><span class="std std-ref"><span class="pre">TRANSFER_SEQUENCE_NUMBER_ERROR</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_TRANSFER_SEQUENCE_NUMBER_ERROR" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when sequence number of burst message or burst data segment is out of order. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_TRANSFER_IN_ERROR">
+<span class="target" id="group__ant__error_1gae324d3154b99f1d6247501e247882841"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_TRANSFER_IN_ERROR</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1gabb130dbf5380067214dfb9652c229b66"><span class="std std-ref"><span class="pre">TRANSFER_IN_ERROR</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_TRANSFER_IN_ERROR" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when transfer error has occured on supplied burst message or burst data segment. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_TRANSFER_BUSY">
+<span class="target" id="group__ant__error_1ga808b01467335e6e845fae4e483fff632"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_TRANSFER_BUSY</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1gaf7422213118cdccf3e2391dc834e6ee6"><span class="std std-ref"><span class="pre">TRANSFER_BUSY</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_TRANSFER_BUSY" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when transfer is busy and cannot process supplied burst message or burst data segment. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_MESSAGE_SIZE_EXCEEDS_LIMIT">
+<span class="target" id="group__ant__error_1gab029e803fd76c402e68652b8a13ea3b9"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_MESSAGE_SIZE_EXCEEDS_LIMIT</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1ga272d27b9d26ceca3d1c4b66b3bb5f371"><span class="std std-ref"><span class="pre">MESSAGE_SIZE_EXCEEDS_LIMIT</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_MESSAGE_SIZE_EXCEEDS_LIMIT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response if a data message is provided that is too large. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_INVALID_MESSAGE">
+<span class="target" id="group__ant__error_1ga388c39a908acf6dd0474bea3a0f1b53b"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_INVALID_MESSAGE</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1ga13e6211655220a5ff81e713a96105180"><span class="std std-ref"><span class="pre">INVALID_MESSAGE</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_INVALID_MESSAGE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when the message has an invalid parameter. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_INVALID_NETWORK_NUMBER">
+<span class="target" id="group__ant__error_1ga780c667bc071f477db392dc07a2e444d"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_INVALID_NETWORK_NUMBER</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1gab28e5c3fefe7dbc0cc8d8458bdf80814"><span class="std std-ref"><span class="pre">INVALID_NETWORK_NUMBER</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_INVALID_NETWORK_NUMBER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when an invalid network number is provided. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_INVALID_LIST_ID">
+<span class="target" id="group__ant__error_1gaf3759c68825f7b06613f82bccb411e60"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_INVALID_LIST_ID</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1ga17ceb69a5c11fe627086d164e38f7268"><span class="std std-ref"><span class="pre">INVALID_LIST_ID</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_INVALID_LIST_ID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when the provided list ID or size exceeds the limit. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_INVALID_SCAN_TX_CHANNEL">
+<span class="target" id="group__ant__error_1gae1813878b3515eda4c731cf8c5bf2f07"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_INVALID_SCAN_TX_CHANNEL</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1gab7fa4cdd33a40d9df15b19dd55a64d10"><span class="std std-ref"><span class="pre">INVALID_SCAN_TX_CHANNEL</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_INVALID_SCAN_TX_CHANNEL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when attempting to transmit on channel 0 when in scan mode. </p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED">
+<span class="target" id="group__ant__error_1gad81d92c712fff6617de08803133e3ee8"></span><span class="sig-name descname"><span class="n"><span class="pre">NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</span></span></span> <a class="reference internal" href="#group__ant__error_1ga50be0dcedcb7cfb4cefb7c8d62f36e68"><span class="std std-ref"><span class="pre">NRF_ANT_ERROR_OFFSET</span></span></a> <span class="pre">+</span> <a class="reference internal" href="parameters.html#group__ant__parameters_1ga601c766746b322fc8c454af06a7d7e1f"><span class="std std-ref"><span class="pre">INVALID_PARAMETER_PROVIDED</span></span></a><a class="headerlink" href="#c.NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Response when an invalid parameter is specified in a configuration message. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="c type">
+<dt class="sig sig-object c" id="c.ant_err_t">
+<span class="target" id="group__ant__error_1ga0ebfbc735d349c41b5b3a0414aee9f20"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_err_t</span></span></span><a class="headerlink" href="#c.ant_err_t" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
 
 
            </div>
@@ -102,7 +207,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+    <p>&#169; Copyright 2025, Garmin Canada Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

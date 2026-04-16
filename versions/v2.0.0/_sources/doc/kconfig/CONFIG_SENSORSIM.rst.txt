@@ -1,0 +1,54 @@
+:orphan:
+
+.. title:: SENSORSIM
+
+.. option:: CONFIG_SENSORSIM
+
+*Sensor Data Simulator Library*
+
+Type: ``bool``
+
+Help
+====
+
+Allows for manual incrementing of a sensor value or generates a triangular waveform.
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+No defaults. Implicitly defaults to ``n``.
+
+Symbols that select this symbol
+===============================
+
+- \ :option:`ANT_BPWR_SIMULATOR <CONFIG_ANT_BPWR_SIMULATOR>`
+- \ :option:`ANT_BSC_SIMULATOR <CONFIG_ANT_BSC_SIMULATOR>`
+- \ :option:`ANT_HRM_SIMULATOR <CONFIG_ANT_HRM_SIMULATOR>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``lib\sensorsim/Kconfig:10``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:15``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    menuconfig SENSORSIM
+    	bool "Sensor Data Simulator Library"
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  Allows for manual incrementing of a sensor value or generates a triangular waveform.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

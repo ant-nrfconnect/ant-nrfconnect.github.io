@@ -1,0 +1,42 @@
+:orphan:
+
+.. title:: ANT_ENCRYPTION_NUM_CHANNELS
+
+.. option:: CONFIG_ANT_ENCRYPTION_NUM_CHANNELS
+
+*Number of encrypted channels to configure. Must be <= CONFIG_ANT_ENCRYPTED_CHANNELS*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+\ :option:`ANT_ENCRYPT_CONFIG <CONFIG_ANT_ENCRYPT_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- 1
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``lib\ant_encryption/Kconfig:21``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:11``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT Encrypt Config Library
+
+.. parsed-literal::
+
+    config ANT_ENCRYPTION_NUM_CHANNELS
+    	int "Number of encrypted channels to configure. Must be <= CONFIG_ANT_ENCRYPTED_CHANNELS"
+    	range 1 15
+    	default 1
+    	depends on \ :option:`ANT_ENCRYPT_CONFIG <CONFIG_ANT_ENCRYPT_CONFIG>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

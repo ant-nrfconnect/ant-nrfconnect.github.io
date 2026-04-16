@@ -1,0 +1,62 @@
+:orphan:
+
+.. title:: ANT_LIBRARY_CORE
+
+.. option:: CONFIG_ANT_LIBRARY_CORE
+
+*Enabled on the core used for ANT radio communication*
+
+Type: ``bool``
+
+Help
+====
+
+This configuration is required for all single core builds and for network core builds on dual-core systems.
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+- n if SOC_NRF5340_CPUAPP
+- y
+
+Symbols selected by this symbol
+===============================
+
+- NRFX_PPI if HAS_HW_NRF_PPI
+- NRFX_DPPI if HAS_HW_NRF_DPPIC
+- NRFX_DPPI10 if SOC_SERIES_NRF54LX
+- MPSL
+- ENTROPY_GENERATOR
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``Kconfig:20``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_LIBRARY_CORE
+    	bool "Enabled on the core used for ANT radio communication"
+    	default n if SOC_NRF5340_CPUAPP
+    	default y
+    	select NRFX_PPI if HAS_HW_NRF_PPI
+    	select NRFX_DPPI if HAS_HW_NRF_DPPIC
+    	select NRFX_DPPI10 if SOC_SERIES_NRF54LX
+    	select MPSL
+    	select ENTROPY_GENERATOR
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  This configuration is required for all single core builds and for network core builds on dual-core systems.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

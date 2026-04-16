@@ -1,0 +1,60 @@
+:orphan:
+
+.. title:: ANT_LICENSE_KEY
+
+.. option:: CONFIG_ANT_LICENSE_KEY
+
+*ANT License Key.*
+
+Type: ``string``
+
+Help
+====
+
+This key is used in library initialization. You MUST obtain a
+valid commercial license key BEFORE releasing a product to market
+that uses ANT. You may enable the Evaluation license key for
+non-commericial use by setting CONFIG ANT_EVALUATION_KEY=y or
+defining CONFIG_ANT_LICENSE_KEY in the configuration file. For
+more information about ANT licensing, visit the following website:
+https://www.thisisant.com/developer/ant/licensing
+
+Direct dependencies
+===================
+
+\ :option:`ANT_LIBRARY_CORE <CONFIG_ANT_LIBRARY_CORE>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- "3831-521d-7df9-24d8-eff3-467b-225f-a00e" if \ :option:`ANT_EVALUATION_KEY <CONFIG_ANT_EVALUATION_KEY>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:10``
+
+Included via ``Kconfig:48``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_LICENSE_KEY
+    	string "ANT License Key."
+    	default "3831-521d-7df9-24d8-eff3-467b-225f-a00e" if \ :option:`ANT_EVALUATION_KEY <CONFIG_ANT_EVALUATION_KEY>`
+    	depends on \ :option:`ANT_LIBRARY_CORE <CONFIG_ANT_LIBRARY_CORE>` && \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  This key is used in library initialization. You MUST obtain a
+    	  valid commercial license key BEFORE releasing a product to market
+    	  that uses ANT. You may enable the Evaluation license key for
+    	  non-commericial use by setting CONFIG ANT_EVALUATION_KEY=y or
+    	  defining CONFIG_ANT_LICENSE_KEY in the configuration file. For
+    	  more information about ANT licensing, visit the following website:
+    	  https://www.thisisant.com/developer/ant/licensing
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

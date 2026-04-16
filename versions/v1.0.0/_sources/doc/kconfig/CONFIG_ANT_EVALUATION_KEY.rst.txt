@@ -1,0 +1,41 @@
+:orphan:
+
+.. title:: ANT_EVALUATION_KEY
+
+.. option:: CONFIG_ANT_EVALUATION_KEY
+
+*Use ANT Evaluation License Key.*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+SOC_NRF5340_CPUNET && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- n
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:23``
+
+Included via ``Kconfig:34``
+
+Menu path: (Top) → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_EVALUATION_KEY
+    	bool "Use ANT Evaluation License Key."
+    	default n
+    	depends on SOC_NRF5340_CPUNET && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

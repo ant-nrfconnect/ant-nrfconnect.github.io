@@ -1,0 +1,56 @@
+:orphan:
+
+.. title:: ANT_SDC_INIT
+
+.. option:: CONFIG_ANT_SDC_INIT
+
+*Allow ANT Init to initialize the Softdevice Controller (sdc_init)*
+
+Type: ``bool``
+
+Help
+====
+
+Allow ANT initialization on the network core to also initialize the softdevice
+controller. This is to allow the ANT library stack to utlize the sdc_soc
+interface for cryptographic purposes. If sdc_init() is run prior to ANT
+initialization (eg. for BT), then this configuration is not needed as long as
+it is run before using any ANT library stack cryptographic functions.
+
+Direct dependencies
+===================
+
+BT && \ :option:`ANT_LIBRARY_CORE <CONFIG_ANT_LIBRARY_CORE>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- n
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:77``
+
+Included via ``Kconfig:48``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_SDC_INIT
+    	bool "Allow ANT Init to initialize the Softdevice Controller (sdc_init)"
+    	default n
+    	depends on BT && \ :option:`ANT_LIBRARY_CORE <CONFIG_ANT_LIBRARY_CORE>` && \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  Allow ANT initialization on the network core to also initialize the softdevice
+    	  controller. This is to allow the ANT library stack to utlize the sdc_soc
+    	  interface for cryptographic purposes. If sdc_init() is run prior to ANT
+    	  initialization (eg. for BT), then this configuration is not needed as long as
+    	  it is run before using any ANT library stack cryptographic functions.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

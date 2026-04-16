@@ -1,0 +1,46 @@
+:orphan:
+
+.. title:: ANT_HRM_SIMULATOR
+
+.. option:: CONFIG_ANT_HRM_SIMULATOR
+
+*Enable ANT+ HRM Simulator*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :option:`ANT_HRM <CONFIG_ANT_HRM>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+No defaults. Implicitly defaults to ``n``.
+
+Symbols selected by this symbol
+===============================
+
+- \ :option:`SENSORSIM <CONFIG_SENSORSIM>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``lib\ant_profiles\ant_hrm/Kconfig:17``
+
+Included via ``Kconfig:49`` → ``lib/Kconfig:13`` → ``lib\ant_profiles/Kconfig:13``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → ANT+ HRM profile
+
+.. parsed-literal::
+
+    config ANT_HRM_SIMULATOR
+    	bool "Enable ANT+ HRM Simulator"
+    	select \ :option:`SENSORSIM <CONFIG_SENSORSIM>`
+    	depends on \ :option:`ANT_HRM <CONFIG_ANT_HRM>` && \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

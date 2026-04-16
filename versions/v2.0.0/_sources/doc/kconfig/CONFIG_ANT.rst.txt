@@ -1,0 +1,45 @@
+:orphan:
+
+.. title:: ANT
+
+.. option:: CONFIG_ANT
+
+*ANT Wireless*
+
+Type: ``bool``
+
+Help
+====
+
+Enable ANT ultra low power wireless protocol.
+
+Direct dependencies
+===================
+
+SOC_NRF5340_CPUNET || SOC_NRF5340_CPUAPP || SOC_NRF52840 || SOC_NRF52832 || SOC_NRF54L15
+
+*(Includes any dependencies from ifs and menus.)*
+
+Defaults
+========
+
+No defaults. Implicitly defaults to ``n``.
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``Kconfig:12``
+
+Menu path: (Top) → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT
+    	bool "ANT Wireless"
+    	depends on SOC_NRF5340_CPUNET || SOC_NRF5340_CPUAPP || SOC_NRF52840 || SOC_NRF52832 || SOC_NRF54L15
+    	help
+    	  Enable ANT ultra low power wireless protocol.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

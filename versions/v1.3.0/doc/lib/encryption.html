@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANT Encryption Library &mdash; ANT for nRF Connect SDK  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ANT Key Manager Library" href="key_manager.html" />
+    <link rel="prev" title="ANT Channel Config Library" href="channel_config.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ANT for nRF Connect SDK
+            <img src="../../_static/this-is-ant.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.3.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration_notes.html">Integration notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples.html">Samples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api/interface.html">ANT Interface Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/parameters.html">ANT Parameters Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/error.html">ANT Error Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../init/ant_init_host_cpuapp.html">ANT Initialization: Multicore Host (cpuapp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profiles/ant_plus.html">ANT+ Profiles</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="libraries.html">ANT Libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="channel_config.html">ANT Channel Config Library</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ANT Encryption Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="key_manager.html">ANT Key Manager Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="search_config.html">ANT Search Config Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="state_indicator.html">ANT State Indicator Library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kconfig/index.html">Configuration Options</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ANT for nRF Connect SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+          <li><a href="libraries.html">ANT Libraries</a> &raquo;</li>
+      <li>ANT Encryption Library</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/lib/encryption.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ant-encryption-library">
+<span id="ant-lib-encrypt"></span><h1>ANT Encryption Library<a class="headerlink" href="#ant-encryption-library" title="Permalink to this headline"></a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv434ant_channel_encrypt_config_perform7uint8_tP30ant_encrypt_channel_settings_t">
+<span id="_CPPv334ant_channel_encrypt_config_perform7uint8_tP30ant_encrypt_channel_settings_t"></span><span id="_CPPv234ant_channel_encrypt_config_perform7uint8_tP30ant_encrypt_channel_settings_t"></span><span id="ant_channel_encrypt_config_perform__uint8_t.ant_encrypt_channel_settings_tP"></span><span class="target" id="group__ant__encrypt__config_1ga4b301ceada5420d0e06ee9d7405fa30e"></span><a class="reference internal" href="../api/error.html#_CPPv49ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_encrypt_config_perform</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channel_number</span></span>, <span class="n"><span class="pre">ant_encrypt_channel_settings_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_crypto_config</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434ant_channel_encrypt_config_perform7uint8_tP30ant_encrypt_channel_settings_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for applying an encryption configuration to a slave channel. </p>
+<p>This function enables encryption on a channel.</p>
+<p>This function should be used by the ANT encryption negotiation module and this module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_number</strong> – <strong>[in]</strong> ANT channel number. </p></li>
+<li><p><strong>p_crypto_config</strong> – <strong>[in]</strong> Pointer to the encryption configuration.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value returned by <a class="reference internal" href="../api/interface.html#group__ant__interface_1ga3f80054329acfb03b820ede9e3205b0b"><span class="std std-ref">ant_crypto_channel_enable</span></a> (for example, NRF_SUCCESS if the configuration was successful). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv426ant_channel_encrypt_config7uint8_t7uint8_tP30ant_encrypt_channel_settings_t">
+<span id="_CPPv326ant_channel_encrypt_config7uint8_t7uint8_tP30ant_encrypt_channel_settings_t"></span><span id="_CPPv226ant_channel_encrypt_config7uint8_t7uint8_tP30ant_encrypt_channel_settings_t"></span><span id="ant_channel_encrypt_config__uint8_t.uint8_t.ant_encrypt_channel_settings_tP"></span><span class="target" id="group__ant__encrypt__config_1ga3d9b51aa67371c027a4ea9491f6481f5"></span><a class="reference internal" href="../api/error.html#_CPPv49ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_encrypt_config</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channel_type</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channel_num</span></span>, <span class="n"><span class="pre">ant_encrypt_channel_settings_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_crypto_config</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426ant_channel_encrypt_config7uint8_t7uint8_tP30ant_encrypt_channel_settings_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for applying an encryption configuration to a master or slave channel. </p>
+<p>When called for a master channel, this function enables encryption for that channel. When called for a slave channel, it saves the encryption configuration for future use.</p>
+<p>This function should be used by the ANT channel configuration module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_type</strong> – <strong>[in]</strong> ANT channel type: CHANNEL_TYPE_SLAVE or CHANNEL_TYPE_MASTER. </p></li>
+<li><p><strong>channel_num</strong> – <strong>[in]</strong> ANT channel number. </p></li>
+<li><p><strong>p_crypto_config</strong> – <strong>[in]</strong> Pointer to the encryption configuration.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return values</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>0</strong> – If the function completed successfully. </p></li>
+<li><p><strong>NRF_ANT_ERROR_INVALID_PARAMETER_PROVIDED</strong> – If the channel type is invalid. </p></li>
+<li><p><strong>NRF_ANT_ERROR_CHANNEL_IN_WRONG_STATE</strong> – If the stack is not configured for encryption. </p></li>
+<li><p><strong>Other</strong> – Otherwise, the error value returned by the <a class="reference internal" href="#group__ant__encrypt__config_1ga4b301ceada5420d0e06ee9d7405fa30e"><span class="std std-ref">ant_channel_encrypt_config_perform</span></a> function is returned. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv427ant_stack_encryption_configPCK28ant_encrypt_stack_settings_t">
+<span id="_CPPv327ant_stack_encryption_configPCK28ant_encrypt_stack_settings_t"></span><span id="_CPPv227ant_stack_encryption_configPCK28ant_encrypt_stack_settings_t"></span><span id="ant_stack_encryption_config__ant_encrypt_stack_settings_tCPC"></span><span class="target" id="group__ant__encrypt__config_1ga77e04b8392a8d9e4b90840fb3f906d12"></span><a class="reference internal" href="../api/error.html#_CPPv49ant_err_t" title="ant_err_t"><span class="n"><span class="pre">ant_err_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_stack_encryption_config</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ant_encrypt_stack_settings_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_crypto_info_set</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427ant_stack_encryption_configPCK28ant_encrypt_stack_settings_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for configuring the cryptographic settings of the ANT stack. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p_crypto_info_set</strong> – <strong>[in]</strong> Pointer to the settings. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv425ant_encrypt_event_handlerP9ant_evt_t">
+<span id="_CPPv325ant_encrypt_event_handlerP9ant_evt_t"></span><span id="_CPPv225ant_encrypt_event_handlerP9ant_evt_t"></span><span id="ant_encrypt_event_handler__ant_evt_tP"></span><span class="target" id="group__ant__encrypt__config_1ga22ee6fd726046e2c2bd62c429f6f024c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_encrypt_event_handler</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../init/ant_init_host_cpuapp.html#_CPPv49ant_evt_t" title="ant_evt_t"><span class="n"><span class="pre">ant_evt_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_ant_evt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425ant_encrypt_event_handlerP9ant_evt_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for handling ANT encryption events. </p>
+<p>This function should be used directly in the ANT event dispatching process. It serves the ANT encryption events to the registered event handler. If ANT encryption negotiation is used, this function is required.</p>
+<p>This function should be used by the ANT encryption configuration module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p_ant_evt</strong> – <strong>[in]</strong> Pointer to the ANT stack event message structure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv430ant_enc_event_handler_register26ant_encrypt_user_handler_t">
+<span id="_CPPv330ant_enc_event_handler_register26ant_encrypt_user_handler_t"></span><span id="_CPPv230ant_enc_event_handler_register26ant_encrypt_user_handler_t"></span><span id="ant_enc_event_handler_register__ant_encrypt_user_handler_t"></span><span class="target" id="group__ant__encrypt__config_1gae498a8288d447ea5342586528f2d915a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_enc_event_handler_register</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ant_encrypt_user_handler_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430ant_enc_event_handler_register26ant_encrypt_user_handler_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for registering an event handler for ANT encryption events. </p>
+<p>The event handler should support all of the events in ant_encrypt_user_evt_t.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p_handler</strong> – <strong>[in]</strong> Pointer to a handler function. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv438ant_channel_encrypt_tracking_state_set7uint8_t28ant_encrypt_tracking_state_t">
+<span id="_CPPv338ant_channel_encrypt_tracking_state_set7uint8_t28ant_encrypt_tracking_state_t"></span><span id="_CPPv238ant_channel_encrypt_tracking_state_set7uint8_t28ant_encrypt_tracking_state_t"></span><span id="ant_channel_encrypt_tracking_state_set__uint8_t.ant_encrypt_tracking_state_t"></span><span class="target" id="group__ant__encrypt__negotiation__slave_1gafd10d1135228016165328a72f435e1dd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_encrypt_tracking_state_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channel_number</span></span>, <span class="n"><span class="pre">ant_encrypt_tracking_state_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">state</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv438ant_channel_encrypt_tracking_state_set7uint8_t28ant_encrypt_tracking_state_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for setting the encryption negotiation state of a slave ANT channel. </p>
+<p>This function should be used by the ANT encryption configuration module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_number</strong> – <strong>[in]</strong> ANT channel number. </p></li>
+<li><p><strong>state</strong> – <strong>[in]</strong> State to set. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv438ant_channel_encrypt_tracking_state_get7uint8_t">
+<span id="_CPPv338ant_channel_encrypt_tracking_state_get7uint8_t"></span><span id="_CPPv238ant_channel_encrypt_tracking_state_get7uint8_t"></span><span id="ant_channel_encrypt_tracking_state_get__uint8_t"></span><span class="target" id="group__ant__encrypt__negotiation__slave_1ga45243f89d50008a3e1e4808c689aeea2"></span><span class="n"><span class="pre">ant_encrypt_tracking_state_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_encrypt_tracking_state_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channel_number</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv438ant_channel_encrypt_tracking_state_get7uint8_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for getting the encryption negotiation state of a slave ANT channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channel_number</strong> – <strong>[in]</strong> ANT channel number. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv442ant_channel_encrypt_negotiation_slave_initv">
+<span id="_CPPv342ant_channel_encrypt_negotiation_slave_initv"></span><span id="_CPPv242ant_channel_encrypt_negotiation_slave_initv"></span><span id="ant_channel_encrypt_negotiation_slave_init__void"></span><span class="target" id="group__ant__encrypt__negotiation__slave_1ga028a0b9ebb4471a950bcaeae0d7ea2e7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_channel_encrypt_negotiation_slave_init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv442ant_channel_encrypt_negotiation_slave_initv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for initializing the module. </p>
+<p>This function initializes internal states of the module. It should only be used by the ANT encryption configuration module. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv432ant_slave_channel_encrypt_config7uint8_tPCK30ant_encrypt_channel_settings_t">
+<span id="_CPPv332ant_slave_channel_encrypt_config7uint8_tPCK30ant_encrypt_channel_settings_t"></span><span id="_CPPv232ant_slave_channel_encrypt_config7uint8_tPCK30ant_encrypt_channel_settings_t"></span><span id="ant_slave_channel_encrypt_config__uint8_t.ant_encrypt_channel_settings_tCPC"></span><span class="target" id="group__ant__encrypt__negotiation__slave_1ga4748d980ae8cb635aece7ce2ef90363f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_slave_channel_encrypt_config</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channel_number</span></span>, <span class="n"><span class="pre">ant_encrypt_channel_settings_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_crypto_config</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432ant_slave_channel_encrypt_config7uint8_tPCK30ant_encrypt_channel_settings_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for setting the configuration for the slave channel. </p>
+<p>This function saves the channel’s encryption configuration to a lookup table (LUT) for future usage. The configuration can then be used to enable encryption.</p>
+<p>This function is intended to be used by the ANT encryption configuration module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_number</strong> – <strong>[in]</strong> ANT channel number. </p></li>
+<li><p><strong>p_crypto_config</strong> – <strong>[in]</strong> Pointer to the encryption configuration. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv429ant_slave_encrypt_negotiationP9ant_evt_t">
+<span id="_CPPv329ant_slave_encrypt_negotiationP9ant_evt_t"></span><span id="_CPPv229ant_slave_encrypt_negotiationP9ant_evt_t"></span><span id="ant_slave_encrypt_negotiation__ant_evt_tP"></span><span class="target" id="group__ant__encrypt__negotiation__slave_1ga4737b291ff04d781c9ad600b09a43388"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ant_slave_encrypt_negotiation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../init/ant_init_host_cpuapp.html#_CPPv49ant_evt_t" title="ant_evt_t"><span class="n"><span class="pre">ant_evt_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_ant_evt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429ant_slave_encrypt_negotiationP9ant_evt_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function for handling ANT encryption negotiation on slave nodes. </p>
+<p>This function should be used directly in the ANT event dispatching process. It tries to enable slave channel encryption for all slave channels that are declared as encrypted channels (if appropriate master channels are found).</p>
+<p>This function should be used by the ANT encryption configuration module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p_ant_evt</strong> – <strong>[in]</strong> Pointer to the ANT stack event message structure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="channel_config.html" class="btn btn-neutral float-left" title="ANT Channel Config Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="key_manager.html" class="btn btn-neutral float-right" title="ANT Key Manager Library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Garmin Canada Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: 1.3.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        
+           <strong> 
+          <dd><a href="https://ant-nrfconnect.github.io/versions/v2.0.0/">1.3.0</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://ant-nrfconnect.github.io/versions/v1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="https://ant-nrfconnect.github.io/versions/v1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="https://ant-nrfconnect.github.io/versions/v1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="https://ant-nrfconnect.github.io/versions/v0.5.0/">0.5.0</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+:orphan:
+
+.. title:: ANT_EVENT_QUEUE_SIZE
+
+.. option:: CONFIG_ANT_EVENT_QUEUE_SIZE
+
+*Event queue size.*
+
+Type: ``int``
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- 32
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:67``
+
+Included via ``Kconfig:48``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_EVENT_QUEUE_SIZE
+    	int "Event queue size."
+    	default 32
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

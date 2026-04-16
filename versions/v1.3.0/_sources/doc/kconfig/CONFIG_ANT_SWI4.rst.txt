@@ -1,0 +1,35 @@
+:orphan:
+
+.. title:: ANT_SWI4
+
+.. option:: CONFIG_ANT_SWI4
+
+*SWI4*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+HAS_HW_NRF_SWI4 && \ :ref:`<choice ANT_SWI: Software interrupt to use for ANT events.> <choice_0>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:54``
+
+Included via ``Kconfig:39``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless → Software interrupt to use for ANT events.
+
+.. parsed-literal::
+
+    config ANT_SWI4
+    	bool "SWI4"
+    	depends on HAS_HW_NRF_SWI4 && \ :ref:`<choice ANT_SWI: Software interrupt to use for ANT events.> <choice_0>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

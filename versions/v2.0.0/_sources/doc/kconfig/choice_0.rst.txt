@@ -1,0 +1,50 @@
+:orphan:
+
+.. title:: choice ANT_SWI: Software interrupt to use for ANT events.
+
+.. _choice_0:
+
+.. describe:: choice ANT_SWI: Software interrupt to use for ANT events.
+
+*Software interrupt to use for ANT events.*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- \ :option:`ANT_SWI1 <CONFIG_ANT_SWI1>`
+
+Choice options
+==============
+
+- \ :option:`ANT_SWI1 <CONFIG_ANT_SWI1>`
+- \ :option:`ANT_SWI2 <CONFIG_ANT_SWI2>`
+- \ :option:`ANT_SWI3 <CONFIG_ANT_SWI3>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:38``
+
+Included via ``Kconfig:48``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    choice ANT_SWI
+    	bool "Software interrupt to use for ANT events."
+    	default \ :option:`ANT_SWI1 <CONFIG_ANT_SWI1>`
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

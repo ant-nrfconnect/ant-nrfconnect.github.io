@@ -1,0 +1,48 @@
+:orphan:
+
+.. title:: ANT_LIBRARY_CORE
+
+.. option:: CONFIG_ANT_LIBRARY_CORE
+
+*Defines the core used for ANT radio communication*
+
+Type: ``bool``
+
+Help
+====
+
+This configuration is required for all single core builds and for network core builds on dual-core systems.
+
+Defaults
+========
+
+- n if SOC_NRF5340_CPUAPP
+- y
+
+Symbols selected by this symbol
+===============================
+
+- MPSL
+- ENTROPY_GENERATOR
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``Kconfig:18``
+
+Menu path: (Top) → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_LIBRARY_CORE
+    	bool "Defines the core used for ANT radio communication"
+    	default n if SOC_NRF5340_CPUAPP
+    	default y
+    	select MPSL
+    	select ENTROPY_GENERATOR
+    	help
+    	  This configuration is required for all single core builds and for network core builds on dual-core systems.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

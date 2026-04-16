@@ -1,0 +1,52 @@
+:orphan:
+
+.. title:: ANT_RPC
+
+.. option:: CONFIG_ANT_RPC
+
+*ANT over RPC*
+
+Type: ``bool``
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- n
+
+Symbols selected by this symbol
+===============================
+
+- NRF_RPC
+
+Symbols that select this symbol
+===============================
+
+- \ :option:`ANT_NP <CONFIG_ANT_NP>`
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``np/Kconfig:38``
+
+Included via ``Kconfig:50``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_RPC
+    	bool "ANT over RPC"
+    	default n
+    	select NRF_RPC
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

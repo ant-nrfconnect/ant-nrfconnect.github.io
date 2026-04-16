@@ -1,0 +1,48 @@
+:orphan:
+
+.. title:: ANT_WORK_STACK_SIZE
+
+.. option:: CONFIG_ANT_WORK_STACK_SIZE
+
+*Size of the work handler thread stack.*
+
+Type: ``int``
+
+Help
+====
+
+Size of the work handler thread stack, used to process work in ANT priority context.
+
+Direct dependencies
+===================
+
+\ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- 1024
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``init/Kconfig:32``
+
+Included via ``Kconfig:48``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_WORK_STACK_SIZE
+    	int "Size of the work handler thread stack."
+    	default 1024
+    	depends on \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  Size of the work handler thread stack, used to process work in ANT priority context.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*

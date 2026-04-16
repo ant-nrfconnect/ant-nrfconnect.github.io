@@ -1,0 +1,70 @@
+:orphan:
+
+.. title:: ANT_INCLUDE_NP_CHILD_IMAGE
+
+.. option:: CONFIG_ANT_INCLUDE_NP_CHILD_IMAGE
+
+*Include ANT NP sample on netcore*
+
+Type: ``bool``
+
+Help
+====
+
+Enabling this setting will include an ANT-only network stack to run on
+the network core to communicate over nRF RPC with the application core.
+The application core does not have access to the radio peripheral.
+
+This setting conflicts with CONFIG_BT since dual protocol samples (ANT
+and BLE) are built on the on the default network core sample (typically
+hci_ipc, see NCS_INCLUDE_RPMSG_CHILD_IMAGE for details) with
+additional configurations to enable ANT.
+
+Direct dependencies
+===================
+
+SOC_NRF5340_CPUAPP && \ :option:`ANT_NP <CONFIG_ANT_NP>` && !BT && SOC_SERIES_NRF53X && \ :option:`ANT <CONFIG_ANT>`
+
+*(Includes any dependencies from ifs and menus.)*
+
+Default
+=======
+
+- y if \ :option:`ANT_NP <CONFIG_ANT_NP>` && !BT
+
+Symbols selected by this symbol
+===============================
+
+- PARTITION_MANAGER_ENABLED
+- BOARD_ENABLE_CPUNET
+
+Kconfig definition
+==================
+
+.. highlight:: kconfig
+
+At ``samples/Kconfig:12``
+
+Included via ``Kconfig:42``
+
+Menu path: (Top) → ANT Wireless → ANT Wireless
+
+.. parsed-literal::
+
+    config ANT_INCLUDE_NP_CHILD_IMAGE
+    	bool "Include ANT NP sample on netcore"
+    	default y if \ :option:`ANT_NP <CONFIG_ANT_NP>` && !BT
+    	select PARTITION_MANAGER_ENABLED
+    	select BOARD_ENABLE_CPUNET
+    	depends on SOC_NRF5340_CPUAPP && \ :option:`ANT_NP <CONFIG_ANT_NP>` && !BT && SOC_SERIES_NRF53X && \ :option:`ANT <CONFIG_ANT>`
+    	help
+    	  Enabling this setting will include an ANT-only network stack to run on
+    	  the network core to communicate over nRF RPC with the application core.
+    	  The application core does not have access to the radio peripheral.
+	  
+    	  This setting conflicts with CONFIG_BT since dual protocol samples (ANT
+    	  and BLE) are built on the on the default network core sample (typically
+    	  hci_ipc, see NCS_INCLUDE_RPMSG_CHILD_IMAGE for details) with
+    	  additional configurations to enable ANT.
+
+*(The 'depends on' condition includes propagated dependencies from ifs and menus.)*
